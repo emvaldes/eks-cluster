@@ -1,0 +1,5 @@
+
+Farget Pod Execution Policy:
+arn:aws:iam::{{account-number}}:role/eksctl-{{cluster-name}}-cluster-FargatePodExecutionRole-{{hashed-index}}
+
+Policy ARN:  arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy

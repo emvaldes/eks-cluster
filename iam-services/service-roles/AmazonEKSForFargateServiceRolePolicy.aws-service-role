@@ -1,0 +1,27 @@
+
+Warning:
+This policy is linked to a service and used only with a service-linked role for that service. You cannot attach, detach, modify, or delete this policy. Learn more
+
+Policy ARN:  arn:aws:iam::aws:policy/aws-service-role/AmazonEKSForFargateServiceRolePolicy
+Description: This policy grants necessary permissions to Amazon EKS to run fargate tasks
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:CreateNetworkInterface",
+                "ec2:CreateNetworkInterfacePermission",
+                "ec2:DeleteNetworkInterface",
+                "ec2:DescribeNetworkInterfaces",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcs",
+                "ec2:DescribeDhcpOptions",
+                "ec2:DescribeRouteTables"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+#!/bin/bash
+## Version: 0.1.0
+
+## Script's custom attributes:
+
+export team_member='Eduardo Valdes';
+export team_creator='DevOps Team';
+export team_owner='Infrastructure';
+
+## Script's default attributes:
+
+export autoscaler_version='cluster-autoscaler:v1.14.7';
+export autoscaling_groupname='';
+
+export instance_rolename='';
+
+export default_debug_level=3;
+export max_debug_level=5;

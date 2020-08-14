@@ -1,0 +1,1768 @@
+
+$ bash -x eks-cluster --delete-cluster=prototype.devops --verbose --debug;
+
+++ basename eks-cluster
++ script_name=eks-cluster
++ usr_local=/Users/prototype
++ mkdir -p /Users/prototype
++ local_bin=/Users/prototype/bin
++ mkdir -p /Users/prototype/bin
++ local_etc=/Users/prototype/etc
++ mkdir -p /Users/prototype/etc
++ xfiles=(shared-cloud.variables shared-cloud.functions)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.variables
++ shared_module=/Users/prototype/etc/variables/shared-cloud.variables
++ [[ ! -e /Users/prototype/etc/variables/shared-cloud.variables ]]
++ source /Users/prototype/etc/variables/shared-cloud.variables
+++ export continue_response=false
+++ continue_response=false
+++ export github_server=https://github.com
+++ github_server=https://github.com
+++ export github_content=https://raw.githubusercontent.com
+++ github_content=https://raw.githubusercontent.com
+++ export github_private=https://github.counsyl.com
+++ github_private=https://github.counsyl.com
+++ export devops_project=prototype/devops-tools
+++ devops_project=prototype/devops-tools
+++ export AWS_REGION=us-east-1
+++ AWS_REGION=us-east-1
+++ export AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ export AWS_PROFILE=kubernetes
+++ AWS_PROFILE=kubernetes
+++ export SAML_PROFILE=techops
+++ SAML_PROFILE=techops
+++ export KUBEHOME=/Users/prototype/.kube
+++ KUBEHOME=/Users/prototype/.kube
+++ export KUBECONFIG=/Users/prototype/.kube/config
+++ KUBECONFIG=/Users/prototype/.kube/config
+++ export DEFAULT_DOMAIN=reyanraj.com
+++ DEFAULT_DOMAIN=reyanraj.com
+++ export KUBERNETES_SSHKEY=kubernetes.pub
+++ KUBERNETES_SSHKEY=kubernetes.pub
+++ export monitoring_account=tiller
+++ monitoring_account=tiller
+++ export monitoring_application=prometheus
+++ monitoring_application=prometheus
+++ export monitoring_operator=stable/prometheus-operator
+++ monitoring_operator=stable/prometheus-operator
+++ export namespace_default=default
+++ namespace_default=default
+++ export namespace_kubesystem=kube-system
+++ namespace_kubesystem=kube-system
+++ export namespace_monitoring=prometheus
+++ namespace_monitoring=prometheus
+++ export namespace_cloudwatch=amazon-cloudwatch
+++ namespace_cloudwatch=amazon-cloudwatch
+++ export include_everything=everything
+++ include_everything=everything
+++ export application_prototype=helloworld-deployment
+++ application_prototype=helloworld-deployment
+++ export cloudwatch_agent=cloudwatch-agent
+++ cloudwatch_agent=cloudwatch-agent
+++ export target_podname=
+++ target_podname=
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.functions
++ shared_module=/Users/prototype/etc/functions/shared-cloud.functions
++ [[ ! -e /Users/prototype/etc/functions/shared-cloud.functions ]]
++ source /Users/prototype/etc/functions/shared-cloud.functions
++ xfiles=(eks-cluster.functions eks-cluster.variables eks-cluster.help eks-cluster.create.help eks-cluster.delete.help)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.functions
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.functions ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.functions
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.variables
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.variables ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.variables
+++ export 'team_member=Eduardo Valdes'
+++ team_member='Eduardo Valdes'
+++ export 'team_creator=DevOps Team'
+++ team_creator='DevOps Team'
+++ export 'team_owner=SRE Team'
+++ team_owner='SRE Team'
+++ export autoscaler_version=cluster-autoscaler:v1.14.7
+++ autoscaler_version=cluster-autoscaler:v1.14.7
+++ export autoscaling_groupname=
+++ autoscaling_groupname=
+++ export instance_rolename=
+++ instance_rolename=
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.create.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.create.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.create.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.delete.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ eks_cluster --delete-cluster=prototype.devops --verbose --debug
++ oIFS='
+'
++ for xitem in '"${@}"'
++ IFS==
+++ echo --delete-cluster=prototype.devops
+++ sed -e s/--//g
++ set delete-cluster prototype.devops
++ [[ delete-cluster = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ delete-cluster = \c\a\p\a\c\i\t\y ]]
++ [[ delete-cluster = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ delete-cluster = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \d\e\b\u\g ]]
++ [[ delete-cluster = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ export target_cluster=prototype.devops
++ target_cluster=prototype.devops
++ delete_cluster=true
++ [[ delete-cluster = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ delete-cluster = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ delete-cluster = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ delete-cluster = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ delete-cluster = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ delete-cluster = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ delete-cluster = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ delete-cluster = \p\r\o\f\i\l\e ]]
++ [[ delete-cluster = \r\e\g\i\o\n ]]
++ [[ delete-cluster = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ delete-cluster = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ delete-cluster = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ delete-cluster = \z\o\n\e\s ]]
++ [[ delete-cluster = \v\e\r\b\o\s\e ]]
++ [[ delete-cluster = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --verbose
+++ sed -e s/--//g
++ set verbose
++ [[ verbose = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ verbose = \c\a\p\a\c\i\t\y ]]
++ [[ verbose = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ verbose = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\b\u\g ]]
++ [[ verbose = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ verbose = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ verbose = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ verbose = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ verbose = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ verbose = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ verbose = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ verbose = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ verbose = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ verbose = \p\r\o\f\i\l\e ]]
++ [[ verbose = \r\e\g\i\o\n ]]
++ [[ verbose = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ verbose = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ verbose = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ verbose = \z\o\n\e\s ]]
++ [[ verbose = \v\e\r\b\o\s\e ]]
++ export verbose=true
++ verbose=true
++ [[ verbose = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --debug
+++ sed -e s/--//g
++ set debug
++ [[ debug = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ debug = \c\a\p\a\c\i\t\y ]]
++ [[ debug = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ debug = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\b\u\g ]]
++ export debug_mode=true
++ debug_mode=true
++ [[ debug = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ debug = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ debug = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ debug = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ debug = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ debug = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ debug = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ debug = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ debug = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ debug = \p\r\o\f\i\l\e ]]
++ [[ debug = \r\e\g\i\o\n ]]
++ [[ debug = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ debug = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ debug = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ debug = \z\o\n\e\s ]]
++ [[ debug = \v\e\r\b\o\s\e ]]
++ [[ debug = \h\e\l\p ]]
++ IFS='
+'
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export create_cluster=false
++ create_cluster=false
++ [[ 0 -eq 0 ]]
++ export deploy_cluster=false
++ deploy_cluster=false
++ [[ 0 -eq 0 ]]
++ export deploy_dashboard=false
++ deploy_dashboard=false
++ [[ 0 -eq 0 ]]
++ export deploy_prometheus=false
++ deploy_prometheus=false
++ [[ 0 -eq 0 ]]
++ export deploy_prototype=false
++ deploy_prototype=false
++ [[ 0 -eq 0 ]]
++ export describe_cluster=false
++ describe_cluster=false
++ [[ 0 -eq 0 ]]
++ export describe_create=false
++ describe_create=false
++ [[ 0 -eq 0 ]]
++ export describe_delete=false
++ describe_delete=false
++ [[ 0 -eq 0 ]]
++ export enable_autoscaling=false
++ enable_autoscaling=false
++ [[ 0 -eq 0 ]]
++ export enable_cloudwatch=false
++ enable_cloudwatch=false
++ [[ 0 -eq 0 ]]
++ export enable_metrics=false
++ enable_metrics=false
++ [[ 0 -eq 0 ]]
++ export scale_cluster=0
++ scale_cluster=0
++ [[ 0 -eq 0 ]]
++ export interactive_mode=false
++ interactive_mode=false
++ [[ 0 -eq 0 ]]
++ export kubeconfig=false
++ kubeconfig=false
++ [[ 14 -gt 0 ]]
++ regex='(.*)\.(.*)'
++ [[ prototype.devops =~ (.*)\.(.*) ]]
++ export cluster_name=prototype
++ cluster_name=prototype
++ export nodegroup_name=devops
++ nodegroup_name=devops
++ [[ 4 -eq 0 ]]
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ [[ 0 -eq 0 ]]
++ export default_profile=kubernetes
++ default_profile=kubernetes
++ export AWS_DEFAULT_PROFILE=kubernetes
++ AWS_DEFAULT_PROFILE=kubernetes
++ [[ 0 -eq 0 ]]
++ export default_region=us-east-1
++ default_region=us-east-1
++ [[ 0 -eq 0 ]]
++ export default_zones=us-east-1a,us-east-1b,us-east-1c
++ default_zones=us-east-1a,us-east-1b,us-east-1c
++ [[ 0 -eq 0 ]]
++ cluster_capacity=(1.2.3)
++ declare -a cluster_capacity
++ regex='([[:digit:]]*).([[:digit:]]*).([[:digit:]]*)'
++ [[ 1.2.3 =~ ([[:digit:]]*).([[:digit:]]*).([[:digit:]]*) ]]
++ export nodes_default=1
++ nodes_default=1
++ export nodes_minimum=2
++ nodes_minimum=2
++ export nodes_maximum=3
++ nodes_maximum=3
++ default_user=prototype
++ default_nodegroup=prototype
++ [[ true == true ]]
++ debug_level=4
++ [[ false == true ]]
++ [[ false == true ]]
++ [[ '' == true ]]
++ [[ 7 -eq 0 ]]
++ [[ 6 -eq 0 ]]
++ export configs_path=/tmp/devops/prototype
++ configs_path=/tmp/devops/prototype
++ mkdir -p /tmp/devops/prototype
++ export metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ [[ false == false ]]
++ export KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ export service_platform=k8s-eks
++ service_platform=k8s-eks
+++ aws sts get-caller-identity --profile kubernetes --region us-east-1 --query Account --output text
++ export account_number=738054984624
++ account_number=738054984624
++ [[ true == true ]]
++ remove_cluster
++ __function_name remove_cluster
++ func_name=remove_cluster
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [remove_cluster]: '
+Function [remove_cluster]:
++ return 0
++ __instance_rolename
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ return 0
+++ aws iam get-instance-profile --profile kubernetes --region us-east-1 --instance-profile-name eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111 --query 'InstanceProfile.Roles[].Arn' --output text
++ export instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ return 0
++ delete_services /Users/prototype/.kube/eksctl/clusters/prototype
++ [[ -n '' ]]
++ kubeconfig=/Users/prototype/.kube/eksctl/clusters/prototype
++ KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ target_configs=($(
+        kubectl get           svc           --all-namespaces           --output json           | jq -r '.items[] | select(.status.loadBalancer[]!="")'           | jq '[.metadata.namespace, .metadata.name, .status.loadBalancer.ingress[].hostname] | @csv'             --raw-output           | sed -e 's|"||g';
+          result=${?};
+      ))
+++ kubectl get svc --all-namespaces --output json
+++ jq -r '.items[] | select(.status.loadBalancer[]!="")'
+++ jq '[.metadata.namespace, .metadata.name, .status.loadBalancer.ingress[].hostname] | @csv' --raw-output
+++ sed -e 's|"||g'
+++ result=0
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
++ for target_config in '${target_configs[@]}'
++ regex='(.*)\,(.*)\,(.*)'
++ [[ default,helloworld-deployment,af49ecbdd269f11ea9c3d12f930d7a58-360768571.us-east-1.elb.amazonaws.com =~ (.*)\,(.*)\,(.*) ]]
++ export internal_service=helloworld-deployment
++ internal_service=helloworld-deployment
++ kubectl delete svc helloworld-deployment
+service "helloworld-deployment" deleted
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ return 0
++ aws iam detach-role-policy --profile kubernetes --region us-east-1 --role-name eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02 --policy-arn arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ aws iam delete-policy --profile kubernetes --region us-east-1 --policy-arn arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ aws iam detach-role-policy --profile kubernetes --region us-east-1 --role-name eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02 --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ eksctl delete cluster --name prototype --profile kubernetes --region us-east-1 --timeout 10m0s --wait --verbose 4
+2019-12-24T15:58:25-07:00 [ℹ]  eksctl version 0.11.1
+2019-12-24T15:58:25-07:00 [ℹ]  using region us-east-1
+2019-12-24T15:58:25-07:00 [▶]  role ARN for the current session is "arn:aws:iam::738054984624:user/kubernetes"
+2019-12-24T15:58:25-07:00 [ℹ]  deleting EKS cluster "prototype"
+2019-12-24T15:58:25-07:00 [▶]  cfg.json = \
+{
+    "kind": "ClusterConfig",
+    "apiVersion": "eksctl.io/v1alpha5",
+    "metadata": {
+        "name": "prototype",
+        "region": "us-east-1",
+        "version": "1.14"
+    },
+    "iam": {
+        "withOIDC": false
+    },
+    "vpc": {
+        "cidr": "192.168.0.0/16",
+        "autoAllocateIPv6": false,
+        "nat": {
+            "gateway": "Single"
+        },
+        "clusterEndpoints": {
+            "privateAccess": false,
+            "publicAccess": true
+        }
+    },
+    "cloudWatch": {
+        "clusterLogging": {}
+    }
+}
+
+2019-12-24T15:58:26-07:00 [▶]  cluster = {
+  Arn: "arn:aws:eks:us-east-1:738054984624:cluster/prototype",
+  CertificateAuthority: {
+    Data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1USXlOREl4TURZMU4xb1hEVEk1TVRJeU1USXhNRFkxTjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTERXCjRzTVlNTUx1WEpHSHA0MVVjNHFNaGhUc3ZWQ2VIcHZOMVNiZDFnNkQ3YWZIblVhaU1Yd3RZS0tHSHpOQzhuWW0KR2Q5U3pBYXVQK1pzdCtFczcvN3hVTWk1QWxKRldXWVkzSUxSMm5EWW1WRWNodG9IdkNBb1dWOTJEVHV4L2pDWgo1Z2ZYV0hwMmdCN29WYU0rVVh1bEJLNkN6MXY1YUpqUDh6V1g4TzhuN04rUnVGcWZwMlc3ZUNmUlFrSmxPaEpVCmlUZkc1RnlJQmxEdS9oRjArWjFwT09QcVhUK05HTXJDc1RjcUNCYkZpald4elpjZmo0ak5jNWZCVEFLelg2bUwKbDJFaXI3SjEvNVBaODY5RWsxVzdsdDZJa3RYcGtUUnhNeExhTWtLYWpaR2VobHMrNHc2a3BhYzFvck14UVZUTAp2VHUwSFdaUkw1enRnTmFSaU5zQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFGQlZZV1VERlE3WitDUWVJZzFMejR1VWRzUmIKMzBWRms2VUpoVG1FUkRJZ0U2K1lhNE5tOTNZVmFIM2cyQzBGODFiSHFOdW52dFBJY1hFRW4yZ1puWUI2T29CdQpCNERPQk42aE9CSzJvaVpoQmJ0STZzSWxxZWFwRnFvUVJmNE13dTl0OUxyVGxWRDJYTVdhTi9oVmdwNC9SRUpYCkZ1dzBiVFNGVGJNNmpXQ1g1Skp6a05hdFJKNXFuOUtCaERwendGS2lJZWxnc05VYjNzTzU2cmUxNWRpY3U5TS8KRldzeGl3SjhiOEJUWWhRSEQvSFMxNlJ6SS9kOTUxdEZZVE94Q1JOT0cyREtFVjlQK25MMktFRktJWXg3Q0JwegpJaEdyWEwzSFdrbUk5bUhZVEZaVDdINWhHczIzN3NjVENkQ3lSTXF1eXNMMSs5c0MzTEwyVWV3T3BTRT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+  },
+  CreatedAt: 2019-12-24 20:59:59 +0000 UTC,
+  Endpoint: "https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com",
+  Identity: {
+    Oidc: {
+      Issuer: "https://oidc.eks.us-east-1.amazonaws.com/id/A5E7343167DDE1DED38A8FAAC3B7B418"
+    }
+  },
+  Logging: {
+    ClusterLogging: [{
+        Enabled: true,
+        Types: [
+          "api",
+          "audit",
+          "authenticator",
+          "controllerManager",
+          "scheduler"
+        ]
+      }]
+  },
+  Name: "prototype",
+  PlatformVersion: "eks.7",
+  ResourcesVpcConfig: {
+    ClusterSecurityGroupId: "sg-05e821e4661c356b3",
+    EndpointPrivateAccess: false,
+    EndpointPublicAccess: true,
+    SecurityGroupIds: ["sg-04bffaeb42498266b"],
+    SubnetIds: [
+      "subnet-0b60b74e32bb2d5b9",
+      "subnet-04518884ed1f2994f",
+      "subnet-0783d0c9d2733a28b",
+      "subnet-035d65fcdde60ab1e",
+      "subnet-08fd7eaccb04a6ea7",
+      "subnet-02136cc89d80e853f"
+    ],
+    VpcId: "vpc-0d778f5d45975aa0d"
+  },
+  RoleArn: "arn:aws:iam::738054984624:role/eksctl-prototype-cluster-ServiceRole-1674N52ISB9LV",
+  Status: "ACTIVE",
+  Tags: {
+
+  },
+  Version: "1.14"
+}
+2019-12-24T15:58:26-07:00 [▶]  Fargate profile: list request: sending: {
+  ClusterName: "prototype"
+}
+2019-12-24T15:58:26-07:00 [▶]  Fargate profile: list request: received 0 profile(s): {
+  FargateProfileNames: []
+}
+2019-12-24T15:58:26-07:00 [ℹ]  deleted 0 Fargate profile(s)
+2019-12-24T15:58:27-07:00 [▶]  existing = {
+  KeyPairs: [{
+      KeyFingerprint: "0d:16:0f:42:a0:99:21:de:60:9b:82:d1:bd:16:b5:44:7d:fb:74:47",
+      KeyName: "devops"
+    },{
+      KeyFingerprint: "b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7",
+      KeyName: "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7"
+    },{
+      KeyFingerprint: "44:e5:51:73:cb:27:c2:41:e0:d2:4f:56:a1:d8:e3:d3:dd:36:85:6c",
+      KeyName: "kubernetes"
+    }]
+}
+2019-12-24T15:58:27-07:00 [▶]  existing key "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7" matches prefix
+2019-12-24T15:58:27-07:00 [▶]  existing key "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7" matches fingerprint
+2019-12-24T15:58:27-07:00 [▶]  deleting key "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7"
+2019-12-24T15:58:27-07:00 [ℹ]  cleaning up LoadBalancer services
+2019-12-24T15:58:28-07:00 [▶]  deleting Load Balancer Security Group orphans
+2019-12-24T15:58:28-07:00 [▶]  deleting orphan Load Balancer security group sg-05d302bd485adadc3 with description "Security group for Kubernetes ELB af49ecbdd269f11ea9c3d12f930d7a58 (default/helloworld-deployment)"
+2019-12-24T15:58:28-07:00 [✖]  cannot delete orphan ELB Security Groups: cannot delete security group k8s-elb-af49ecbdd269f11ea9c3d12f930d7a58: DependencyViolation: resource sg-05d302bd485adadc3 has a dependent object
+	status code: 400, request id: aca3326f-ddbd-439a-87a1-b4c32b221407
++ __debugging 1
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 1'
+Status: 1
++ return 0
++ rm -fv /Users/prototype/.kube/eksctl/clusters/prototype
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ return 0
++ return 0
+
+$ bash -x eks-cluster --delete-cluster=prototype.devops --verbose --debug;
+
+++ basename eks-cluster
++ script_name=eks-cluster
++ usr_local=/Users/prototype
++ mkdir -p /Users/prototype
++ local_bin=/Users/prototype/bin
++ mkdir -p /Users/prototype/bin
++ local_etc=/Users/prototype/etc
++ mkdir -p /Users/prototype/etc
++ xfiles=(shared-cloud.variables shared-cloud.functions)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.variables
++ shared_module=/Users/prototype/etc/variables/shared-cloud.variables
++ [[ ! -e /Users/prototype/etc/variables/shared-cloud.variables ]]
++ source /Users/prototype/etc/variables/shared-cloud.variables
+++ export continue_response=false
+++ continue_response=false
+++ export github_server=https://github.com
+++ github_server=https://github.com
+++ export github_content=https://raw.githubusercontent.com
+++ github_content=https://raw.githubusercontent.com
+++ export github_private=https://github.counsyl.com
+++ github_private=https://github.counsyl.com
+++ export devops_project=prototype/devops-tools
+++ devops_project=prototype/devops-tools
+++ export AWS_REGION=us-east-1
+++ AWS_REGION=us-east-1
+++ export AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ export AWS_PROFILE=kubernetes
+++ AWS_PROFILE=kubernetes
+++ export SAML_PROFILE=techops
+++ SAML_PROFILE=techops
+++ export KUBEHOME=/Users/prototype/.kube
+++ KUBEHOME=/Users/prototype/.kube
+++ export KUBECONFIG=/Users/prototype/.kube/config
+++ KUBECONFIG=/Users/prototype/.kube/config
+++ export DEFAULT_DOMAIN=reyanraj.com
+++ DEFAULT_DOMAIN=reyanraj.com
+++ export KUBERNETES_SSHKEY=kubernetes.pub
+++ KUBERNETES_SSHKEY=kubernetes.pub
+++ export monitoring_account=tiller
+++ monitoring_account=tiller
+++ export monitoring_application=prometheus
+++ monitoring_application=prometheus
+++ export monitoring_operator=stable/prometheus-operator
+++ monitoring_operator=stable/prometheus-operator
+++ export namespace_default=default
+++ namespace_default=default
+++ export namespace_kubesystem=kube-system
+++ namespace_kubesystem=kube-system
+++ export namespace_monitoring=prometheus
+++ namespace_monitoring=prometheus
+++ export namespace_cloudwatch=amazon-cloudwatch
+++ namespace_cloudwatch=amazon-cloudwatch
+++ export include_everything=everything
+++ include_everything=everything
+++ export application_prototype=helloworld-deployment
+++ application_prototype=helloworld-deployment
+++ export cloudwatch_agent=cloudwatch-agent
+++ cloudwatch_agent=cloudwatch-agent
+++ export target_podname=
+++ target_podname=
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.functions
++ shared_module=/Users/prototype/etc/functions/shared-cloud.functions
++ [[ ! -e /Users/prototype/etc/functions/shared-cloud.functions ]]
++ source /Users/prototype/etc/functions/shared-cloud.functions
++ xfiles=(eks-cluster.functions eks-cluster.variables eks-cluster.help eks-cluster.create.help eks-cluster.delete.help)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.functions
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.functions ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.functions
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.variables
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.variables ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.variables
+++ export 'team_member=Eduardo Valdes'
+++ team_member='Eduardo Valdes'
+++ export 'team_creator=DevOps Team'
+++ team_creator='DevOps Team'
+++ export 'team_owner=SRE Team'
+++ team_owner='SRE Team'
+++ export autoscaler_version=cluster-autoscaler:v1.14.7
+++ autoscaler_version=cluster-autoscaler:v1.14.7
+++ export autoscaling_groupname=
+++ autoscaling_groupname=
+++ export instance_rolename=
+++ instance_rolename=
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.create.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.create.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.create.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.delete.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ eks_cluster --delete-cluster=prototype.devops --verbose --debug
++ oIFS='
+'
++ for xitem in '"${@}"'
++ IFS==
+++ echo --delete-cluster=prototype.devops
+++ sed -e s/--//g
++ set delete-cluster prototype.devops
++ [[ delete-cluster = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ delete-cluster = \c\a\p\a\c\i\t\y ]]
++ [[ delete-cluster = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ delete-cluster = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \d\e\b\u\g ]]
++ [[ delete-cluster = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ export target_cluster=prototype.devops
++ target_cluster=prototype.devops
++ delete_cluster=true
++ [[ delete-cluster = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ delete-cluster = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ delete-cluster = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ delete-cluster = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ delete-cluster = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ delete-cluster = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ delete-cluster = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ delete-cluster = \p\r\o\f\i\l\e ]]
++ [[ delete-cluster = \r\e\g\i\o\n ]]
++ [[ delete-cluster = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ delete-cluster = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ delete-cluster = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ delete-cluster = \z\o\n\e\s ]]
++ [[ delete-cluster = \v\e\r\b\o\s\e ]]
++ [[ delete-cluster = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --verbose
+++ sed -e s/--//g
++ set verbose
++ [[ verbose = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ verbose = \c\a\p\a\c\i\t\y ]]
++ [[ verbose = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ verbose = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\b\u\g ]]
++ [[ verbose = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ verbose = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ verbose = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ verbose = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ verbose = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ verbose = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ verbose = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ verbose = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ verbose = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ verbose = \p\r\o\f\i\l\e ]]
++ [[ verbose = \r\e\g\i\o\n ]]
++ [[ verbose = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ verbose = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ verbose = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ verbose = \z\o\n\e\s ]]
++ [[ verbose = \v\e\r\b\o\s\e ]]
++ export verbose=true
++ verbose=true
++ [[ verbose = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --debug
+++ sed -e s/--//g
++ set debug
++ [[ debug = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ debug = \c\a\p\a\c\i\t\y ]]
++ [[ debug = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ debug = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\b\u\g ]]
++ export debug_mode=true
++ debug_mode=true
++ [[ debug = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ debug = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ debug = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ debug = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ debug = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ debug = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ debug = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ debug = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ debug = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ debug = \p\r\o\f\i\l\e ]]
++ [[ debug = \r\e\g\i\o\n ]]
++ [[ debug = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ debug = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ debug = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ debug = \z\o\n\e\s ]]
++ [[ debug = \v\e\r\b\o\s\e ]]
++ [[ debug = \h\e\l\p ]]
++ IFS='
+'
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export create_cluster=false
++ create_cluster=false
++ [[ 0 -eq 0 ]]
++ export deploy_cluster=false
++ deploy_cluster=false
++ [[ 0 -eq 0 ]]
++ export deploy_dashboard=false
++ deploy_dashboard=false
++ [[ 0 -eq 0 ]]
++ export deploy_prometheus=false
++ deploy_prometheus=false
++ [[ 0 -eq 0 ]]
++ export deploy_prototype=false
++ deploy_prototype=false
++ [[ 0 -eq 0 ]]
++ export describe_cluster=false
++ describe_cluster=false
++ [[ 0 -eq 0 ]]
++ export describe_create=false
++ describe_create=false
++ [[ 0 -eq 0 ]]
++ export describe_delete=false
++ describe_delete=false
++ [[ 0 -eq 0 ]]
++ export enable_autoscaling=false
++ enable_autoscaling=false
++ [[ 0 -eq 0 ]]
++ export enable_cloudwatch=false
++ enable_cloudwatch=false
++ [[ 0 -eq 0 ]]
++ export enable_metrics=false
++ enable_metrics=false
++ [[ 0 -eq 0 ]]
++ export scale_cluster=0
++ scale_cluster=0
++ [[ 0 -eq 0 ]]
++ export interactive_mode=false
++ interactive_mode=false
++ [[ 0 -eq 0 ]]
++ export kubeconfig=false
++ kubeconfig=false
++ [[ 14 -gt 0 ]]
++ regex='(.*)\.(.*)'
++ [[ prototype.devops =~ (.*)\.(.*) ]]
++ export cluster_name=prototype
++ cluster_name=prototype
++ export nodegroup_name=devops
++ nodegroup_name=devops
++ [[ 4 -eq 0 ]]
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ [[ 0 -eq 0 ]]
++ export default_profile=kubernetes
++ default_profile=kubernetes
++ export AWS_DEFAULT_PROFILE=kubernetes
++ AWS_DEFAULT_PROFILE=kubernetes
++ [[ 0 -eq 0 ]]
++ export default_region=us-east-1
++ default_region=us-east-1
++ [[ 0 -eq 0 ]]
++ export default_zones=us-east-1a,us-east-1b,us-east-1c
++ default_zones=us-east-1a,us-east-1b,us-east-1c
++ [[ 0 -eq 0 ]]
++ cluster_capacity=(1.2.3)
++ declare -a cluster_capacity
++ regex='([[:digit:]]*).([[:digit:]]*).([[:digit:]]*)'
++ [[ 1.2.3 =~ ([[:digit:]]*).([[:digit:]]*).([[:digit:]]*) ]]
++ export nodes_default=1
++ nodes_default=1
++ export nodes_minimum=2
++ nodes_minimum=2
++ export nodes_maximum=3
++ nodes_maximum=3
++ default_user=prototype
++ default_nodegroup=prototype
++ [[ true == true ]]
++ debug_level=4
++ [[ false == true ]]
++ [[ false == true ]]
++ [[ '' == true ]]
++ [[ 7 -eq 0 ]]
++ [[ 6 -eq 0 ]]
++ export configs_path=/tmp/devops/prototype
++ configs_path=/tmp/devops/prototype
++ mkdir -p /tmp/devops/prototype
++ export metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ [[ false == false ]]
++ export KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ export service_platform=k8s-eks
++ service_platform=k8s-eks
+++ aws sts get-caller-identity --profile kubernetes --region us-east-1 --query Account --output text
++ export account_number=738054984624
++ account_number=738054984624
++ [[ true == true ]]
++ remove_cluster
++ __function_name remove_cluster
++ func_name=remove_cluster
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [remove_cluster]: '
+Function [remove_cluster]:
++ return 0
++ __instance_rolename
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ return 0
+++ aws iam get-instance-profile --profile kubernetes --region us-east-1 --instance-profile-name eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111 --query 'InstanceProfile.Roles[].Arn' --output text
++ export instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ return 0
++ delete_services /Users/prototype/.kube/eksctl/clusters/prototype
++ [[ -n '' ]]
++ kubeconfig=/Users/prototype/.kube/eksctl/clusters/prototype
++ KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ target_configs=($(
+        kubectl get           svc           --all-namespaces           --output json           | jq -r '.items[] | select(.status.loadBalancer[]!="")'           | jq '[.metadata.namespace, .metadata.name, .status.loadBalancer.ingress[].hostname] | @csv'             --raw-output           | sed -e 's|"||g';
+          result=${?};
+      ))
+++ kubectl get svc --all-namespaces --output json
+++ jq -r '.items[] | select(.status.loadBalancer[]!="")'
+++ jq '[.metadata.namespace, .metadata.name, .status.loadBalancer.ingress[].hostname] | @csv' --raw-output
+++ sed -e 's|"||g'
+W1224 16:00:28.400999   41314 loader.go:223] Config not found: /Users/prototype/.kube/eksctl/clusters/prototype
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ result=0
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
++ return 0
++ aws iam detach-role-policy --profile kubernetes --region us-east-1 --role-name eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02 --policy-arn arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops
+
+An error occurred (NoSuchEntity) when calling the DetachRolePolicy operation: Policy arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops was not found.
++ __debugging 255
++ [[ true == true ]]
++ [[ 3 -gt 0 ]]
++ echo -e 'Status: 255'
+Status: 255
++ return 0
++ aws iam delete-policy --profile kubernetes --region us-east-1 --policy-arn arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops
+
+An error occurred (NoSuchEntity) when calling the DeletePolicy operation: Policy arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops does not exist or is not attachable.
++ __debugging 255
++ [[ true == true ]]
++ [[ 3 -gt 0 ]]
++ echo -e 'Status: 255'
+Status: 255
++ return 0
++ aws iam detach-role-policy --profile kubernetes --region us-east-1 --role-name eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02 --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
+
+An error occurred (NoSuchEntity) when calling the DetachRolePolicy operation: Policy arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy was not found.
++ __debugging 255
++ [[ true == true ]]
++ [[ 3 -gt 0 ]]
++ echo -e 'Status: 255'
+Status: 255
++ return 0
++ eksctl delete cluster --name prototype --profile kubernetes --region us-east-1 --timeout 10m0s --wait --verbose 4
+2019-12-24T16:00:30-07:00 [ℹ]  eksctl version 0.11.1
+2019-12-24T16:00:30-07:00 [ℹ]  using region us-east-1
+2019-12-24T16:00:31-07:00 [▶]  role ARN for the current session is "arn:aws:iam::738054984624:user/kubernetes"
+2019-12-24T16:00:31-07:00 [ℹ]  deleting EKS cluster "prototype"
+2019-12-24T16:00:31-07:00 [▶]  cfg.json = \
+{
+    "kind": "ClusterConfig",
+    "apiVersion": "eksctl.io/v1alpha5",
+    "metadata": {
+        "name": "prototype",
+        "region": "us-east-1",
+        "version": "1.14"
+    },
+    "iam": {
+        "withOIDC": false
+    },
+    "vpc": {
+        "cidr": "192.168.0.0/16",
+        "autoAllocateIPv6": false,
+        "nat": {
+            "gateway": "Single"
+        },
+        "clusterEndpoints": {
+            "privateAccess": false,
+            "publicAccess": true
+        }
+    },
+    "cloudWatch": {
+        "clusterLogging": {}
+    }
+}
+
+2019-12-24T16:00:32-07:00 [▶]  cluster = {
+  Arn: "arn:aws:eks:us-east-1:738054984624:cluster/prototype",
+  CertificateAuthority: {
+    Data: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1USXlOREl4TURZMU4xb1hEVEk1TVRJeU1USXhNRFkxTjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTERXCjRzTVlNTUx1WEpHSHA0MVVjNHFNaGhUc3ZWQ2VIcHZOMVNiZDFnNkQ3YWZIblVhaU1Yd3RZS0tHSHpOQzhuWW0KR2Q5U3pBYXVQK1pzdCtFczcvN3hVTWk1QWxKRldXWVkzSUxSMm5EWW1WRWNodG9IdkNBb1dWOTJEVHV4L2pDWgo1Z2ZYV0hwMmdCN29WYU0rVVh1bEJLNkN6MXY1YUpqUDh6V1g4TzhuN04rUnVGcWZwMlc3ZUNmUlFrSmxPaEpVCmlUZkc1RnlJQmxEdS9oRjArWjFwT09QcVhUK05HTXJDc1RjcUNCYkZpald4elpjZmo0ak5jNWZCVEFLelg2bUwKbDJFaXI3SjEvNVBaODY5RWsxVzdsdDZJa3RYcGtUUnhNeExhTWtLYWpaR2VobHMrNHc2a3BhYzFvck14UVZUTAp2VHUwSFdaUkw1enRnTmFSaU5zQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFGQlZZV1VERlE3WitDUWVJZzFMejR1VWRzUmIKMzBWRms2VUpoVG1FUkRJZ0U2K1lhNE5tOTNZVmFIM2cyQzBGODFiSHFOdW52dFBJY1hFRW4yZ1puWUI2T29CdQpCNERPQk42aE9CSzJvaVpoQmJ0STZzSWxxZWFwRnFvUVJmNE13dTl0OUxyVGxWRDJYTVdhTi9oVmdwNC9SRUpYCkZ1dzBiVFNGVGJNNmpXQ1g1Skp6a05hdFJKNXFuOUtCaERwendGS2lJZWxnc05VYjNzTzU2cmUxNWRpY3U5TS8KRldzeGl3SjhiOEJUWWhRSEQvSFMxNlJ6SS9kOTUxdEZZVE94Q1JOT0cyREtFVjlQK25MMktFRktJWXg3Q0JwegpJaEdyWEwzSFdrbUk5bUhZVEZaVDdINWhHczIzN3NjVENkQ3lSTXF1eXNMMSs5c0MzTEwyVWV3T3BTRT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+  },
+  CreatedAt: 2019-12-24 20:59:59 +0000 UTC,
+  Endpoint: "https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com",
+  Identity: {
+    Oidc: {
+      Issuer: "https://oidc.eks.us-east-1.amazonaws.com/id/A5E7343167DDE1DED38A8FAAC3B7B418"
+    }
+  },
+  Logging: {
+    ClusterLogging: [{
+        Enabled: true,
+        Types: [
+          "api",
+          "audit",
+          "authenticator",
+          "controllerManager",
+          "scheduler"
+        ]
+      }]
+  },
+  Name: "prototype",
+  PlatformVersion: "eks.7",
+  ResourcesVpcConfig: {
+    ClusterSecurityGroupId: "sg-05e821e4661c356b3",
+    EndpointPrivateAccess: false,
+    EndpointPublicAccess: true,
+    SecurityGroupIds: ["sg-04bffaeb42498266b"],
+    SubnetIds: [
+      "subnet-0b60b74e32bb2d5b9",
+      "subnet-04518884ed1f2994f",
+      "subnet-0783d0c9d2733a28b",
+      "subnet-035d65fcdde60ab1e",
+      "subnet-08fd7eaccb04a6ea7",
+      "subnet-02136cc89d80e853f"
+    ],
+    VpcId: "vpc-0d778f5d45975aa0d"
+  },
+  RoleArn: "arn:aws:iam::738054984624:role/eksctl-prototype-cluster-ServiceRole-1674N52ISB9LV",
+  Status: "ACTIVE",
+  Tags: {
+
+  },
+  Version: "1.14"
+}
+2019-12-24T16:00:32-07:00 [▶]  Fargate profile: list request: sending: {
+  ClusterName: "prototype"
+}
+2019-12-24T16:00:32-07:00 [▶]  Fargate profile: list request: received 0 profile(s): {
+  FargateProfileNames: []
+}
+2019-12-24T16:00:32-07:00 [ℹ]  deleted 0 Fargate profile(s)
+2019-12-24T16:00:32-07:00 [▶]  existing = {
+  KeyPairs: [{
+      KeyFingerprint: "0d:16:0f:42:a0:99:21:de:60:9b:82:d1:bd:16:b5:44:7d:fb:74:47",
+      KeyName: "devops"
+    },{
+      KeyFingerprint: "44:e5:51:73:cb:27:c2:41:e0:d2:4f:56:a1:d8:e3:d3:dd:36:85:6c",
+      KeyName: "kubernetes"
+    }]
+}
+2019-12-24T16:00:32-07:00 [▶]  reset current-context in kubeconfig
+%!!(MISSING)(EXTRA string=)2019-12-24T16:00:32-07:00 [✔]  kubeconfig has been updated
+2019-12-24T16:00:32-07:00 [ℹ]  cleaning up LoadBalancer services
+2019-12-24T16:00:33-07:00 [▶]  deleting Load Balancer Security Group orphans
+2019-12-24T16:00:34-07:00 [▶]  nodegroups = [{
+  Capabilities: ["CAPABILITY_IAM"],
+  CreationTime: 2019-12-24 21:10:13.033 +0000 UTC,
+  Description: "EKS Managed Nodes (SSH access: true) [created by eksctl]",
+  DisableRollback: false,
+  DriftInformation: {
+    StackDriftStatus: "NOT_CHECKED"
+  },
+  EnableTerminationProtection: false,
+  RollbackConfiguration: {
+
+  },
+  StackId: "arn:aws:cloudformation:us-east-1:738054984624:stack/eksctl-prototype-nodegroup-devops/c672b0e0-2691-11ea-a8e4-12c9c271ca70",
+  StackName: "eksctl-prototype-nodegroup-devops",
+  StackStatus: "CREATE_COMPLETE",
+  Tags: [
+    {
+      Key: "alpha.eksctl.io/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Owner",
+      Value: "SRE Team"
+    },
+    {
+      Key: "alpha.eksctl.io/nodegroup-name",
+      Value: "devops"
+    },
+    {
+      Key: "eksctl.cluster.k8s.io/v1alpha1/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Team",
+      Value: "DevOps Team"
+    },
+    {
+      Key: "alpha.eksctl.io/nodegroup-type",
+      Value: "managed"
+    },
+    {
+      Key: "Creator",
+      Value: "Eduardo Valdes"
+    }
+  ]
+}]
+2019-12-24T16:00:34-07:00 [▶]  iamserviceaccounts = []
+2019-12-24T16:00:35-07:00 [ℹ]  2 sequential tasks: { delete nodegroup "devops", delete cluster control plane "prototype" }
+2019-12-24T16:00:35-07:00 [▶]  started task: delete nodegroup "devops"
+2019-12-24T16:00:35-07:00 [▶]  waiting for 1 parallel tasks to complete
+2019-12-24T16:00:35-07:00 [▶]  started task: delete nodegroup "devops"
+2019-12-24T16:00:35-07:00 [ℹ]  will delete stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:00:35-07:00 [ℹ]  waiting for stack "eksctl-prototype-nodegroup-devops" to get deleted
+2019-12-24T16:00:35-07:00 [▶]  start waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:00:35-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:00:53-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:01:09-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:01:27-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:01:44-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:01:59-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:02:19-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:02:37-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:02:53-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:03:12-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:03:28-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:03:45-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:04:01-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:04:17-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:04:35-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:04:55-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:05:15-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:05:34-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:05:51-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:05:52-07:00 [▶]  done after 5m16.710412524s of waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T16:05:52-07:00 [▶]  completed task: delete nodegroup "devops"
+2019-12-24T16:05:52-07:00 [▶]  completed task: delete nodegroup "devops"
+2019-12-24T16:05:52-07:00 [▶]  started task: delete cluster control plane "prototype"
+2019-12-24T16:05:52-07:00 [ℹ]  will delete stack "eksctl-prototype-cluster"
+2019-12-24T16:05:52-07:00 [ℹ]  waiting for stack "eksctl-prototype-cluster" to get deleted
+2019-12-24T16:05:52-07:00 [▶]  start waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:05:52-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:06:08-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:06:24-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:06:40-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:07:00-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:07:16-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:07:32-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:07:52-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:08:09-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:08:24-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:08:43-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:09:00-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:09:17-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:09:34-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:09:53-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:10:09-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:10:27-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:10:47-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:11:03-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:11:21-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:11:36-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:11:53-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:12:13-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:12:32-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:12:48-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:13:05-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:13:21-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:13:41-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:13:56-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:14:16-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:14:34-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:14:50-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:15:06-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:15:22-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:15:41-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:15:53-07:00 [✖]  unexpected status "DELETE_IN_PROGRESS" while waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T16:15:53-07:00 [ℹ]  fetching stack events in attempt to troubleshoot the root cause of the failure
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::InternetGateway/InternetGateway: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::InternetGateway/InternetGateway: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPCGatewayAttachment/VPCGatewayAttachment: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::EIP/NATIP: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::EIP/NATIP: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::NatGateway/NATGateway: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PublicRouteTable: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1A: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PublicRouteTable: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1C: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1B: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::NatGateway/NATGateway: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1A: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1C: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1B: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1C: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1A: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1B: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1C: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1A: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1B: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1C: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1B: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/PublicSubnetRoute: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1A: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ClusterSharedNodeSecurityGroup: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ClusterSharedNodeSecurityGroup: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EKS::Cluster/ControlPlane: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPCGatewayAttachment/VPCGatewayAttachment: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressInterNodeGroupSG: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyNLB: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressDefaultClusterToNodeSG: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1C: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/FargatePodExecutionRole: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressNodeToDefaultClusterSG: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyNLB: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressDefaultClusterToNodeSG: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressInterNodeGroupSG: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyCloudWatchMetrics: DELETE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1B: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressNodeToDefaultClusterSG: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1C: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1A: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1A: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1C: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1B: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/PublicSubnetRoute: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyCloudWatchMetrics: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/FargatePodExecutionRole: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1B: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1A: DELETE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::CloudFormation::Stack/eksctl-prototype-cluster: DELETE_IN_PROGRESS – "User Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::CloudFormation::Stack/eksctl-prototype-cluster: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressNodeToDefaultClusterSG: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressDefaultClusterToNodeSG: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressNodeToDefaultClusterSG: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressNodeToDefaultClusterSG: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressDefaultClusterToNodeSG: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressDefaultClusterToNodeSG: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EKS::Cluster/ControlPlane: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1B: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1A: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1C: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1B: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1A: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1C: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1B: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1A: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/NATPrivateSubnetRouteUSEAST1C: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::NatGateway/NATGateway: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1A: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1C: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1C: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1B: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1B: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1A: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EKS::Cluster/ControlPlane: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1A: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1C: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1C: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1B: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/PublicSubnetRoute: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::NatGateway/NATGateway: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1B: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1A: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1A: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1C: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EKS::Cluster/ControlPlane: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1C: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::NatGateway/NATGateway: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1B: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPublicUSEAST1B: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SubnetRouteTableAssociation/RouteTableAssociationPrivateUSEAST1A: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1C: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1A: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1C: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1B: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1B: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1A: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPCGatewayAttachment/VPCGatewayAttachment: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressInterNodeGroupSG: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressInterNodeGroupSG: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyNLB: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyCloudWatchMetrics: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroupIngress/IngressInterNodeGroupSG: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ClusterSharedNodeSecurityGroup: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ControlPlaneSecurityGroup: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ClusterSharedNodeSecurityGroup: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ControlPlaneSecurityGroup: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/PublicSubnetRoute: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Route/PublicSubnetRoute: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1C: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PublicRouteTable: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1B: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1A: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1C: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1B: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1A: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1C: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1B: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PublicRouteTable: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1A: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1C: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1B: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1C: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ClusterSharedNodeSecurityGroup: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPCGatewayAttachment/VPCGatewayAttachment: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1A: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1B: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PublicRouteTable: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1C: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1B: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1C: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPCGatewayAttachment/VPCGatewayAttachment: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1A: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::SecurityGroup/ControlPlaneSecurityGroup: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::RouteTable/PrivateRouteTableUSEAST1A: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPublicUSEAST1A: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::Subnet/SubnetPrivateUSEAST1B: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPC/VPC: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::EIP/NATIP: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::InternetGateway/InternetGateway: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyNLB: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyCloudWatchMetrics: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyNLB: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Policy/PolicyCloudWatchMetrics: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/FargatePodExecutionRole: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/ServiceRole: CREATE_COMPLETE
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPC/VPC: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::InternetGateway/InternetGateway: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::EIP/NATIP: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::VPC/VPC: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/FargatePodExecutionRole: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/ServiceRole: CREATE_IN_PROGRESS – "Resource creation Initiated"
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::InternetGateway/InternetGateway: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::EC2::EIP/NATIP: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/FargatePodExecutionRole: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::IAM::Role/ServiceRole: CREATE_IN_PROGRESS
+2019-12-24T16:15:53-07:00 [▶]  AWS::CloudFormation::Stack/eksctl-prototype-cluster: CREATE_IN_PROGRESS – "User Initiated"
+2019-12-24T16:15:53-07:00 [▶]  failed task: delete cluster control plane "prototype" (will not run other sequential tasks)
+2019-12-24T16:15:53-07:00 [ℹ]  1 error(s) occurred while deleting cluster with nodegroup(s)
+2019-12-24T16:15:53-07:00 [✖]  waiting for CloudFormation stack "eksctl-prototype-cluster": RequestCanceled: waiter context canceled
+caused by: context deadline exceeded
+2019-12-24T16:15:53-07:00 [✖]  failed to delete cluster with nodegroup(s)
++ __debugging 1
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 1'
+Status: 1
++ return 0
++ rm -fv /Users/prototype/.kube/eksctl/clusters/prototype
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ return 0
++ return 0
+
+$ bash -x eks-cluster --delete-cluster=prototype.devops --verbose --debug;
+
+++ basename eks-cluster
++ script_name=eks-cluster
++ usr_local=/Users/prototype
++ mkdir -p /Users/prototype
++ local_bin=/Users/prototype/bin
++ mkdir -p /Users/prototype/bin
++ local_etc=/Users/prototype/etc
++ mkdir -p /Users/prototype/etc
++ xfiles=(shared-cloud.variables shared-cloud.functions)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.variables
++ shared_module=/Users/prototype/etc/variables/shared-cloud.variables
++ [[ ! -e /Users/prototype/etc/variables/shared-cloud.variables ]]
++ source /Users/prototype/etc/variables/shared-cloud.variables
+++ export continue_response=false
+++ continue_response=false
+++ export github_server=https://github.com
+++ github_server=https://github.com
+++ export github_content=https://raw.githubusercontent.com
+++ github_content=https://raw.githubusercontent.com
+++ export github_private=https://github.counsyl.com
+++ github_private=https://github.counsyl.com
+++ export devops_project=prototype/devops-tools
+++ devops_project=prototype/devops-tools
+++ export AWS_REGION=us-east-1
+++ AWS_REGION=us-east-1
+++ export AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ export AWS_PROFILE=kubernetes
+++ AWS_PROFILE=kubernetes
+++ export SAML_PROFILE=techops
+++ SAML_PROFILE=techops
+++ export KUBEHOME=/Users/prototype/.kube
+++ KUBEHOME=/Users/prototype/.kube
+++ export KUBECONFIG=/Users/prototype/.kube/config
+++ KUBECONFIG=/Users/prototype/.kube/config
+++ export DEFAULT_DOMAIN=reyanraj.com
+++ DEFAULT_DOMAIN=reyanraj.com
+++ export KUBERNETES_SSHKEY=kubernetes.pub
+++ KUBERNETES_SSHKEY=kubernetes.pub
+++ export monitoring_account=tiller
+++ monitoring_account=tiller
+++ export monitoring_application=prometheus
+++ monitoring_application=prometheus
+++ export monitoring_operator=stable/prometheus-operator
+++ monitoring_operator=stable/prometheus-operator
+++ export namespace_default=default
+++ namespace_default=default
+++ export namespace_kubesystem=kube-system
+++ namespace_kubesystem=kube-system
+++ export namespace_monitoring=prometheus
+++ namespace_monitoring=prometheus
+++ export namespace_cloudwatch=amazon-cloudwatch
+++ namespace_cloudwatch=amazon-cloudwatch
+++ export include_everything=everything
+++ include_everything=everything
+++ export application_prototype=helloworld-deployment
+++ application_prototype=helloworld-deployment
+++ export cloudwatch_agent=cloudwatch-agent
+++ cloudwatch_agent=cloudwatch-agent
+++ export target_podname=
+++ target_podname=
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.functions
++ shared_module=/Users/prototype/etc/functions/shared-cloud.functions
++ [[ ! -e /Users/prototype/etc/functions/shared-cloud.functions ]]
++ source /Users/prototype/etc/functions/shared-cloud.functions
++ xfiles=(eks-cluster.functions eks-cluster.variables eks-cluster.help eks-cluster.create.help eks-cluster.delete.help)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.functions
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.functions ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.functions
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.variables
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.variables ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.variables
+++ export 'team_member=Eduardo Valdes'
+++ team_member='Eduardo Valdes'
+++ export 'team_creator=DevOps Team'
+++ team_creator='DevOps Team'
+++ export 'team_owner=SRE Team'
+++ team_owner='SRE Team'
+++ export autoscaler_version=cluster-autoscaler:v1.14.7
+++ autoscaler_version=cluster-autoscaler:v1.14.7
+++ export autoscaling_groupname=
+++ autoscaling_groupname=
+++ export instance_rolename=
+++ instance_rolename=
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.create.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.create.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.create.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.delete.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ eks_cluster --delete-cluster=prototype.devops --verbose --debug
++ oIFS='
+'
++ for xitem in '"${@}"'
++ IFS==
+++ echo --delete-cluster=prototype.devops
+++ sed -e s/--//g
++ set delete-cluster prototype.devops
++ [[ delete-cluster = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ delete-cluster = \c\a\p\a\c\i\t\y ]]
++ [[ delete-cluster = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ delete-cluster = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \d\e\b\u\g ]]
++ [[ delete-cluster = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ export target_cluster=prototype.devops
++ target_cluster=prototype.devops
++ delete_cluster=true
++ [[ delete-cluster = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ delete-cluster = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ delete-cluster = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ delete-cluster = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ delete-cluster = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ delete-cluster = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ delete-cluster = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ delete-cluster = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ delete-cluster = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ delete-cluster = \p\r\o\f\i\l\e ]]
++ [[ delete-cluster = \r\e\g\i\o\n ]]
++ [[ delete-cluster = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ delete-cluster = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ delete-cluster = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ delete-cluster = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ delete-cluster = \z\o\n\e\s ]]
++ [[ delete-cluster = \v\e\r\b\o\s\e ]]
++ [[ delete-cluster = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --verbose
+++ sed -e s/--//g
++ set verbose
++ [[ verbose = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ verbose = \c\a\p\a\c\i\t\y ]]
++ [[ verbose = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ verbose = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\b\u\g ]]
++ [[ verbose = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ verbose = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ verbose = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ verbose = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ verbose = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ verbose = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ verbose = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ verbose = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ verbose = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ verbose = \p\r\o\f\i\l\e ]]
++ [[ verbose = \r\e\g\i\o\n ]]
++ [[ verbose = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ verbose = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ verbose = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ verbose = \z\o\n\e\s ]]
++ [[ verbose = \v\e\r\b\o\s\e ]]
++ export verbose=true
++ verbose=true
++ [[ verbose = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --debug
+++ sed -e s/--//g
++ set debug
++ [[ debug = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ debug = \c\a\p\a\c\i\t\y ]]
++ [[ debug = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ debug = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\b\u\g ]]
++ export debug_mode=true
++ debug_mode=true
++ [[ debug = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ debug = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ debug = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ debug = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ debug = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ debug = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ debug = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ debug = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ debug = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ debug = \p\r\o\f\i\l\e ]]
++ [[ debug = \r\e\g\i\o\n ]]
++ [[ debug = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ debug = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ debug = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ debug = \z\o\n\e\s ]]
++ [[ debug = \v\e\r\b\o\s\e ]]
++ [[ debug = \h\e\l\p ]]
++ IFS='
+'
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export create_cluster=false
++ create_cluster=false
++ [[ 0 -eq 0 ]]
++ export deploy_cluster=false
++ deploy_cluster=false
++ [[ 0 -eq 0 ]]
++ export deploy_dashboard=false
++ deploy_dashboard=false
++ [[ 0 -eq 0 ]]
++ export deploy_prometheus=false
++ deploy_prometheus=false
++ [[ 0 -eq 0 ]]
++ export deploy_prototype=false
++ deploy_prototype=false
++ [[ 0 -eq 0 ]]
++ export describe_cluster=false
++ describe_cluster=false
++ [[ 0 -eq 0 ]]
++ export describe_create=false
++ describe_create=false
++ [[ 0 -eq 0 ]]
++ export describe_delete=false
++ describe_delete=false
++ [[ 0 -eq 0 ]]
++ export enable_autoscaling=false
++ enable_autoscaling=false
++ [[ 0 -eq 0 ]]
++ export enable_cloudwatch=false
++ enable_cloudwatch=false
++ [[ 0 -eq 0 ]]
++ export enable_metrics=false
++ enable_metrics=false
++ [[ 0 -eq 0 ]]
++ export scale_cluster=0
++ scale_cluster=0
++ [[ 0 -eq 0 ]]
++ export interactive_mode=false
++ interactive_mode=false
++ [[ 0 -eq 0 ]]
++ export kubeconfig=false
++ kubeconfig=false
++ [[ 14 -gt 0 ]]
++ regex='(.*)\.(.*)'
++ [[ prototype.devops =~ (.*)\.(.*) ]]
++ export cluster_name=prototype
++ cluster_name=prototype
++ export nodegroup_name=devops
++ nodegroup_name=devops
++ [[ 4 -eq 0 ]]
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ [[ 0 -eq 0 ]]
++ export default_profile=kubernetes
++ default_profile=kubernetes
++ export AWS_DEFAULT_PROFILE=kubernetes
++ AWS_DEFAULT_PROFILE=kubernetes
++ [[ 0 -eq 0 ]]
++ export default_region=us-east-1
++ default_region=us-east-1
++ [[ 0 -eq 0 ]]
++ export default_zones=us-east-1a,us-east-1b,us-east-1c
++ default_zones=us-east-1a,us-east-1b,us-east-1c
++ [[ 0 -eq 0 ]]
++ cluster_capacity=(1.2.3)
++ declare -a cluster_capacity
++ regex='([[:digit:]]*).([[:digit:]]*).([[:digit:]]*)'
++ [[ 1.2.3 =~ ([[:digit:]]*).([[:digit:]]*).([[:digit:]]*) ]]
++ export nodes_default=1
++ nodes_default=1
++ export nodes_minimum=2
++ nodes_minimum=2
++ export nodes_maximum=3
++ nodes_maximum=3
++ default_user=prototype
++ default_nodegroup=prototype
++ [[ true == true ]]
++ debug_level=4
++ [[ false == true ]]
++ [[ false == true ]]
++ [[ '' == true ]]
++ [[ 7 -eq 0 ]]
++ [[ 6 -eq 0 ]]
++ export configs_path=/tmp/devops/prototype
++ configs_path=/tmp/devops/prototype
++ mkdir -p /tmp/devops/prototype
++ export metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ [[ false == false ]]
++ export KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ export service_platform=k8s-eks
++ service_platform=k8s-eks
+++ aws sts get-caller-identity --profile kubernetes --region us-east-1 --query Account --output text
++ export account_number=738054984624
++ account_number=738054984624
++ [[ true == true ]]
++ remove_cluster
++ __function_name remove_cluster
++ func_name=remove_cluster
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [remove_cluster]: '
+Function [remove_cluster]:
++ return 0
++ __instance_rolename
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=
++ autoscaling_groupname=
++ return 0
+++ aws iam get-instance-profile --profile kubernetes --region us-east-1 --instance-profile-name --query 'InstanceProfile.Roles[].Arn' --output text
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: argument --instance-profile-name: expected one argument
++ export instance_rolename=
++ instance_rolename=
++ return 0
++ delete_services /Users/prototype/.kube/eksctl/clusters/prototype
++ [[ -n '' ]]
++ kubeconfig=/Users/prototype/.kube/eksctl/clusters/prototype
++ KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ target_configs=($(
+        kubectl get           svc           --all-namespaces           --output json           | jq -r '.items[] | select(.status.loadBalancer[]!="")'           | jq '[.metadata.namespace, .metadata.name, .status.loadBalancer.ingress[].hostname] | @csv'             --raw-output           | sed -e 's|"||g';
+          result=${?};
+      ))
+++ kubectl get svc --all-namespaces --output json
+++ jq -r '.items[] | select(.status.loadBalancer[]!="")'
+++ jq '[.metadata.namespace, .metadata.name, .status.loadBalancer.ingress[].hostname] | @csv' --raw-output
+++ sed -e 's|"||g'
+W1224 16:23:05.282271   43066 loader.go:223] Config not found: /Users/prototype/.kube/eksctl/clusters/prototype
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
+++ result=0
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
++ return 0
++ aws iam detach-role-policy --profile kubernetes --region us-east-1 --role-name --policy-arn arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: argument --role-name: expected one argument
++ __debugging 2
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 2'
+Status: 2
++ return 0
++ aws iam delete-policy --profile kubernetes --region us-east-1 --policy-arn arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops
+
+An error occurred (NoSuchEntity) when calling the DeletePolicy operation: Policy arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops does not exist or is not attachable.
++ __debugging 255
++ [[ true == true ]]
++ [[ 3 -gt 0 ]]
++ echo -e 'Status: 255'
+Status: 255
++ return 0
++ aws iam detach-role-policy --profile kubernetes --region us-east-1 --role-name --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: argument --role-name: expected one argument
++ __debugging 2
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 2'
+Status: 2
++ return 0
++ eksctl delete cluster --name prototype --profile kubernetes --region us-east-1 --timeout 10m0s --wait --verbose 4
+2019-12-24T16:23:07-07:00 [ℹ]  eksctl version 0.11.1
+2019-12-24T16:23:07-07:00 [ℹ]  using region us-east-1
+2019-12-24T16:23:07-07:00 [▶]  role ARN for the current session is "arn:aws:iam::738054984624:user/kubernetes"
+2019-12-24T16:23:07-07:00 [ℹ]  deleting EKS cluster "prototype"
+2019-12-24T16:23:07-07:00 [▶]  cfg.json = \
+{
+    "kind": "ClusterConfig",
+    "apiVersion": "eksctl.io/v1alpha5",
+    "metadata": {
+        "name": "prototype",
+        "region": "us-east-1",
+        "version": "1.14"
+    },
+    "iam": {
+        "withOIDC": false
+    },
+    "vpc": {
+        "cidr": "192.168.0.0/16",
+        "autoAllocateIPv6": false,
+        "nat": {
+            "gateway": "Single"
+        },
+        "clusterEndpoints": {
+            "privateAccess": false,
+            "publicAccess": true
+        }
+    },
+    "cloudWatch": {
+        "clusterLogging": {}
+    }
+}
+
+2019-12-24T16:23:08-07:00 [✖]  fetching cluster status to determine if it can be deleted: unable to describe cluster control plane: ResourceNotFoundException: No cluster found for name: prototype.
+	status code: 404, request id: 9e91e1cb-19c9-452d-a210-57f3f4581216
++ __debugging 1
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 1'
+Status: 1
++ return 0
++ rm -fv /Users/prototype/.kube/eksctl/clusters/prototype
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ return 0
++ return 0

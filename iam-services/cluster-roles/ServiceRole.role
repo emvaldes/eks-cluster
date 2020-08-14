@@ -1,0 +1,38 @@
+
+Service Role Policy:
+arn:aws:iam::738054984624:role/eksctl-{{cluster-name}}-cluster-ServiceRole-{{hashed-index}}
+
+Policy ARN:  arn:aws:iam::aws:policy/AmazonEKSClusterPolicy
+Policy ARN:  arn:aws:iam::aws:policy/AmazonEKSServicePolicy
+
+Inline Policy: eksctl-{{cluster-name}}-cluster-PolicyCloudWatchMetrics
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "cloudwatch:PutMetricData"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        }
+    ]
+}
+
+Inline Policy: eksctl-{{cluster-name}}-cluster-PolicyNLB
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "elasticloadbalancing:*",
+                "ec2:CreateSecurityGroup",
+                "ec2:Describe*"
+            ],
+            "Resource": "*",
+            "Effect": "Allow"
+        }
+    ]
+}

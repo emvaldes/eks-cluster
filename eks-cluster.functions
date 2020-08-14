@@ -1,0 +1,556 @@
+#!/bin/bash
+## Version: 0.1.0
+
+export autoscaling_groupname='';
+function __autoscaling_groupname () {
+    tracking_process ${FUNCNAME} "${@}";
+    export autoscaling_groupname=$(
+        services_console "autoscaling \
+          describe-auto-scaling-groups \
+          --profile ${default_profile} \
+          --region ${default_region} \
+          --query 'AutoScalingGroups[?Tags[?Key==\`eks:cluster-name\`]]' \
+          --query 'AutoScalingGroups[?Tags[?Value==\`${cluster_name}\`]]'" \
+        | jq '.[].AutoScalingGroupName' --raw-output
+      );
+    [[ ${#autoscaling_groupname} -eq 0 ]] && return 1;
+    return 0;
+  }; ## alias __autoscaling-groupname='__autoscaling_groupname';
+
+## export checkpolicy_exists='';
+function __checkpolicy_exists () {
+    tracking_process ${FUNCNAME} "${@}";
+    [[ -n ${1+} ]] && local target_policy=false || local target_policy="${1}";
+    local checkpolicy_exists='';
+    if [[ ${target_policy} != false ]]; then
+      checkpolicy_exists=$(
+          services_console "iam \
+            list-policies \
+            --query 'Policies[?PolicyName==\`${target_policy}\`]'" \
+          | jq '.[].PolicyName' --raw-output
+        );
+      [[ ${#checkpolicy_exists} -eq 0 ]] && return 1;
+    fi;
+    return 0;
+  }; ## alias __checkpolicy-exists='__checkpolicy_exists';
+
+function __instance_rolename () {
+    tracking_process ${FUNCNAME} "${@}";
+    __autoscaling_groupname;
+    local result=${?};
+    if [[ ${result} -eq 0 ]]; then
+      export instance_rolename=$(
+          services_console "iam \
+            get-instance-profile \
+            --profile ${default_profile} \
+            --region ${default_region} \
+            --instance-profile-name ${autoscaling_groupname} \
+            --query 'InstanceProfile.Roles[].Arn' \
+            --output text"
+        );
+    fi;
+    [[ ${#instance_rolename} -eq 0 ]] && return 1;
+    return 0;
+  }; ## alias __instance-rolename='__instance_rolename';
+
+function autoscaler_group () {
+    tracking_process ${FUNCNAME} "${@}";
+    __autoscaling_groupname;
+    local result=${?};
+    if [[ ${result} -eq 0 ]]; then
+            print "Auto-Scaling Group Name: ${autoscaling_groupname}";
+            continue_process;
+      else  return 1;
+    fi;
+    return 0;
+  }; alias autoscaler-group='autoscaler_group';
+
+function autoscaler_update () {
+    tracking_process ${FUNCNAME} "${@}";
+## Note: There is no need to do this any more:
+##       $ kubectl_console "get deploy helloworld-deployment --output yaml" > ${local_tmp}/test1.yaml;
+##       $ kubectl_console "replace --filename ${local_tmp}/test1.yaml" ;
+##       deployment.apps/helloworld-deployment replaced
+    declare -a cluster_configs=();
+    cluster_configs+=("- --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/${cluster_name}");
+    cluster_configs+=("- --balance-similar-node-groups");
+    cluster_configs+=("- --skip-nodes-with-system-pods=false");
+    local cluster_autoscaler="cluster-autoscaler.yaml";
+    local config_file="${clusters_path}/${script_name}/configs/${cluster_autoscaler}";
+    display_message "Auto-Configuring Cluster AutoScaler Deployment: ...";
+    display_message "Modifying this line:";
+    print "        ${cluster_configs[0]}";
+    display_message "Appending these lines:";
+    print "        ${cluster_configs[1]}";
+    print "        ${cluster_configs[2]}";
+    local template_filename="${config_file/.yaml/.template}";
+    kubectl_console "get \
+      deployment.apps/cluster-autoscaler \
+      --namespace ${namespace_kubesystem} \
+      --output yaml" > ${template_filename};
+    cat ${template_filename} \
+      | sed -e "s/\<YOUR/${cluster_name}~        ${cluster_configs[1]}/" \
+            -e "s/^\(.*\)\(CLUSTER NAME>\)/        ${cluster_configs[2]}/" \
+      | tr '~' '\n' > ${config_file};
+    kubectl patch \
+      deployment.apps/cluster-autoscaler \
+      --namespace ${namespace_kubesystem} \
+      --patch "$(cat ${config_file})";
+    ## Expected: deployment.apps/cluster-autoscaler patched
+    ## Error(s): Error from server (Conflict): Operation cannot be fulfilled on
+    ##           deployments.apps "cluster-autoscaler": the object has been modified;
+    ##           please apply your changes to the latest version and try again
+    local result=${?}; debugging_process ${result};
+    ## Manual Process:
+    ## kubectl_console "edit \
+    ##   deployment.apps/cluster-autoscaler \
+    ##   --namespace ${namespace_kubesystem}";
+    debugging_process ${?};
+    display_message "Displaying Cluster AutoScaler Deployment:";
+    cat ${config_file};
+    ## Purging template file:
+    rm -fv ${template_filename} &>/dev/null;
+    continue_process;
+    return 0;
+  }; alias autoscaler-update='autoscaler_update';
+
+function autoscaler_version () {
+    tracking_process ${FUNCNAME} "${@}";
+    kubectl_console "set image \
+      deployment.apps/cluster-autoscaler \
+      cluster-autoscaler=k8s.gcr.io/${autoscaler_version} \
+      --namespace ${namespace_kubesystem}";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias autoscaler-version='autoscaler_version';
+
+function cluster_token () {
+    tracking_process ${FUNCNAME} "${@}";
+    aws-iam-authenticator token -i ${cluster_name} \
+      | python -m json.tool;
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias cluster-token='cluster_token';
+
+function configmap_awsauth () {
+    tracking_process ${FUNCNAME} "${@}";
+    __instance_rolename;
+    local remote_storage='https://amazon-eks.s3-us-west-2.amazonaws.com';
+    local location='cloudformation/2019-11-15';
+    local yaml_file='aws-auth-cm.yaml';
+    config_file="${clusters_path}/${script_name}/configs/${yaml_file}";
+    ## rm -fv ${config_file} 2>/dev/null;
+    cat /dev/null > ${config_file} 2>/dev/null;
+    curl --silent --output ${config_file} --location --remote-name ${remote_storage}/${location}/${yaml_file};
+    debugging_process ${?};
+    tee -a ${config_file} << BLOCK
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: ${namespace_kubesystem}
+data:
+  mapRoles: |
+    - rolearn: ${instance_rolename}
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
+BLOCK
+    kubectl_console "apply \
+      --filename ${config_file}";
+    debugging_process ${?};
+    kubectl_console "describe \
+      configmap aws-auth \
+      --namespace ${namespace_kubesystem}";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias configmap-awsauth='configmap_awsauth';
+
+function configure_logging () {
+    tracking_process ${FUNCNAME} "${@}";
+    eksctl_console "utils \
+      update-cluster-logging \
+      --profile ${default_profile} \
+      --region ${default_region} \
+      --cluster ${cluster_name} \
+      --enable-types all \
+      --approve";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias configure-logging='configure_logging';
+
+function create_autoscaler () {
+    tracking_process ${FUNCNAME} "${@}";
+    local location='kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples';
+    local yaml_file='cluster-autoscaler-autodiscover.yaml';
+    kubectl_console "apply \
+      --filename ${github_content}/${location}/${yaml_file}";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias create-autoscaler='create_autoscaler';
+
+function deploy_kubernetes () {
+    tracking_process ${FUNCNAME} "${@}";
+    ## rm -fv ${KUBECONFIG} 2>/dev/null;
+    cat /dev/null > ${KUBECONFIG} 2>/dev/null;
+    declare -a infrastructure=();
+    if [[ ${enable_fargate} == false ]]; then
+      infrastructure=("--fargate");
+    fi
+    eksctl_console "create cluster \
+      --alb-ingress-access \
+      --appmesh-access \
+      --asg-access \
+      --auto-kubeconfig \
+      ${infrastructure[*]} \
+      --full-ecr-access \
+      --managed \
+      --name ${cluster_name} \
+      --nodegroup-name ${nodegroup_name} \
+      --nodes-max ${nodes_maximum} \
+      --nodes-min ${nodes_minimum} \
+      --profile ${default_profile} \
+      --region ${default_region} \
+      --ssh-access \
+      --ssh-public-key ${access_pubkey} \
+      --tags 'Owner=${team_owner},Team=${team_creator},Creator=${team_member}' \
+      --timeout 60m0s \
+      --verbose ${debug_level} \
+      --version ${cluster_version} \
+      --zones ${default_zones}" \
+    ;
+    local result=${?};
+    local console_warning="The AWS Elastic Container Kubernetes (EKS) [${cluster_name}] cluster hasn't been created properly! ";
+    if [[ ${result} -eq 1 ]]; then
+            display_message "Warning: ${console_warning}";
+            eksctl_console "delete cluster \
+              --region=${default_region} \
+              --name=${cluster_name}" \
+            ;
+            ## Warning: This issue might happen.
+            ## [ℹ]  eksctl version 0.25.0
+            ## [ℹ]  using region us-west-2
+            ## [ℹ]  deleting EKS cluster "prototype"
+            ## Error: fetching cluster status to determine if it can be deleted: unable to describe cluster control plane: ResourceNotFoundException: No cluster found for name: prototype.
+            ## {
+            ##   RespMetadata: {
+            ##     StatusCode: 404,
+            ##     RequestID: "2933eaa6-a374-4bf0-b241-89128d454468"
+            ##   },
+            ##   Message_: "No cluster found for name: prototype."
+            ## }
+            display_message "Warning: Aborting AWS Elastic Container Kubernetes (EKS) deployment! ";
+            exit -1;
+      else  debugging_process ${result};
+            ## I have encountered issues with --full-ecr-access
+            # counter=0;
+            # status=1; while [[ ${status} -ne 0 ]]; do
+            #   inline '.'; ((counter++));
+            #   eksctl_console "get cluster --name ${cluster_name} --region ${default_region} --profile ${default_profile}" ; &>/dev/null; status=${?};
+            #   [[ ${status} -eq 0 ]] && print " done! [ ${counter} mins. ]";
+            #   sleep_until 60 15 "Countdown:";
+            # done; unset counter;
+            continue_process;
+    fi;
+    return 0;
+  }; alias deploy-kubernetes='deploy_kubernetes';
+
+function describe_stacks () {
+    tracking_process ${FUNCNAME} "${@}";
+    eksctl_console "utils describe-stacks \
+      --profile ${default_profile} \
+      --region=${default_region} \
+      --cluster=${cluster_name}";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias describe-stacks='describe_stacks';
+
+function disable_eviction () {
+    tracking_process ${FUNCNAME} "${@}";
+    kubectl_console "annotate \
+      deployment.apps/cluster-autoscaler \
+      cluster-autoscaler.kubernetes.io/safe-to-evict="false" \
+      --namespace ${namespace_kubesystem}";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias disable-eviction='disable_eviction';
+
+function display_ekscluster () {
+    tracking_process ${FUNCNAME} "${@}";
+    ## export KUBECONFIG="${KUBEHOME}/eksctl/clusters/${cluster_name}";
+    eksctl_console "get cluster \
+      --profile ${default_profile} \
+      --region=${default_region} \
+      --name ${cluster_name} \
+      --output json" \
+    2>/dev/null;
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias display-ekscluster='display_ekscluster';
+
+function inspect_autoscaler () {
+    tracking_process ${FUNCNAME} "${@}";
+    kubectl_console "logs \
+      --namespace ${namespace_kubesystem} \
+      --follow deployment.apps/cluster-autoscaler" \
+    | head -n 250;
+    ##  | less -N -;
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias inspect-autoscaler='inspect_autoscaler';
+
+function instance_roleupdate () {
+    tracking_process ${FUNCNAME} "${@}";
+    declare -a cluster_nodes=($(
+        kubectl_console "get \
+          nodes \
+          --output jsonpath='{.items[*].metadata.name}'"
+      ));
+    for cluster_node in ${cluster_nodes[@]}; do
+      instance_id="$(
+          services_console "ec2 \
+            describe-instances \
+            --profile ${default_profile} \
+            --region ${default_region} \
+            --filters 'Name=network-interface.private-dns-name,Values=${cluster_node}' \
+            --query 'Reservations[*].Instances[].InstanceId' \
+            --output text";
+            result=${?};
+        )";
+      debugging_process ${result};
+      association_id=$(
+          services_console "ec2 \
+            describe-iam-instance-profile-associations \
+            --profile ${default_profile} \
+            --region ${default_region} \
+            --filters 'Name=instance-id,Values=${instance_id}' \
+            --query 'IamInstanceProfileAssociations[].AssociationId' \
+            --output text";
+            result=${?};
+        );
+      debugging_process ${result};
+      __autoscaling_groupname;
+      local result=${?};
+      if [[ ${result} -eq 0 ]]; then
+              services_console "ec2 \
+                replace-iam-instance-profile-association \
+                --profile ${default_profile} \
+                --region ${default_region} \
+                --association-id ${association_id} \
+                --iam-instance-profile 'Name=${autoscaling_groupname##*\/}'";
+              debugging_process ${?};
+        else  return 1;
+      fi;
+    done;
+    continue_process;
+    return 0;
+  }; alias instance-roleupdate='instance_roleupdate';
+
+function kubeconfig_context () {
+    tracking_process ${FUNCNAME} "${@}";
+    eksctl_console "utils write-kubeconfig \
+      --profile ${default_profile} \
+      --region ${default_region} \
+      --kubeconfig=${KUBECONFIG} \
+      --set-kubeconfig-context \
+      --cluster ${cluster_name}";
+    debugging_process ${?};
+    # sed -i '' -e 's|eks-course|aws-eks|g' ${KUBECONFIG};
+    # cluster_authinfo=$(
+    #     kubectl_console "config \
+    #       get-contexts \
+    #       --no-headers" \
+    #     | grep ${cluster_name}.${default_region}.eksctl.io \
+    #     | awk '{print $4}'
+    #   );
+    # kubectl_console "config \
+    #   use-context ${cluster_authinfo} \
+    #   --kubeconfig=${KUBECONFIG}";
+    kubectl_console "config view";
+    debugging_process ${?};
+    ##  --kubeconfig=${KUBECONFIG};
+    continue_process;
+    return 0;
+  }; alias kubeconfig-context='kubeconfig_context';
+
+function metricshelper_deploy () {
+    tracking_process ${FUNCNAME} "${@}";
+    local location='aws/amazon-vpc-cni-k8s/release-1.5/config/v1.5';
+    local yaml_file='cni-metrics-helper.yaml';
+    kubectl_console "apply \
+      --filename ${github_content}/${location}/${yaml_file}";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias metricshelper-deploy='metricshelper_deploy';
+
+function metricshelper_policy () {
+    tracking_process ${FUNCNAME} "${@}";
+    local json_file="allow_put_metrics_data.json";
+    config_file="${clusters_path}/${script_name}/configs/${json_file}";
+    cat /dev/null > ${config_file} ;
+    tee -a ${config_file} << BLOCK
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*"
+    }
+  ]
+}
+BLOCK
+    ## Evaluate if the Metrics-Helper policy already exists?
+    __checkpolicy_exists ${metricshelper_policyname};
+    local result=${?};
+    if [[ ${result} -eq 1 ]]; then
+            services_console "iam \
+              create-policy \
+              --profile ${default_profile} \
+              --region ${default_region} \
+              --policy-name ${metricshelper_policyname} \
+              --description 'Grants permission to write metrics to CloudWatch' \
+              --policy-document file://${config_file}";
+            debugging_process ${?};
+            continue_process;
+      else  return ${result};
+    fi;
+    return 0;
+  }; alias metricshelper-policy='metricshelper_policy';
+
+function metricshelper_rolepolicies () {
+    tracking_process ${FUNCNAME} "${@}";
+    __instance_rolename;
+    local target_rolename="${instance_rolename##*\/}";
+    services_console "iam \
+      attach-role-policy \
+      --profile ${default_profile} \
+      --region ${default_region} \
+      --policy-arn arn:aws:iam::${account_number}:policy/${metricshelper_policyname} \
+      --role-name ${target_rolename}";
+    debugging_process ${?};
+    services_console "iam \
+      attach-role-policy \
+      --profile ${default_profile} \
+      --region ${default_region} \
+      --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy \
+      --role-name ${target_rolename}";
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias metricshelper-rolepolicies='metricshelper_rolepolicies';
+
+function metricsserver_deploy () {
+    tracking_process ${FUNCNAME} "${@}";
+    package_source='kubernetes-sigs/metrics-server/archive/v0.3.6.tar.gz';
+    package_file="metrics-server-0.3.6";
+    config_file="${configs_path}/${package_file}";
+    ## rm -fv ${config_file} 2>/dev/null;
+    cat /dev/null > ${config_file} 2>/dev/null;
+    curl --silent --output ${config_file}.tgz --location --remote-name ${github_server}/${package_source} ;
+    debugging_process ${?};
+    tar -xvzf ${config_file}.tgz &>/dev/null ;
+    debugging_process ${?};
+    kubectl_console "create \
+      --filename ${package_file}/deploy/1.8+/ \
+      --record=true";
+    debugging_process ${?};
+    rm -rf ${package_file}* 2>/dev/null;
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias metricsserver-deploy='metricsserver_deploy';
+
+function remove_cluster () {
+    tracking_process ${FUNCNAME} "${@}";
+    __instance_rolename;
+    ## delete_services ${KUBECONFIG};
+    local target_rolename="${instance_rolename##*\/}";
+    if [[ ${#target_rolename} -gt 0 ]]; then
+      local role_exists=$(
+          services_console "iam get-role \
+            --profile ${default_profile} \
+            --region ${default_region} \
+            --role-name ${target_rolename} \
+            --query 'Role.RoleName' \
+            --output text"
+        );
+      local custom_policy="arn:aws:iam::${account_number}:policy";
+      declare -a policies_arn=(
+          "${custom_policy}/${metricshelper_policyname}"
+          "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+        );
+      if [[ "${role_exists}" == "${target_rolename}" ]]; then
+        ## { "Role": { ... "RoleName": "eksctl-kubernetes-nodegroup-devop-NodeInstanceRole-14M1CSX3XLLMX", ... }
+        for policy_arn in ${policies_arn[@]}; do
+          local policy_exists=$(
+              services_console "iam get-policy \
+                --profile ${default_profile} \
+                --region ${default_region} \
+                --policy-arn ${policy_arn} \
+                --query 'Policy.Arn' \
+                --output text" 2>/dev/null
+            );
+          if [[ "${policy_exists}" == "${policy_arn}" ]]; then
+            ## {"Policy": { ... "Arn": "arn:aws:iam::***:policy/+++", ... }}
+            services_console "iam \
+              detach-role-policy \
+              --profile ${default_profile} \
+              --region ${default_region} \
+              --role-name ${target_rolename} \
+              --policy-arn ${policy_arn}" \
+            2>/dev/null;
+            debugging_process ${?};
+            if [[ ${policy_arn} == ${custom_policy}/${metricshelper_policyname} ]]; then
+              services_console "iam \
+                delete-policy \
+                --profile ${default_profile} \
+                --region ${default_region} \
+                --policy-arn ${custom_policy}/${metricshelper_policyname}" \
+              2>/dev/null;
+              debugging_process ${?};
+            fi;
+          fi;
+        done;
+      fi;
+    fi;
+    eksctl_console "delete cluster \
+      --name ${cluster_name} \
+      --profile ${default_profile} \
+      --region ${default_region} \
+      --timeout 15m0s \
+      --wait \
+      --verbose ${debug_level}";
+    debugging_process ${?};
+    ## rm -fv ${KUBECONFIG};
+    cat /dev/null > ${KUBECONFIG};
+    debugging_process ${?};
+    return 0;
+  }; alias remove-cluster='remove_cluster';
+
+function resize_cluster () {
+    tracking_process ${FUNCNAME} "${@}";
+    total_nodes=${1};
+    eksctl_console "scale nodegroup \
+      --profile ${default_profile} \
+      --region ${default_region} \
+      --cluster ${cluster_name} \
+      --name ${nodegroup_name} \
+      --nodes ${total_nodes} \
+      --verbose ${debug_level}" \
+    2>/dev/null;
+    debugging_process ${?};
+    continue_process;
+    return 0;
+  }; alias resizecluster='resize_cluster';

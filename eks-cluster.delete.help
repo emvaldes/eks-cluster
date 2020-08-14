@@ -1,0 +1,15 @@
+#!/bin/bash
+## Version: 0.1.0
+
+script_name=$(basename ${0});
+
+function how2delete_cluster () {
+    ## tracking_process ${FUNCNAME} "${@}";
+    display_message "$ eks-cluster \
+  --delete-cluster=kubernetes.devops \
+  --verbose \
+";
+    display_message "Goodbye!";
+    exit 0;
+    ## return 0;
+  };

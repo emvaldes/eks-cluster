@@ -1,0 +1,27 @@
+
+Policy ARN:  arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly
+Description: Provides read-only access to Amazon EC2 Container Registry repositories.
+
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ecr:GetAuthorizationToken",
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:GetRepositoryPolicy",
+                "ecr:DescribeRepositories",
+                "ecr:ListImages",
+                "ecr:DescribeImages",
+                "ecr:BatchGetImage",
+                "ecr:GetLifecyclePolicy",
+                "ecr:GetLifecyclePolicyPreview",
+                "ecr:ListTagsForResource",
+                "ecr:DescribeImageScanFindings"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

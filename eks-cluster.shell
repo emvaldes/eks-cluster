@@ -1,0 +1,311 @@
+#!/bin/bash
+## Version: 0.1.0
+
+source ${HOME}/.bash.functions;
+script_name=$(basename ${0});
+
+export clusters_path="${local_tmp}/clusters";
+export CALLER_SCRIPT="${clusters_path}/${script_name}/logger/${script_name}.log";
+
+mkdir -p $(dirname ${CALLER_SCRIPT});
+mkdir -p ${clusters_path}/${script_name}/{docker,configs};
+
+## System/Profile container(s):
+
+usr_local="${HOME}"; mkdir -p ${usr_local};
+local_bin="${usr_local}/bin"; mkdir -p ${local_bin};
+local_etc="${usr_local}/etc"; mkdir -p ${local_etc};
+local_tmp="/tmp"; mkdir -p ${local_tmp};
+
+declare -a xfiles=(
+    devops-cloud.variables
+    devops-cloud.functions
+  );
+for xfile in "${xfiles[@]}"; do
+  shared_cloud=${xfile};
+  shared_module="${local_etc}/${shared_cloud##*\.}/${shared_cloud}";
+  if [[ ! -e ${shared_module} ]]; then
+          curl --silent --output ${shared_module} --location --remote-name \
+          ${github_private}/${devops_project}/blob/master/${shared_cloud##*\.}/${shared_cloud};
+          result=$?; if [[ ${result} -gt 0 ]]; then
+            display_message "Warning: [${shared_module}] was not found! ";
+            exit 1;
+          fi;
+    else  source ${shared_module};
+  fi;
+done;
+
+declare -a xfiles=(
+    eks-cluster.functions
+    eks-cluster.variables
+    eks-cluster.help
+    eks-cluster.create.help
+    eks-cluster.delete.help
+  );
+for xfile in "${xfiles[@]}"; do
+  target="${local_etc}/eks-cluster/${xfile}";
+  if [[ -e ${target} ]]; then source ${target};
+    else display_message "Warning: [${target}] was not found! ";
+         exit 2;
+  fi;
+done;
+
+declare -a xfiles=(
+    devops-tools.functions
+    devops-install.functions
+  );
+for xfile in "${xfiles[@]}"; do
+  target="${local_etc}/functions/${xfile}";
+  if [[ -e ${target} ]]; then source ${target};
+    else display_message "Warning: [${target}] was not found! ";
+         exit 2;
+  fi;
+done;
+
+function eks_cluster () {
+    tracking_process ${FUNCNAME} "${@}";
+    oIFS="${IFS}";
+    for xitem in "${@}"; do
+      IFS='='; set `echo -e "${xitem}" | sed -e 's/--//g'`
+      [[ ${1#*\--} = "access-pubkey" ]] && export access_pubkey="${2}";
+      [[ ${1#*\--} = "capacity" ]] && declare -a cluster_capacity=("${2}");
+      [[ ${1#*\--} = "cluster-name" ]] && export cluster_name="${2}";
+      [[ ${1#*\--} = "cluster-version" ]] && export cluster_version="${2}";
+      if [[ ${1#*\--} = "create-cluster" ]]; then
+        export target_cluster="${2}";
+        deploy_cluster=true;
+      fi;
+      [[ ${1#*\--} = "debug" ]] && export debug_mode=true;
+      if [[ ${1#*\--} = "delete-cluster" ]]; then
+        export target_cluster="${2}";
+        delete_cluster=true;
+      fi;
+      [[ ${1#*\--} = "deploy-cluster" ]] && export deploy_cluster=true;
+      [[ ${1#*\--} = "deploy-dashboard" ]] && export deploy_dashboard=true;
+      [[ ${1#*\--} = "deploy-prometheus" ]] && export deploy_prometheus=true;
+      [[ ${1#*\--} = "deploy-prototype" ]] && export deploy_prototype=true;
+      if [[ ${1#*\--} = "describe-cluster" ]]; then
+        export target_cluster="${2}";
+        describe_cluster=true;
+      fi;
+      [[ ${1#*\--} = "enable-autoscaling" ]] && export enable_autoscaling=true;
+      [[ ${1#*\--} = "enable-cloudwatch" ]] && export enable_cloudwatch=true;
+      [[ ${1#*\--} = "enable-fargate" ]] && export enable_fargate=true;
+      [[ ${1#*\--} = "enable-metrics" ]] && export enable_metrics=true;
+      [[ ${1#*\--} = "help-create" ]] && export describe_create=true;
+      [[ ${1#*\--} = "help-delete" ]] && export describe_delete=true;
+      [[ ${1#*\--} = "interactive" ]] && export interactive_mode=true;
+      [[ ${1#*\--} = "kubeconfig" ]] && export KUBECONFIG=${2};
+      [[ ${1#*\--} = "nodegroup-name" ]] && export nodegroup_name="${2}";
+      [[ ${1#*\--} = "profile" ]] && export default_profile="${2}";
+      [[ ${1#*\--} = "region" ]] && export default_region="${2}";
+      [[ ${1#*\--} = "scale-cluster" ]] && export scale_cluster="${2}";
+      [[ ${1#*\--} = "target-cluster" ]] && export target_cluster="${2}";
+      [[ ${1#*\--} = "team-creator" ]] && export team_creator="${2}";
+      [[ ${1#*\--} = "team-member" ]] && export team_member="${2}";
+      [[ ${1#*\--} = "team-owner" ]] && export team_owner="${2}";
+      [[ ${1#*\--} = "zones" ]] && export default_zones="${2}";
+      ## [[ ${1#*\--} = "dry-run" ]] && export dry_run="${2}";
+      [[ ${1#*\--} = "verbose" ]] && export verbose=true;
+      [[ ${1#*\--} = "help" ]] && export display_help=true;
+    done; IFS="${oIFS}";
+    ## Define custom-parameter(s):
+    [[ ${#delete_cluster} -eq 0 ]] && export delete_cluster=false;
+    [[ ${#create_cluster} -eq 0 ]] && export create_cluster=false;
+    [[ ${#deploy_cluster} -eq 0 ]] && export deploy_cluster=false;
+    [[ ${#deploy_dashboard} -eq 0 ]] && export deploy_dashboard=false;
+    [[ ${#deploy_prometheus} -eq 0 ]] && export deploy_prometheus=false;
+    [[ ${#deploy_prototype} -eq 0 ]] && export deploy_prototype=false;
+    [[ ${#describe_cluster} -eq 0 ]] && export describe_cluster=false;
+    [[ ${#describe_create} -eq 0 ]] && export describe_create=false;
+    [[ ${#describe_delete} -eq 0 ]] && export describe_delete=false;
+    [[ ${#enable_autoscaling} -eq 0 ]] && export enable_autoscaling=false;
+    [[ ${#enable_cloudwatch} -eq 0 ]] && export enable_cloudwatch=false;
+    [[ ${#enable_fargate} -eq 0 ]] && export enable_fargate=false;
+    [[ ${#enable_metrics} -eq 0 ]] && export enable_metrics=false;
+    [[ ${#scale_cluster} -eq 0 ]] && export scale_cluster=0;
+    [[ ${#interactive_mode} -eq 0 ]] && export interactive_mode=false;
+    [[ ${#kubeconfig} -eq 0 ]] && export kubeconfig=false;
+    if [[ ${#target_cluster} -gt 0 ]]; then
+      regex='(.*)\.(.*)';
+      if [[ ${target_cluster} =~ ${regex} ]]; then
+        export cluster_name="${BASH_REMATCH[1]}";
+        export nodegroup_name="${BASH_REMATCH[2]}";
+      fi;
+    fi;
+    ## [[ ${#dry_run} -eq 0 ]] && export dry_run=false;
+    [[ ${#debug_mode} -eq 0 ]] && export debug_mode=false;
+    [[ ${#verbose} -eq 0 ]] && export verbose=false;
+    [[ ${#cluster_version} -eq 0 ]] && export cluster_version=${EKSCLUSTER_VERSION};
+    [[ ${#access_pubkey} -eq 0 ]] && export access_pubkey="${HOME}/.ssh/${KUBERNETES_SSHKEY}";
+    [[ ${#default_profile} -eq 0 ]] && export default_profile="${AWS_PROFILE}";
+    export AWS_DEFAULT_PROFILE="${default_profile}";
+    if [[ ${#default_region} -eq 0 ]]; then
+            export default_region="${AWS_REGION}";
+      else  export AWS_REGION="${default_region}";
+            export AWS_DEFAULT_REGION="${AWS_REGION}";
+    fi;
+    if [[ ${#default_zones} -eq 0 ]]; then
+            export default_zones="${AWS_ZONES}";
+      else  export AWS_ZONES="${default_zones}";
+    fi;
+    ## if [[ ${enable_fargate} == false ]]; then
+      [[ ${#cluster_capacity[@]} -eq 0 ]] && declare -a cluster_capacity=(1.2.3);
+      regex='([[:digit:]]*).([[:digit:]]*).([[:digit:]]*)';
+      if [[ ${cluster_capacity} =~ ${regex} ]]; then
+        export nodes_default="${BASH_REMATCH[1]}";
+        export nodes_minimum="${BASH_REMATCH[2]}";
+        export nodes_maximum="${BASH_REMATCH[3]}";
+      fi;
+    ## fi;
+    default_user="${USER}";
+    default_nodegroup='prototype';
+    if [[ ${debug_mode} == true ]]; then
+           debug_level=${max_debug_level};
+      else debug_level=${default_debug_level};
+    fi;
+    [[ ${describe_create} == true ]] && how2create_cluster;
+    [[ ${describe_delete} == true ]] && how2delete_cluster;
+    if [[ ${display_help} == true ]]; then
+           cluster_name="${default_user}";
+           nodegroup_name="${default_nodegroup}";
+           script_options;
+      else if [[ ${#cluster_name} -eq 0 ]]; then
+             newline; read -p "Cluster Name: " response;
+             if [[ ${#response} -eq 0 ]]; then
+                    export cluster_name=${USER};
+               else cluster_name="${response}";
+             fi;
+           fi;
+           if [[ ${#nodegroup_name} -eq 0 ]]; then
+             newline; read -p "NodeGroup Name: " response;
+             if [[ ${#response} -eq 0 ]]; then
+                    export nodegroup_name='prototype';
+               else nodegroup_name="${response}";
+             fi;
+           fi;
+    fi;
+    export cluster_context="${nodegroup_name}.${cluster_name}";
+    export docker_build="${cluster_name}/${nodegroup_name}";
+    export TARGET_DOCKERFILE="${clusters_path}/${script_name}/docker/${docker_build}";
+    mkdir -p ${TARGET_DOCKERFILE};
+    case ${delete_cluster} in
+       true ) script_request='delete'; ;;
+      false ) script_request='create'; ;;
+    esac;
+    export CALLER_SCRIPT="$(dirname ${CALLER_SCRIPT})/${cluster_context}--${script_request}.log";
+    cat /dev/null > ${CALLER_SCRIPT};
+    logging_process "Processing: ${cluster_context}";
+    [[ ${#AWS_ACCOUNT} -eq 0 ]] && fetch_awsaccount;
+    [[ ${#AWS_ACCOUNT} -ne ${AWS_ACCOUNT_LENGTH} ]] && exit 1;
+    ## export configs_path="${local_tmp}/${nodegroup_name}/${cluster_name}"; mkdir -p ${configs_path};
+    export configs_path="${clusters_path}/configs"; mkdir -p ${configs_path};
+    export metricshelper_policyname="CNIMetricsHelperPolicy--${cluster_name}-${nodegroup_name}";
+    ## Customizing KubeConfig = cluster-name
+    if [[ ${kubeconfig} == false ]]; then
+           export KUBECONFIG="${KUBEHOME}/eksctl/clusters/${cluster_name}";
+      else export KUBECONFIG="${kubeconfig}";
+    fi;
+    export service_platform='k8s-eks';
+    export account_number=$(
+        services_console "sts \
+          get-caller-identity \
+          --profile ${default_profile} \
+          --region ${default_region} \
+          --query 'Account' \
+          --output text" 2>/dev/null
+      );
+    if [[ ${delete_cluster} == true ]]; then
+      remove_cluster;
+      return 0;
+    fi;
+    if [[ ${deploy_cluster} == true ]]; then
+      enable_autoscaling=true;  ## Enable Auto-Scaling:
+      enable_metrics=true;      ## Enable CNI Metrics:
+      enable_cloudwatch=true;   ## Enable CloudWatch:
+      deploy_prometheus=true;   ## Prometheus Operator
+      deploy_dashboard=true;    ## Kubernetes Dashboard
+      deploy_prototype=true;    ## HelloWorld Application
+      describe_cluster=true;    ## Describing Cluster
+      deploy_kubernetes;
+      kubeconfig_context;
+      cluster_token;
+      configure_logging;
+      metricsserver_deploy;
+      if [[ ${verbose} == true ]]; then
+        describe_stacks;
+        ## display_apiservice;
+        display_nodes;
+      fi;
+    fi;
+    if [[ ${enable_autoscaling} == true ]]; then
+      create_autoscaler;
+      autoscaler_group;
+      disable_eviction;
+      autoscaler_version;
+      autoscaler_update;
+      if [[ ${verbose} == true ]]; then
+        inspect_autoscaler;
+      fi;
+    fi;
+    if [[ ${enable_metrics} == true ]]; then
+      configmap_awsauth;
+      metricshelper_deploy;
+      metricshelper_policy;
+      metricshelper_rolepolicies;
+      instance_roleupdate;
+    fi;
+    if [[ ${enable_cloudwatch} == true ]]; then
+      enable_cloudwatch;
+    fi;
+    if [[ ${deploy_prometheus} == true ]]; then
+      deploy_prometheus;
+    fi;
+    if [[ ${deploy_dashboard} == true ]]; then
+      deploy_dashboard $(
+          eksctl_console "get cluster \
+            --name ${cluster_name} \
+            --output json" \
+          | jq '.[]|.Endpoint' --raw-output \
+          | awk -F'://' '{print $2}';
+        );
+    fi;
+    if [[ ${deploy_prototype} == true ]]; then
+      if [[ -d ${TARGET_DOCKERFILE} ]]; then
+        cluster_application ${docker_application} ${cluster_context};
+        export container_content='/var/www/html/index.html';
+        repo_version="${script_name}";
+        sed -i -e "s|^\(RUN echo 'Hello.*\)\((\)\(.*\)\()\)\(.*\)$|\1\2${repo_version}.${cluster_context}: $(date +'%Y%m%d%H%M%S')\4\5|g" ${TARGET_DOCKERFILE}/Dockerfile;
+        rm ${TARGET_DOCKERFILE}/Dockerfile-e &>/dev/null;
+        rollout_deployment ${TARGET_DOCKERFILE} ${docker_application} ${cluster_context};
+        deploy_prototype;
+        update_deployment;
+      fi;
+    fi;
+    if [[ ${describe_cluster} == true ]]; then
+      cluster_contexts;
+      describe_cluster;
+      display_ekscluster;
+      newline;
+      declare -a console_targets=(
+          status
+          history
+        );
+      display_message "Identifying Deployment Status ...";
+      for target in ${console_targets[@]}; do
+        kubectl_console "rollout ${target} deployment/${docker_application}-deployment";
+      done;
+      cluster_services;
+      newline;
+    fi;
+    if [[ ${scale_cluster} -gt 0 ]]; then
+      resize_cluster ${scale_cluster};
+      sleep_until 60 15 "Countdown:";
+      display_nodes;
+    fi;
+    logging_process "KubeConfig: export KUBECONFIG='${KUBECONFIG}';";
+    logging_process "Completed! ";
+    return 0;
+  };
+
+eks_cluster "${@}";

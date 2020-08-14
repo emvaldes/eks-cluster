@@ -1,0 +1,4294 @@
+
+$ bash -x eks-cluster --create-cluster=prototype.devops --verbose --debug;
+
+++ basename eks-cluster
++ script_name=eks-cluster
++ usr_local=/Users/prototype
++ mkdir -p /Users/prototype
++ local_bin=/Users/prototype/bin
++ mkdir -p /Users/prototype/bin
++ local_etc=/Users/prototype/etc
++ mkdir -p /Users/prototype/etc
++ xfiles=(shared-cloud.variables shared-cloud.functions)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.variables
++ shared_module=/Users/prototype/etc/variables/shared-cloud.variables
++ [[ ! -e /Users/prototype/etc/variables/shared-cloud.variables ]]
++ source /Users/prototype/etc/variables/shared-cloud.variables
+++ export continue_response=false
+++ continue_response=false
+++ export github_server=https://github.com
+++ github_server=https://github.com
+++ export github_content=https://raw.githubusercontent.com
+++ github_content=https://raw.githubusercontent.com
+++ export github_private=https://github.counsyl.com
+++ github_private=https://github.counsyl.com
+++ export devops_project=prototype/devops-tools
+++ devops_project=prototype/devops-tools
+++ export AWS_REGION=us-east-1
+++ AWS_REGION=us-east-1
+++ export AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ AWS_ZONES=us-east-1a,us-east-1b,us-east-1c
+++ export AWS_PROFILE=kubernetes
+++ AWS_PROFILE=kubernetes
+++ export SAML_PROFILE=techops
+++ SAML_PROFILE=techops
+++ export KUBEHOME=/Users/prototype/.kube
+++ KUBEHOME=/Users/prototype/.kube
+++ export KUBECONFIG=/Users/prototype/.kube/config
+++ KUBECONFIG=/Users/prototype/.kube/config
+++ export DEFAULT_DOMAIN=reyanraj.com
+++ DEFAULT_DOMAIN=reyanraj.com
+++ export KUBERNETES_SSHKEY=kubernetes.pub
+++ KUBERNETES_SSHKEY=kubernetes.pub
+++ export monitoring_account=tiller
+++ monitoring_account=tiller
+++ export monitoring_application=prometheus
+++ monitoring_application=prometheus
+++ export monitoring_operator=stable/prometheus-operator
+++ monitoring_operator=stable/prometheus-operator
+++ export namespace_default=default
+++ namespace_default=default
+++ export namespace_kubesystem=kube-system
+++ namespace_kubesystem=kube-system
+++ export namespace_monitoring=prometheus
+++ namespace_monitoring=prometheus
+++ export namespace_cloudwatch=amazon-cloudwatch
+++ namespace_cloudwatch=amazon-cloudwatch
+++ export include_everything=everything
+++ include_everything=everything
+++ export application_prototype=helloworld-deployment
+++ application_prototype=helloworld-deployment
+++ export cloudwatch_agent=cloudwatch-agent
+++ cloudwatch_agent=cloudwatch-agent
+++ export target_podname=
+++ target_podname=
++ for xfile in '"${xfiles[@]}"'
++ shared_cloud=shared-cloud.functions
++ shared_module=/Users/prototype/etc/functions/shared-cloud.functions
++ [[ ! -e /Users/prototype/etc/functions/shared-cloud.functions ]]
++ source /Users/prototype/etc/functions/shared-cloud.functions
++ xfiles=(eks-cluster.functions eks-cluster.variables eks-cluster.help eks-cluster.create.help eks-cluster.delete.help)
++ declare -a xfiles
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.functions
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.functions ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.functions
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.variables
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.variables ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.variables
+++ export 'team_member=Eduardo Valdes'
+++ team_member='Eduardo Valdes'
+++ export 'team_creator=DevOps Team'
+++ team_creator='DevOps Team'
+++ export 'team_owner=SRE Team'
+++ team_owner='SRE Team'
+++ export autoscaler_version=cluster-autoscaler:v1.14.7
+++ autoscaler_version=cluster-autoscaler:v1.14.7
+++ export autoscaling_groupname=
+++ autoscaling_groupname=
+++ export instance_rolename=
+++ instance_rolename=
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.create.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.create.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.create.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ for xfile in '"${xfiles[@]}"'
++ target=/Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++ [[ -e /Users/prototype/etc/eks-cluster/eks-cluster.delete.help ]]
++ source /Users/prototype/etc/eks-cluster/eks-cluster.delete.help
++++ basename eks-cluster
+++ script_name=eks-cluster
++ eks_cluster --create-cluster=prototype.devops --verbose --debug
++ oIFS='
+'
++ for xitem in '"${@}"'
++ IFS==
+++ echo --create-cluster=prototype.devops
+++ sed -e s/--//g
++ set create-cluster prototype.devops
++ [[ create-cluster = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ create-cluster = \c\a\p\a\c\i\t\y ]]
++ [[ create-cluster = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ create-cluster = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ export target_cluster=prototype.devops
++ target_cluster=prototype.devops
++ deploy_cluster=true
++ [[ create-cluster = \d\e\b\u\g ]]
++ [[ create-cluster = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ create-cluster = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ create-cluster = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ create-cluster = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ create-cluster = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ create-cluster = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ create-cluster = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ create-cluster = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ create-cluster = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ create-cluster = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ create-cluster = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ create-cluster = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ create-cluster = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ create-cluster = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ create-cluster = \p\r\o\f\i\l\e ]]
++ [[ create-cluster = \r\e\g\i\o\n ]]
++ [[ create-cluster = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ create-cluster = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ create-cluster = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ create-cluster = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ create-cluster = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ create-cluster = \z\o\n\e\s ]]
++ [[ create-cluster = \v\e\r\b\o\s\e ]]
++ [[ create-cluster = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --verbose
+++ sed -e s/--//g
++ set verbose
++ [[ verbose = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ verbose = \c\a\p\a\c\i\t\y ]]
++ [[ verbose = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ verbose = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\b\u\g ]]
++ [[ verbose = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ verbose = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ verbose = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ verbose = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ verbose = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ verbose = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ verbose = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ verbose = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ verbose = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ verbose = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ verbose = \p\r\o\f\i\l\e ]]
++ [[ verbose = \r\e\g\i\o\n ]]
++ [[ verbose = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ verbose = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ verbose = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ verbose = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ verbose = \z\o\n\e\s ]]
++ [[ verbose = \v\e\r\b\o\s\e ]]
++ export verbose=true
++ verbose=true
++ [[ verbose = \h\e\l\p ]]
++ for xitem in '"${@}"'
++ IFS==
+++ echo --debug
+++ sed -e s/--//g
++ set debug
++ [[ debug = \a\c\c\e\s\s\-\p\u\b\k\e\y ]]
++ [[ debug = \c\a\p\a\c\i\t\y ]]
++ [[ debug = \c\l\u\s\t\e\r\-\n\a\m\e ]]
++ [[ debug = \c\r\e\a\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\b\u\g ]]
++ export debug_mode=true
++ debug_mode=true
++ [[ debug = \d\e\l\e\t\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\c\l\u\s\t\e\r ]]
++ [[ debug = \d\e\p\l\o\y\-\d\a\s\h\b\o\a\r\d ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\m\e\t\h\e\u\s ]]
++ [[ debug = \d\e\p\l\o\y\-\p\r\o\t\o\t\y\p\e ]]
++ [[ debug = \d\e\s\c\r\i\b\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \e\n\a\b\l\e\-\a\u\t\o\s\c\a\l\i\n\g ]]
++ [[ debug = \e\n\a\b\l\e\-\c\l\o\u\d\w\a\t\c\h ]]
++ [[ debug = \e\n\a\b\l\e\-\m\e\t\r\i\c\s ]]
++ [[ debug = \h\e\l\p\-\c\r\e\a\t\e ]]
++ [[ debug = \h\e\l\p\-\d\e\l\e\t\e ]]
++ [[ debug = \i\n\t\e\r\a\c\t\i\v\e ]]
++ [[ debug = \k\u\b\e\c\o\n\f\i\g ]]
++ [[ debug = \n\o\d\e\g\r\o\u\p\-\n\a\m\e ]]
++ [[ debug = \p\r\o\f\i\l\e ]]
++ [[ debug = \r\e\g\i\o\n ]]
++ [[ debug = \s\c\a\l\e\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\a\r\g\e\t\-\c\l\u\s\t\e\r ]]
++ [[ debug = \t\e\a\m\-\c\r\e\a\t\o\r ]]
++ [[ debug = \t\e\a\m\-\m\e\m\b\e\r ]]
++ [[ debug = \t\e\a\m\-\o\w\n\e\r ]]
++ [[ debug = \z\o\n\e\s ]]
++ [[ debug = \v\e\r\b\o\s\e ]]
++ [[ debug = \h\e\l\p ]]
++ IFS='
+'
++ [[ 0 -eq 0 ]]
++ export delete_cluster=false
++ delete_cluster=false
++ [[ 0 -eq 0 ]]
++ export create_cluster=false
++ create_cluster=false
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export deploy_dashboard=false
++ deploy_dashboard=false
++ [[ 0 -eq 0 ]]
++ export deploy_prometheus=false
++ deploy_prometheus=false
++ [[ 0 -eq 0 ]]
++ export deploy_prototype=false
++ deploy_prototype=false
++ [[ 0 -eq 0 ]]
++ export describe_cluster=false
++ describe_cluster=false
++ [[ 0 -eq 0 ]]
++ export describe_create=false
++ describe_create=false
++ [[ 0 -eq 0 ]]
++ export describe_delete=false
++ describe_delete=false
++ [[ 0 -eq 0 ]]
++ export enable_autoscaling=false
++ enable_autoscaling=false
++ [[ 0 -eq 0 ]]
++ export enable_cloudwatch=false
++ enable_cloudwatch=false
++ [[ 0 -eq 0 ]]
++ export enable_metrics=false
++ enable_metrics=false
++ [[ 0 -eq 0 ]]
++ export scale_cluster=0
++ scale_cluster=0
++ [[ 0 -eq 0 ]]
++ export interactive_mode=false
++ interactive_mode=false
++ [[ 0 -eq 0 ]]
++ export kubeconfig=false
++ kubeconfig=false
++ [[ 14 -gt 0 ]]
++ regex='(.*)\.(.*)'
++ [[ prototype.devops =~ (.*)\.(.*) ]]
++ export cluster_name=prototype
++ cluster_name=prototype
++ export nodegroup_name=devops
++ nodegroup_name=devops
++ [[ 4 -eq 0 ]]
++ [[ 4 -eq 0 ]]
++ [[ 0 -eq 0 ]]
++ export access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ access_pubkey=/Users/prototype/.ssh/kubernetes.pub
++ [[ 0 -eq 0 ]]
++ export default_profile=kubernetes
++ default_profile=kubernetes
++ export AWS_DEFAULT_PROFILE=kubernetes
++ AWS_DEFAULT_PROFILE=kubernetes
++ [[ 0 -eq 0 ]]
++ export default_region=us-east-1
++ default_region=us-east-1
++ [[ 0 -eq 0 ]]
++ export default_zones=us-east-1a,us-east-1b,us-east-1c
++ default_zones=us-east-1a,us-east-1b,us-east-1c
++ [[ 0 -eq 0 ]]
++ cluster_capacity=(1.2.3)
++ declare -a cluster_capacity
++ regex='([[:digit:]]*).([[:digit:]]*).([[:digit:]]*)'
++ [[ 1.2.3 =~ ([[:digit:]]*).([[:digit:]]*).([[:digit:]]*) ]]
++ export nodes_default=1
++ nodes_default=1
++ export nodes_minimum=2
++ nodes_minimum=2
++ export nodes_maximum=3
++ nodes_maximum=3
++ default_user=prototype
++ default_nodegroup=prototype
++ [[ true == true ]]
++ debug_level=4
++ [[ false == true ]]
++ [[ false == true ]]
++ [[ '' == true ]]
++ [[ 7 -eq 0 ]]
++ [[ 6 -eq 0 ]]
++ export configs_path=/tmp/devops/prototype
++ configs_path=/tmp/devops/prototype
++ mkdir -p /tmp/devops/prototype
++ export metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ metricshelper_policyname=CNIMetricsHelperPolicy--prototype-devops
++ [[ false == false ]]
++ export KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ KUBECONFIG=/Users/prototype/.kube/eksctl/clusters/prototype
++ export service_platform=k8s-eks
++ service_platform=k8s-eks
+++ aws sts get-caller-identity --profile kubernetes --region us-east-1 --query Account --output text
++ export account_number=738054984624
++ account_number=738054984624
++ [[ false == true ]]
++ [[ true == true ]]
++ enable_autoscaling=true
++ enable_metrics=true
++ enable_cloudwatch=true
++ deploy_prometheus=true
++ deploy_dashboard=true
++ deploy_prototype=true
++ describe_cluster=true
++ deploy_kubernetes
++ __function_name deploy_kubernetes
++ func_name=deploy_kubernetes
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [deploy_kubernetes]: '
+Function [deploy_kubernetes]:
++ return 0
++ rm -fv /Users/prototype/.kube/eksctl/clusters/prototype
++ eksctl create cluster --profile kubernetes --region us-east-1 --zones us-east-1a,us-east-1b,us-east-1c --name prototype --nodegroup-name devops --ssh-access --tags 'Owner=SRE Team,Team=DevOps Team,Creator=Eduardo Valdes' --nodes-min 2 --nodes-max 3 --ssh-public-key /Users/prototype/.ssh/kubernetes.pub --asg-access --appmesh-access --alb-ingress-access --auto-kubeconfig --verbose 4 --timeout 60m0s --managed
+2019-12-24T13:59:10-07:00 [ℹ]  eksctl version 0.11.1
+2019-12-24T13:59:10-07:00 [ℹ]  using region us-east-1
+2019-12-24T13:59:11-07:00 [▶]  role ARN for the current session is "arn:aws:iam::738054984624:user/kubernetes"
+2019-12-24T13:59:11-07:00 [▶]  VPC CIDR (192.168.0.0/16) was divided into 8 subnets [192.168.0.0/19 192.168.32.0/19 192.168.64.0/19 192.168.96.0/19 192.168.128.0/19 192.168.160.0/19 192.168.192.0/19 192.168.224.0/19]
+2019-12-24T13:59:11-07:00 [ℹ]  subnets for us-east-1a - public:192.168.0.0/19 private:192.168.96.0/19
+2019-12-24T13:59:11-07:00 [ℹ]  subnets for us-east-1b - public:192.168.32.0/19 private:192.168.128.0/19
+2019-12-24T13:59:11-07:00 [ℹ]  subnets for us-east-1c - public:192.168.64.0/19 private:192.168.160.0/19
+2019-12-24T13:59:11-07:00 [ℹ]  using SSH public key "/Users/prototype/.ssh/kubernetes.pub" as "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7"
+2019-12-24T13:59:11-07:00 [▶]  importing SSH public key "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7"
+2019-12-24T13:59:11-07:00 [ℹ]  using Kubernetes version 1.14
+2019-12-24T13:59:11-07:00 [ℹ]  creating EKS cluster "prototype" in "us-east-1" region with managed nodes
+2019-12-24T13:59:11-07:00 [▶]  cfg.json = \
+{
+    "kind": "ClusterConfig",
+    "apiVersion": "eksctl.io/v1alpha5",
+    "metadata": {
+        "name": "prototype",
+        "region": "us-east-1",
+        "version": "1.14",
+        "tags": {
+            "Creator": "Eduardo Valdes",
+            "Owner": "SRE Team",
+            "Team": "DevOps Team"
+        }
+    },
+    "iam": {
+        "withOIDC": false
+    },
+    "vpc": {
+        "cidr": "192.168.0.0/16",
+        "subnets": {
+            "private": {
+                "us-east-1a": {
+                    "cidr": "192.168.96.0/19"
+                },
+                "us-east-1b": {
+                    "cidr": "192.168.128.0/19"
+                },
+                "us-east-1c": {
+                    "cidr": "192.168.160.0/19"
+                }
+            },
+            "public": {
+                "us-east-1a": {
+                    "cidr": "192.168.0.0/19"
+                },
+                "us-east-1b": {
+                    "cidr": "192.168.32.0/19"
+                },
+                "us-east-1c": {
+                    "cidr": "192.168.64.0/19"
+                }
+            }
+        },
+        "autoAllocateIPv6": false,
+        "nat": {
+            "gateway": "Single"
+        },
+        "clusterEndpoints": {
+            "privateAccess": false,
+            "publicAccess": true
+        }
+    },
+    "managedNodeGroups": [
+        {
+            "name": "devops",
+            "amiFamily": "AmazonLinux2",
+            "instanceType": "m5.large",
+            "desiredCapacity": 2,
+            "minSize": 2,
+            "maxSize": 3,
+            "volumeSize": 0,
+            "ssh": {
+                "allow": true,
+                "publicKeyPath": "/Users/prototype/.ssh/kubernetes.pub",
+                "publicKeyName": "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7"
+            },
+            "labels": {
+                "alpha.eksctl.io/cluster-name": "prototype",
+                "alpha.eksctl.io/nodegroup-name": "devops"
+            },
+            "tags": {
+                "alpha.eksctl.io/nodegroup-name": "devops",
+                "alpha.eksctl.io/nodegroup-type": "managed"
+            },
+            "iam": {
+                "withAddonPolicies": {
+                    "imageBuilder": false,
+                    "autoScaler": true,
+                    "externalDNS": false,
+                    "certManager": false,
+                    "appMesh": true,
+                    "ebs": false,
+                    "fsx": false,
+                    "efs": false,
+                    "albIngress": true,
+                    "xRay": false,
+                    "cloudWatch": false
+                }
+            }
+        }
+    ],
+    "availabilityZones": [
+        "us-east-1a",
+        "us-east-1b",
+        "us-east-1c"
+    ],
+    "cloudWatch": {
+        "clusterLogging": {}
+    }
+}
+
+2019-12-24T13:59:11-07:00 [ℹ]  will create 2 separate CloudFormation stacks for cluster itself and the initial managed nodegroup
+2019-12-24T13:59:11-07:00 [ℹ]  if you encounter any issues, check CloudFormation console or try 'eksctl utils describe-stacks --region=us-east-1 --cluster=prototype'
+2019-12-24T13:59:11-07:00 [ℹ]  CloudWatch logging will not be enabled for cluster "prototype" in "us-east-1"
+2019-12-24T13:59:11-07:00 [ℹ]  you can enable it with 'eksctl utils update-cluster-logging --region=us-east-1 --cluster=prototype'
+2019-12-24T13:59:11-07:00 [ℹ]  Kubernetes API endpoint access will use default of {publicAccess=true, privateAccess=false} for cluster "prototype" in "us-east-1"
+2019-12-24T13:59:11-07:00 [ℹ]  2 sequential tasks: { create cluster control plane "prototype", create managed nodegroup "devops" }
+2019-12-24T13:59:11-07:00 [▶]  started task: create cluster control plane "prototype"
+2019-12-24T13:59:11-07:00 [ℹ]  building cluster stack "eksctl-prototype-cluster"
+2019-12-24T13:59:11-07:00 [▶]  CreateStackInput = {
+  Capabilities: ["CAPABILITY_IAM"],
+  StackName: "eksctl-prototype-cluster",
+  Tags: [
+    {
+      Key: "alpha.eksctl.io/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "eksctl.cluster.k8s.io/v1alpha1/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Creator",
+      Value: "Eduardo Valdes"
+    },
+    {
+      Key: "Owner",
+      Value: "SRE Team"
+    },
+    {
+      Key: "Team",
+      Value: "DevOps Team"
+    }
+  ],
+  TemplateBody: "{\"AWSTemplateFormatVersion\":\"2010-09-09\",\"Description\":\"EKS cluster (dedicated VPC: true, dedicated IAM: true) [created and managed by eksctl]\",\"Resources\":{\"ClusterSharedNodeSecurityGroup\":{\"Type\":\"AWS::EC2::SecurityGroup\",\"Properties\":{\"GroupDescription\":\"Communication between all nodes in the cluster\",\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/ClusterSharedNodeSecurityGroup\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"ControlPlane\":{\"Type\":\"AWS::EKS::Cluster\",\"Properties\":{\"Name\":\"prototype\",\"ResourcesVpcConfig\":{\"SecurityGroupIds\":[{\"Ref\":\"ControlPlaneSecurityGroup\"}],\"SubnetIds\":[{\"Ref\":\"SubnetPublicUSEAST1A\"},{\"Ref\":\"SubnetPublicUSEAST1B\"},{\"Ref\":\"SubnetPublicUSEAST1C\"},{\"Ref\":\"SubnetPrivateUSEAST1A\"},{\"Ref\":\"SubnetPrivateUSEAST1B\"},{\"Ref\":\"SubnetPrivateUSEAST1C\"}]},\"RoleArn\":{\"Fn::GetAtt\":\"ServiceRole.Arn\"},\"Version\":\"1.14\"}},\"ControlPlaneSecurityGroup\":{\"Type\":\"AWS::EC2::SecurityGroup\",\"Properties\":{\"GroupDescription\":\"Communication between the control plane and worker nodegroups\",\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/ControlPlaneSecurityGroup\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"FargatePodExecutionRole\":{\"Type\":\"AWS::IAM::Role\",\"Properties\":{\"AssumeRolePolicyDocument\":{\"Statement\":[{\"Action\":[\"sts:AssumeRole\"],\"Effect\":\"Allow\",\"Principal\":{\"Service\":[\"eks.amazonaws.com\",\"eks-fargate-pods.amazonaws.com\"]}}],\"Version\":\"2012-10-17\"},\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/AmazonEKSFargatePodExecutionRolePolicy\"]}},\"IngressDefaultClusterToNodeSG\":{\"Type\":\"AWS::EC2::SecurityGroupIngress\",\"Properties\":{\"Description\":\"Allow managed and unmanaged nodes to communicate with each other (all ports)\",\"FromPort\":0,\"GroupId\":{\"Ref\":\"ClusterSharedNodeSecurityGroup\"},\"IpProtocol\":\"-1\",\"SourceSecurityGroupId\":{\"Fn::GetAtt\":\"ControlPlane.ClusterSecurityGroupId\"},\"ToPort\":65535}},\"IngressInterNodeGroupSG\":{\"Type\":\"AWS::EC2::SecurityGroupIngress\",\"Properties\":{\"Description\":\"Allow nodes to communicate with each other (all ports)\",\"FromPort\":0,\"GroupId\":{\"Ref\":\"ClusterSharedNodeSecurityGroup\"},\"IpProtocol\":\"-1\",\"SourceSecurityGroupId\":{\"Ref\":\"ClusterSharedNodeSecurityGroup\"},\"ToPort\":65535}},\"IngressNodeToDefaultClusterSG\":{\"Type\":\"AWS::EC2::SecurityGroupIngress\",\"Properties\":{\"Description\":\"Allow unmanaged nodes to communicate with control plane (all ports)\",\"FromPort\":0,\"GroupId\":{\"Fn::GetAtt\":\"ControlPlane.ClusterSecurityGroupId\"},\"IpProtocol\":\"-1\",\"SourceSecurityGroupId\":{\"Ref\":\"ClusterSharedNodeSecurityGroup\"},\"ToPort\":65535}},\"InternetGateway\":{\"Type\":\"AWS::EC2::InternetGateway\",\"Properties\":{\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/InternetGateway\"}}]}},\"NATGateway\":{\"Type\":\"AWS::EC2::NatGateway\",\"Properties\":{\"AllocationId\":{\"Fn::GetAtt\":\"NATIP.AllocationId\"},\"SubnetId\":{\"Ref\":\"SubnetPublicUSEAST1A\"},\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/NATGateway\"}}]}},\"NATIP\":{\"Type\":\"AWS::EC2::EIP\",\"Properties\":{\"Domain\":\"vpc\"}},\"NATPrivateSubnetRouteUSEAST1A\":{\"Type\":\"AWS::EC2::Route\",\"Properties\":{\"DestinationCidrBlock\":\"0.0.0.0/0\",\"NatGatewayId\":{\"Ref\":\"NATGateway\"},\"RouteTableId\":{\"Ref\":\"PrivateRouteTableUSEAST1A\"}}},\"NATPrivateSubnetRouteUSEAST1B\":{\"Type\":\"AWS::EC2::Route\",\"Properties\":{\"DestinationCidrBlock\":\"0.0.0.0/0\",\"NatGatewayId\":{\"Ref\":\"NATGateway\"},\"RouteTableId\":{\"Ref\":\"PrivateRouteTableUSEAST1B\"}}},\"NATPrivateSubnetRouteUSEAST1C\":{\"Type\":\"AWS::EC2::Route\",\"Properties\":{\"DestinationCidrBlock\":\"0.0.0.0/0\",\"NatGatewayId\":{\"Ref\":\"NATGateway\"},\"RouteTableId\":{\"Ref\":\"PrivateRouteTableUSEAST1C\"}}},\"PolicyCloudWatchMetrics\":{\"Type\":\"AWS::IAM::Policy\",\"Properties\":{\"PolicyDocument\":{\"Statement\":[{\"Action\":[\"cloudwatch:PutMetricData\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"},\"PolicyName\":{\"Fn::Sub\":\"${AWS::StackName}-PolicyCloudWatchMetrics\"},\"Roles\":[{\"Ref\":\"ServiceRole\"}]}},\"PolicyNLB\":{\"Type\":\"AWS::IAM::Policy\",\"Properties\":{\"PolicyDocument\":{\"Statement\":[{\"Action\":[\"elasticloadbalancing:*\",\"ec2:CreateSecurityGroup\",\"ec2:Describe*\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"},\"PolicyName\":{\"Fn::Sub\":\"${AWS::StackName}-PolicyNLB\"},\"Roles\":[{\"Ref\":\"ServiceRole\"}]}},\"PrivateRouteTableUSEAST1A\":{\"Type\":\"AWS::EC2::RouteTable\",\"Properties\":{\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/PrivateRouteTableUSEAST1A\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"PrivateRouteTableUSEAST1B\":{\"Type\":\"AWS::EC2::RouteTable\",\"Properties\":{\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/PrivateRouteTableUSEAST1B\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"PrivateRouteTableUSEAST1C\":{\"Type\":\"AWS::EC2::RouteTable\",\"Properties\":{\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/PrivateRouteTableUSEAST1C\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"PublicRouteTable\":{\"Type\":\"AWS::EC2::RouteTable\",\"Properties\":{\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/PublicRouteTable\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"PublicSubnetRoute\":{\"Type\":\"AWS::EC2::Route\",\"Properties\":{\"DestinationCidrBlock\":\"0.0.0.0/0\",\"GatewayId\":{\"Ref\":\"InternetGateway\"},\"RouteTableId\":{\"Ref\":\"PublicRouteTable\"}}},\"RouteTableAssociationPrivateUSEAST1A\":{\"Type\":\"AWS::EC2::SubnetRouteTableAssociation\",\"Properties\":{\"RouteTableId\":{\"Ref\":\"PrivateRouteTableUSEAST1A\"},\"SubnetId\":{\"Ref\":\"SubnetPrivateUSEAST1A\"}}},\"RouteTableAssociationPrivateUSEAST1B\":{\"Type\":\"AWS::EC2::SubnetRouteTableAssociation\",\"Properties\":{\"RouteTableId\":{\"Ref\":\"PrivateRouteTableUSEAST1B\"},\"SubnetId\":{\"Ref\":\"SubnetPrivateUSEAST1B\"}}},\"RouteTableAssociationPrivateUSEAST1C\":{\"Type\":\"AWS::EC2::SubnetRouteTableAssociation\",\"Properties\":{\"RouteTableId\":{\"Ref\":\"PrivateRouteTableUSEAST1C\"},\"SubnetId\":{\"Ref\":\"SubnetPrivateUSEAST1C\"}}},\"RouteTableAssociationPublicUSEAST1A\":{\"Type\":\"AWS::EC2::SubnetRouteTableAssociation\",\"Properties\":{\"RouteTableId\":{\"Ref\":\"PublicRouteTable\"},\"SubnetId\":{\"Ref\":\"SubnetPublicUSEAST1A\"}}},\"RouteTableAssociationPublicUSEAST1B\":{\"Type\":\"AWS::EC2::SubnetRouteTableAssociation\",\"Properties\":{\"RouteTableId\":{\"Ref\":\"PublicRouteTable\"},\"SubnetId\":{\"Ref\":\"SubnetPublicUSEAST1B\"}}},\"RouteTableAssociationPublicUSEAST1C\":{\"Type\":\"AWS::EC2::SubnetRouteTableAssociation\",\"Properties\":{\"RouteTableId\":{\"Ref\":\"PublicRouteTable\"},\"SubnetId\":{\"Ref\":\"SubnetPublicUSEAST1C\"}}},\"ServiceRole\":{\"Type\":\"AWS::IAM::Role\",\"Properties\":{\"AssumeRolePolicyDocument\":{\"Statement\":[{\"Action\":[\"sts:AssumeRole\"],\"Effect\":\"Allow\",\"Principal\":{\"Service\":[\"eks.amazonaws.com\",\"eks-fargate-pods.amazonaws.com\"]}}],\"Version\":\"2012-10-17\"},\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/AmazonEKSServicePolicy\",\"arn:aws:iam::aws:policy/AmazonEKSClusterPolicy\"]}},\"SubnetPrivateUSEAST1A\":{\"Type\":\"AWS::EC2::Subnet\",\"Properties\":{\"AvailabilityZone\":\"us-east-1a\",\"CidrBlock\":\"192.168.96.0/19\",\"Tags\":[{\"Key\":\"kubernetes.io/role/internal-elb\",\"Value\":\"1\"},{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/SubnetPrivateUSEAST1A\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"SubnetPrivateUSEAST1B\":{\"Type\":\"AWS::EC2::Subnet\",\"Properties\":{\"AvailabilityZone\":\"us-east-1b\",\"CidrBlock\":\"192.168.128.0/19\",\"Tags\":[{\"Key\":\"kubernetes.io/role/internal-elb\",\"Value\":\"1\"},{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/SubnetPrivateUSEAST1B\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"SubnetPrivateUSEAST1C\":{\"Type\":\"AWS::EC2::Subnet\",\"Properties\":{\"AvailabilityZone\":\"us-east-1c\",\"CidrBlock\":\"192.168.160.0/19\",\"Tags\":[{\"Key\":\"kubernetes.io/role/internal-elb\",\"Value\":\"1\"},{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/SubnetPrivateUSEAST1C\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"SubnetPublicUSEAST1A\":{\"Type\":\"AWS::EC2::Subnet\",\"Properties\":{\"AvailabilityZone\":\"us-east-1a\",\"CidrBlock\":\"192.168.0.0/19\",\"Tags\":[{\"Key\":\"kubernetes.io/role/elb\",\"Value\":\"1\"},{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/SubnetPublicUSEAST1A\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"SubnetPublicUSEAST1B\":{\"Type\":\"AWS::EC2::Subnet\",\"Properties\":{\"AvailabilityZone\":\"us-east-1b\",\"CidrBlock\":\"192.168.32.0/19\",\"Tags\":[{\"Key\":\"kubernetes.io/role/elb\",\"Value\":\"1\"},{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/SubnetPublicUSEAST1B\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"SubnetPublicUSEAST1C\":{\"Type\":\"AWS::EC2::Subnet\",\"Properties\":{\"AvailabilityZone\":\"us-east-1c\",\"CidrBlock\":\"192.168.64.0/19\",\"Tags\":[{\"Key\":\"kubernetes.io/role/elb\",\"Value\":\"1\"},{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/SubnetPublicUSEAST1C\"}}],\"VpcId\":{\"Ref\":\"VPC\"}}},\"VPC\":{\"Type\":\"AWS::EC2::VPC\",\"Properties\":{\"CidrBlock\":\"192.168.0.0/16\",\"EnableDnsHostnames\":true,\"EnableDnsSupport\":true,\"Tags\":[{\"Key\":\"Name\",\"Value\":{\"Fn::Sub\":\"${AWS::StackName}/VPC\"}}]}},\"VPCGatewayAttachment\":{\"Type\":\"AWS::EC2::VPCGatewayAttachment\",\"Properties\":{\"InternetGatewayId\":{\"Ref\":\"InternetGateway\"},\"VpcId\":{\"Ref\":\"VPC\"}}}},\"Outputs\":{\"ARN\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::ARN\"}},\"Value\":{\"Fn::GetAtt\":\"ControlPlane.Arn\"}},\"CertificateAuthorityData\":{\"Value\":{\"Fn::GetAtt\":\"ControlPlane.CertificateAuthorityData\"}},\"ClusterSecurityGroupId\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::ClusterSecurityGroupId\"}},\"Value\":{\"Fn::GetAtt\":\"ControlPlane.ClusterSecurityGroupId\"}},\"ClusterStackName\":{\"Value\":{\"Ref\":\"AWS::StackName\"}},\"Endpoint\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::Endpoint\"}},\"Value\":{\"Fn::GetAtt\":\"ControlPlane.Endpoint\"}},\"FargatePodExecutionRoleARN\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::FargatePodExecutionRoleARN\"}},\"Value\":{\"Fn::GetAtt\":\"FargatePodExecutionRole.Arn\"}},\"FeatureNATMode\":{\"Value\":\"Single\"},\"SecurityGroup\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::SecurityGroup\"}},\"Value\":{\"Ref\":\"ControlPlaneSecurityGroup\"}},\"ServiceRoleARN\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::ServiceRoleARN\"}},\"Value\":{\"Fn::GetAtt\":\"ServiceRole.Arn\"}},\"SharedNodeSecurityGroup\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::SharedNodeSecurityGroup\"}},\"Value\":{\"Ref\":\"ClusterSharedNodeSecurityGroup\"}},\"SubnetsPrivate\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::SubnetsPrivate\"}},\"Value\":{\"Fn::Join\":[\",\",[{\"Ref\":\"SubnetPrivateUSEAST1A\"},{\"Ref\":\"SubnetPrivateUSEAST1B\"},{\"Ref\":\"SubnetPrivateUSEAST1C\"}]]}},\"SubnetsPublic\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::SubnetsPublic\"}},\"Value\":{\"Fn::Join\":[\",\",[{\"Ref\":\"SubnetPublicUSEAST1A\"},{\"Ref\":\"SubnetPublicUSEAST1B\"},{\"Ref\":\"SubnetPublicUSEAST1C\"}]]}},\"VPC\":{\"Export\":{\"Name\":{\"Fn::Sub\":\"${AWS::StackName}::VPC\"}},\"Value\":{\"Ref\":\"VPC\"}}}}"
+}
+2019-12-24T13:59:12-07:00 [ℹ]  deploying stack "eksctl-prototype-cluster"
+2019-12-24T13:59:12-07:00 [▶]  start waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T13:59:12-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T13:59:31-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T13:59:47-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:00:05-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:00:24-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:00:43-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:01:01-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:01:21-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:01:40-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:01:57-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:02:14-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:02:33-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:02:49-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:03:09-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:03:27-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:03:43-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:03:59-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:04:18-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:04:34-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:04:50-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:05:10-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:05:30-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:05:47-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:06:04-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:06:23-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:06:39-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:06:58-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:07:15-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:07:31-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:07:49-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:08:07-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:08:23-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:08:38-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:08:55-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:09:15-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:09:31-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:09:51-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:10:11-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:10:11-07:00 [▶]  done after 10m58.859207419s of waiting for CloudFormation stack "eksctl-prototype-cluster"
+2019-12-24T14:10:11-07:00 [▶]  processing stack outputs
+2019-12-24T14:10:12-07:00 [▶]  completed task: create cluster control plane "prototype"
+2019-12-24T14:10:12-07:00 [▶]  started task: create managed nodegroup "devops"
+2019-12-24T14:10:12-07:00 [▶]  waiting for 1 parallel tasks to complete
+2019-12-24T14:10:12-07:00 [▶]  started task: create managed nodegroup "devops"
+2019-12-24T14:10:12-07:00 [ℹ]  building managed nodegroup stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:10:12-07:00 [▶]  CreateStackInput = {
+  Capabilities: ["CAPABILITY_IAM"],
+  StackName: "eksctl-prototype-nodegroup-devops",
+  Tags: [
+    {
+      Key: "alpha.eksctl.io/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "eksctl.cluster.k8s.io/v1alpha1/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Creator",
+      Value: "Eduardo Valdes"
+    },
+    {
+      Key: "Owner",
+      Value: "SRE Team"
+    },
+    {
+      Key: "Team",
+      Value: "DevOps Team"
+    },
+    {
+      Key: "alpha.eksctl.io/nodegroup-name",
+      Value: "devops"
+    },
+    {
+      Key: "alpha.eksctl.io/nodegroup-type",
+      Value: "managed"
+    }
+  ],
+  TemplateBody: "{\"AWSTemplateFormatVersion\":\"2010-09-09\",\"Description\":\"EKS Managed Nodes (SSH access: true) [created by eksctl]\",\"Resources\":{\"ManagedNodeGroup\":{\"Type\":\"AWS::EKS::Nodegroup\",\"Properties\":{\"ClusterName\":\"prototype\",\"NodegroupName\":\"devops\",\"ScalingConfig\":{\"MinSize\":2,\"MaxSize\":3,\"DesiredSize\":2},\"Subnets\":{\"Fn::Split\":[\",\",{\"Fn::ImportValue\":\"eksctl-prototype-cluster::SubnetsPublic\"}]},\"InstanceTypes\":[\"m5.large\"],\"AmiType\":\"AL2_x86_64\",\"RemoteAccess\":{\"Ec2SshKey\":\"eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7\"},\"NodeRole\":{\"Fn::GetAtt\":\"NodeInstanceRole.Arn\"},\"Labels\":{\"alpha.eksctl.io/cluster-name\":\"prototype\",\"alpha.eksctl.io/nodegroup-name\":\"devops\"},\"Tags\":{\"alpha.eksctl.io/nodegroup-name\":\"devops\",\"alpha.eksctl.io/nodegroup-type\":\"managed\"}}},\"NodeInstanceRole\":{\"Type\":\"AWS::IAM::Role\",\"Properties\":{\"AssumeRolePolicyDocument\":{\"Statement\":[{\"Action\":[\"sts:AssumeRole\"],\"Effect\":\"Allow\",\"Principal\":{\"Service\":[\"ec2.amazonaws.com\"]}}],\"Version\":\"2012-10-17\"},\"ManagedPolicyArns\":[\"arn:aws:iam::aws:policy/AmazonEKSWorkerNodePolicy\",\"arn:aws:iam::aws:policy/AmazonEKS_CNI_Policy\",\"arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly\"],\"Path\":\"/\"}},\"PolicyALBIngress\":{\"Type\":\"AWS::IAM::Policy\",\"Properties\":{\"PolicyDocument\":{\"Statement\":[{\"Action\":[\"acm:DescribeCertificate\",\"acm:ListCertificates\",\"acm:GetCertificate\",\"ec2:AuthorizeSecurityGroupIngress\",\"ec2:CreateSecurityGroup\",\"ec2:CreateTags\",\"ec2:DeleteTags\",\"ec2:DeleteSecurityGroup\",\"ec2:DescribeAccountAttributes\",\"ec2:DescribeAddresses\",\"ec2:DescribeInstances\",\"ec2:DescribeInstanceStatus\",\"ec2:DescribeInternetGateways\",\"ec2:DescribeNetworkInterfaces\",\"ec2:DescribeSecurityGroups\",\"ec2:DescribeSubnets\",\"ec2:DescribeTags\",\"ec2:DescribeVpcs\",\"ec2:ModifyInstanceAttribute\",\"ec2:ModifyNetworkInterfaceAttribute\",\"ec2:RevokeSecurityGroupIngress\",\"elasticloadbalancing:AddListenerCertificates\",\"elasticloadbalancing:AddTags\",\"elasticloadbalancing:CreateListener\",\"elasticloadbalancing:CreateLoadBalancer\",\"elasticloadbalancing:CreateRule\",\"elasticloadbalancing:CreateTargetGroup\",\"elasticloadbalancing:DeleteListener\",\"elasticloadbalancing:DeleteLoadBalancer\",\"elasticloadbalancing:DeleteRule\",\"elasticloadbalancing:DeleteTargetGroup\",\"elasticloadbalancing:DeregisterTargets\",\"elasticloadbalancing:DescribeListenerCertificates\",\"elasticloadbalancing:DescribeListeners\",\"elasticloadbalancing:DescribeLoadBalancers\",\"elasticloadbalancing:DescribeLoadBalancerAttributes\",\"elasticloadbalancing:DescribeRules\",\"elasticloadbalancing:DescribeSSLPolicies\",\"elasticloadbalancing:DescribeTags\",\"elasticloadbalancing:DescribeTargetGroups\",\"elasticloadbalancing:DescribeTargetGroupAttributes\",\"elasticloadbalancing:DescribeTargetHealth\",\"elasticloadbalancing:ModifyListener\",\"elasticloadbalancing:ModifyLoadBalancerAttributes\",\"elasticloadbalancing:ModifyRule\",\"elasticloadbalancing:ModifyTargetGroup\",\"elasticloadbalancing:ModifyTargetGroupAttributes\",\"elasticloadbalancing:RegisterTargets\",\"elasticloadbalancing:RemoveListenerCertificates\",\"elasticloadbalancing:RemoveTags\",\"elasticloadbalancing:SetIpAddressType\",\"elasticloadbalancing:SetSecurityGroups\",\"elasticloadbalancing:SetSubnets\",\"elasticloadbalancing:SetWebACL\",\"iam:CreateServiceLinkedRole\",\"iam:GetServerCertificate\",\"iam:ListServerCertificates\",\"waf-regional:GetWebACLForResource\",\"waf-regional:GetWebACL\",\"waf-regional:AssociateWebACL\",\"waf-regional:DisassociateWebACL\",\"tag:GetResources\",\"tag:TagResources\",\"waf:GetWebACL\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"},\"PolicyName\":{\"Fn::Sub\":\"${AWS::StackName}-PolicyALBIngress\"},\"Roles\":[{\"Ref\":\"NodeInstanceRole\"}]}},\"PolicyAppMesh\":{\"Type\":\"AWS::IAM::Policy\",\"Properties\":{\"PolicyDocument\":{\"Statement\":[{\"Action\":[\"appmesh:*\",\"servicediscovery:CreateService\",\"servicediscovery:GetService\",\"servicediscovery:RegisterInstance\",\"servicediscovery:DeregisterInstance\",\"servicediscovery:ListInstances\",\"servicediscovery:ListNamespaces\",\"servicediscovery:ListServices\",\"route53:GetHealthCheck\",\"route53:CreateHealthCheck\",\"route53:UpdateHealthCheck\",\"route53:ChangeResourceRecordSets\",\"route53:DeleteHealthCheck\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"},\"PolicyName\":{\"Fn::Sub\":\"${AWS::StackName}-PolicyAppMesh\"},\"Roles\":[{\"Ref\":\"NodeInstanceRole\"}]}},\"PolicyAutoScaling\":{\"Type\":\"AWS::IAM::Policy\",\"Properties\":{\"PolicyDocument\":{\"Statement\":[{\"Action\":[\"autoscaling:DescribeAutoScalingGroups\",\"autoscaling:DescribeAutoScalingInstances\",\"autoscaling:DescribeLaunchConfigurations\",\"autoscaling:DescribeTags\",\"autoscaling:SetDesiredCapacity\",\"autoscaling:TerminateInstanceInAutoScalingGroup\",\"ec2:DescribeLaunchTemplateVersions\"],\"Effect\":\"Allow\",\"Resource\":\"*\"}],\"Version\":\"2012-10-17\"},\"PolicyName\":{\"Fn::Sub\":\"${AWS::StackName}-PolicyAutoScaling\"},\"Roles\":[{\"Ref\":\"NodeInstanceRole\"}]}}}}"
+}
+2019-12-24T14:10:13-07:00 [ℹ]  deploying stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:10:13-07:00 [▶]  start waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:10:13-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:10:32-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:10:48-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:11:04-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:11:21-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:11:37-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:11:55-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:12:13-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:12:30-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:12:48-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:13:04-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:13:24-07:00 [▶]  waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:13:24-07:00 [▶]  done after 3m11.591587148s of waiting for CloudFormation stack "eksctl-prototype-nodegroup-devops"
+2019-12-24T14:13:25-07:00 [▶]  processing stack outputs
+2019-12-24T14:13:25-07:00 [▶]  completed task: create managed nodegroup "devops"
+2019-12-24T14:13:25-07:00 [▶]  completed task: create managed nodegroup "devops"
+2019-12-24T14:13:25-07:00 [✔]  all EKS cluster resources for "prototype" have been created
+2019-12-24T14:13:25-07:00 [▶]  merging kubeconfig files
+2019-12-24T14:13:25-07:00 [▶]  setting current-context to kubernetes@prototype.us-east-1.eksctl.io
+2019-12-24T14:13:25-07:00 [✔]  saved kubeconfig as "/Users/prototype/.kube/eksctl/clusters/prototype"
+2019-12-24T14:13:25-07:00 [ℹ]  nodegroup "devops" has 2 node(s)
+2019-12-24T14:13:25-07:00 [ℹ]  node "ip-192-168-62-125.ec2.internal" is ready
+2019-12-24T14:13:25-07:00 [ℹ]  node "ip-192-168-64-125.ec2.internal" is ready
+2019-12-24T14:13:25-07:00 [ℹ]  waiting for at least 2 node(s) to become ready in "devops"
+2019-12-24T14:13:25-07:00 [ℹ]  nodegroup "devops" has 2 node(s)
+2019-12-24T14:13:25-07:00 [ℹ]  node "ip-192-168-62-125.ec2.internal" is ready
+2019-12-24T14:13:25-07:00 [ℹ]  node "ip-192-168-64-125.ec2.internal" is ready
+2019-12-24T14:13:25-07:00 [▶]  kubectl: "/usr/local/bin/kubectl"
+2019-12-24T14:13:26-07:00 [▶]  kubectl version: v1.17.0
+2019-12-24T14:13:26-07:00 [▶]  found authenticator: aws-iam-authenticator
+2019-12-24T14:13:26-07:00 [ℹ]  kubectl command should work with "/Users/prototype/.kube/eksctl/clusters/prototype", try 'kubectl --kubeconfig=/Users/prototype/.kube/eksctl/clusters/prototype get nodes'
+2019-12-24T14:13:26-07:00 [✔]  EKS cluster "prototype" in "us-east-1" region is ready
+2019-12-24T14:13:26-07:00 [▶]  cfg.json = \
+{
+    "kind": "ClusterConfig",
+    "apiVersion": "eksctl.io/v1alpha5",
+    "metadata": {
+        "name": "prototype",
+        "region": "us-east-1",
+        "version": "1.14",
+        "tags": {
+            "Creator": "Eduardo Valdes",
+            "Owner": "SRE Team",
+            "Team": "DevOps Team"
+        }
+    },
+    "iam": {
+        "serviceRoleARN": "arn:aws:iam::738054984624:role/eksctl-prototype-cluster-ServiceRole-1674N52ISB9LV",
+        "fargatePodExecutionRoleARN": "arn:aws:iam::738054984624:role/eksctl-prototype-cluster-FargatePodExecutionRole-10TVY11EMQD1B",
+        "withOIDC": false
+    },
+    "vpc": {
+        "id": "vpc-0d778f5d45975aa0d",
+        "cidr": "192.168.0.0/16",
+        "securityGroup": "sg-04bffaeb42498266b",
+        "subnets": {
+            "private": {
+                "us-east-1a": {
+                    "id": "subnet-035d65fcdde60ab1e",
+                    "cidr": "192.168.96.0/19"
+                },
+                "us-east-1b": {
+                    "id": "subnet-08fd7eaccb04a6ea7",
+                    "cidr": "192.168.128.0/19"
+                },
+                "us-east-1c": {
+                    "id": "subnet-02136cc89d80e853f",
+                    "cidr": "192.168.160.0/19"
+                }
+            },
+            "public": {
+                "us-east-1a": {
+                    "id": "subnet-0b60b74e32bb2d5b9",
+                    "cidr": "192.168.0.0/19"
+                },
+                "us-east-1b": {
+                    "id": "subnet-04518884ed1f2994f",
+                    "cidr": "192.168.32.0/19"
+                },
+                "us-east-1c": {
+                    "id": "subnet-0783d0c9d2733a28b",
+                    "cidr": "192.168.64.0/19"
+                }
+            }
+        },
+        "sharedNodeSecurityGroup": "sg-0dbe44cf44d2b69be",
+        "autoAllocateIPv6": false,
+        "nat": {
+            "gateway": "Disable"
+        },
+        "clusterEndpoints": {
+            "privateAccess": false,
+            "publicAccess": true
+        }
+    },
+    "managedNodeGroups": [
+        {
+            "name": "devops",
+            "amiFamily": "AmazonLinux2",
+            "instanceType": "m5.large",
+            "desiredCapacity": 2,
+            "minSize": 2,
+            "maxSize": 3,
+            "volumeSize": 0,
+            "ssh": {
+                "allow": true,
+                "publicKeyPath": "/Users/prototype/.ssh/kubernetes.pub",
+                "publicKeyName": "eksctl-prototype-nodegroup-devops-b5:89:0b:9d:9a:58:53:b0:06:df:11:11:87:60:74:c7"
+            },
+            "labels": {
+                "alpha.eksctl.io/cluster-name": "prototype",
+                "alpha.eksctl.io/nodegroup-name": "devops"
+            },
+            "tags": {
+                "alpha.eksctl.io/nodegroup-name": "devops",
+                "alpha.eksctl.io/nodegroup-type": "managed"
+            },
+            "iam": {
+                "withAddonPolicies": {
+                    "imageBuilder": false,
+                    "autoScaler": true,
+                    "externalDNS": false,
+                    "certManager": false,
+                    "appMesh": true,
+                    "ebs": false,
+                    "fsx": false,
+                    "efs": false,
+                    "albIngress": true,
+                    "xRay": false,
+                    "cloudWatch": false
+                }
+            }
+        }
+    ],
+    "availabilityZones": [
+        "us-east-1a",
+        "us-east-1b",
+        "us-east-1c"
+    ],
+    "cloudWatch": {
+        "clusterLogging": {}
+    },
+    "status": {
+        "endpoint": "https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com",
+        "certificateAuthorityData": "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1USXlOREl4TURZMU4xb1hEVEk1TVRJeU1USXhNRFkxTjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTERXCjRzTVlNTUx1WEpHSHA0MVVjNHFNaGhUc3ZWQ2VIcHZOMVNiZDFnNkQ3YWZIblVhaU1Yd3RZS0tHSHpOQzhuWW0KR2Q5U3pBYXVQK1pzdCtFczcvN3hVTWk1QWxKRldXWVkzSUxSMm5EWW1WRWNodG9IdkNBb1dWOTJEVHV4L2pDWgo1Z2ZYV0hwMmdCN29WYU0rVVh1bEJLNkN6MXY1YUpqUDh6V1g4TzhuN04rUnVGcWZwMlc3ZUNmUlFrSmxPaEpVCmlUZkc1RnlJQmxEdS9oRjArWjFwT09QcVhUK05HTXJDc1RjcUNCYkZpald4elpjZmo0ak5jNWZCVEFLelg2bUwKbDJFaXI3SjEvNVBaODY5RWsxVzdsdDZJa3RYcGtUUnhNeExhTWtLYWpaR2VobHMrNHc2a3BhYzFvck14UVZUTAp2VHUwSFdaUkw1enRnTmFSaU5zQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFGQlZZV1VERlE3WitDUWVJZzFMejR1VWRzUmIKMzBWRms2VUpoVG1FUkRJZ0U2K1lhNE5tOTNZVmFIM2cyQzBGODFiSHFOdW52dFBJY1hFRW4yZ1puWUI2T29CdQpCNERPQk42aE9CSzJvaVpoQmJ0STZzSWxxZWFwRnFvUVJmNE13dTl0OUxyVGxWRDJYTVdhTi9oVmdwNC9SRUpYCkZ1dzBiVFNGVGJNNmpXQ1g1Skp6a05hdFJKNXFuOUtCaERwendGS2lJZWxnc05VYjNzTzU2cmUxNWRpY3U5TS8KRldzeGl3SjhiOEJUWWhRSEQvSFMxNlJ6SS9kOTUxdEZZVE94Q1JOT0cyREtFVjlQK25MMktFRktJWXg3Q0JwegpJaEdyWEwzSFdrbUk5bUhZVEZaVDdINWhHczIzN3NjVENkQ3lSTXF1eXNMMSs5c0MzTEwyVWV3T3BTRT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=",
+        "arn": "arn:aws:eks:us-east-1:738054984624:cluster/prototype",
+        "stackName": "eksctl-prototype-cluster"
+    }
+}
+
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ kubeconfig_context
++ __function_name kubeconfig_context
++ func_name=kubeconfig_context
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [kubeconfig_context]: '
+Function [kubeconfig_context]:
++ return 0
++ eksctl utils write-kubeconfig --profile kubernetes --region us-east-1 --kubeconfig=/Users/prototype/.kube/eksctl/clusters/prototype --set-kubeconfig-context --cluster prototype
+[ℹ]  eksctl version 0.11.1
+[ℹ]  using region us-east-1
+[✔]  saved kubeconfig as "/Users/prototype/.kube/eksctl/clusters/prototype"
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
+  name: prototype.us-east-1.eksctl.io
+contexts:
+- context:
+    cluster: prototype.us-east-1.eksctl.io
+    user: kubernetes@prototype.us-east-1.eksctl.io
+  name: kubernetes@prototype.us-east-1.eksctl.io
+current-context: kubernetes@prototype.us-east-1.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: kubernetes@prototype.us-east-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - token
+      - -i
+      - prototype
+      command: aws-iam-authenticator
+      env:
+      - name: AWS_PROFILE
+        value: kubernetes
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cluster_token
++ __function_name cluster_token
++ func_name=cluster_token
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_token]: '
+Function [cluster_token]:
++ return 0
++ aws-iam-authenticator token -i prototype
++ python -m json.tool
+{
+    "apiVersion": "client.authentication.k8s.io/v1alpha1",
+    "kind": "ExecCredential",
+    "spec": {},
+    "status": {
+        "expirationTimestamp": "2019-12-24T21:27:27Z",
+        "token": "k8s-aws-v1.aHR0cHM6Ly9zdHMuYW1hem9uYXdzLmNvbS8_QWN0aW9uPUdldENhbGxlcklkZW50aXR5JlZlcnNpb249MjAxMS0wNi0xNSZYLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFaWlAyNjU0MkJLQzI3TDRZJTJGMjAxOTEyMjQlMkZ1cy1lYXN0LTElMkZzdHMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDE5MTIyNFQyMTEzMjdaJlgtQW16LUV4cGlyZXM9MCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QlM0J4LWs4cy1hd3MtaWQmWC1BbXotU2lnbmF0dXJlPWJkMjI3YjVjYmQyZWY3NDU5NWIxNGM3OTE2MmNmZjBhZTAzOGJmZmVhNzE3MTIyMGJjYjFiODk0M2JlZGZmODg"
+    }
+}
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ configure_logging
++ __function_name configure_logging
++ func_name=configure_logging
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [configure_logging]: '
+Function [configure_logging]:
++ return 0
++ eksctl utils update-cluster-logging --profile kubernetes --region us-east-1 --cluster prototype --enable-types all --approve
+[ℹ]  eksctl version 0.11.1
+[ℹ]  using region us-east-1
+[ℹ]  will update CloudWatch logging for cluster "prototype" in "us-east-1" (enable types: api, audit, authenticator, controllerManager, scheduler & no types to disable)
+[✔]  configured CloudWatch logging for cluster "prototype" in "us-east-1" (enabled types: api, audit, authenticator, controllerManager, scheduler & no types disabled)
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ metricsserver_deploy
++ __function_name metricsserver_deploy
++ func_name=metricsserver_deploy
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [metricsserver_deploy]: '
+Function [metricsserver_deploy]:
++ return 0
++ package_source=kubernetes-sigs/metrics-server/archive/v0.3.6.tar.gz
++ package_file=metrics-server-0.3.6
++ config_file=/tmp/devops/prototype/metrics-server-0.3.6
++ rm -fv /tmp/devops/prototype/metrics-server-0.3.6
++ curl --silent --output /tmp/devops/prototype/metrics-server-0.3.6.tgz --location --remote-name https://github.com/kubernetes-sigs/metrics-server/archive/v0.3.6.tar.gz
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ tar -xvzf /tmp/devops/prototype/metrics-server-0.3.6.tgz
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ kubectl create --filename metrics-server-0.3.6/deploy/1.8+/
+clusterrole.rbac.authorization.k8s.io/system:aggregated-metrics-reader created
+clusterrolebinding.rbac.authorization.k8s.io/metrics-server:system:auth-delegator created
+rolebinding.rbac.authorization.k8s.io/metrics-server-auth-reader created
+apiservice.apiregistration.k8s.io/v1beta1.metrics.k8s.io created
+serviceaccount/metrics-server created
+deployment.apps/metrics-server created
+service/metrics-server created
+clusterrole.rbac.authorization.k8s.io/system:metrics-server created
+clusterrolebinding.rbac.authorization.k8s.io/system:metrics-server created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ rm -rf metrics-server-0.3.6
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ describe_stacks
++ __function_name describe_stacks
++ func_name=describe_stacks
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [describe_stacks]: '
+Function [describe_stacks]:
++ return 0
++ eksctl utils describe-stacks --profile kubernetes --region=us-east-1 --cluster=prototype
+[ℹ]  eksctl version 0.11.1
+[ℹ]  using region us-east-1
+[ℹ]  stack/eksctl-prototype-nodegroup-devops = {
+  Capabilities: ["CAPABILITY_IAM"],
+  CreationTime: 2019-12-24 21:10:13.033 +0000 UTC,
+  Description: "EKS Managed Nodes (SSH access: true) [created by eksctl]",
+  DisableRollback: false,
+  DriftInformation: {
+    StackDriftStatus: "NOT_CHECKED"
+  },
+  EnableTerminationProtection: false,
+  RollbackConfiguration: {
+
+  },
+  StackId: "arn:aws:cloudformation:us-east-1:738054984624:stack/eksctl-prototype-nodegroup-devops/c672b0e0-2691-11ea-a8e4-12c9c271ca70",
+  StackName: "eksctl-prototype-nodegroup-devops",
+  StackStatus: "CREATE_COMPLETE",
+  Tags: [
+    {
+      Key: "alpha.eksctl.io/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Owner",
+      Value: "SRE Team"
+    },
+    {
+      Key: "alpha.eksctl.io/nodegroup-name",
+      Value: "devops"
+    },
+    {
+      Key: "eksctl.cluster.k8s.io/v1alpha1/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Team",
+      Value: "DevOps Team"
+    },
+    {
+      Key: "alpha.eksctl.io/nodegroup-type",
+      Value: "managed"
+    },
+    {
+      Key: "Creator",
+      Value: "Eduardo Valdes"
+    }
+  ]
+}
+[ℹ]  stack/eksctl-prototype-cluster = {
+  Capabilities: ["CAPABILITY_IAM"],
+  CreationTime: 2019-12-24 20:59:12.76 +0000 UTC,
+  Description: "EKS cluster (dedicated VPC: true, dedicated IAM: true) [created and managed by eksctl]",
+  DisableRollback: false,
+  DriftInformation: {
+    StackDriftStatus: "NOT_CHECKED"
+  },
+  EnableTerminationProtection: false,
+  Outputs: [
+    {
+      ExportName: "eksctl-prototype-cluster::SubnetsPrivate",
+      OutputKey: "SubnetsPrivate",
+      OutputValue: "subnet-035d65fcdde60ab1e,subnet-08fd7eaccb04a6ea7,subnet-02136cc89d80e853f"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::SubnetsPublic",
+      OutputKey: "SubnetsPublic",
+      OutputValue: "subnet-0b60b74e32bb2d5b9,subnet-04518884ed1f2994f,subnet-0783d0c9d2733a28b"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::ServiceRoleARN",
+      OutputKey: "ServiceRoleARN",
+      OutputValue: "arn:aws:iam::738054984624:role/eksctl-prototype-cluster-ServiceRole-1674N52ISB9LV"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::VPC",
+      OutputKey: "VPC",
+      OutputValue: "vpc-0d778f5d45975aa0d"
+    },
+    {
+      OutputKey: "ClusterStackName",
+      OutputValue: "eksctl-prototype-cluster"
+    },
+    {
+      OutputKey: "CertificateAuthorityData",
+      OutputValue: "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRFNU1USXlOREl4TURZMU4xb1hEVEk1TVRJeU1USXhNRFkxTjFvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTERXCjRzTVlNTUx1WEpHSHA0MVVjNHFNaGhUc3ZWQ2VIcHZOMVNiZDFnNkQ3YWZIblVhaU1Yd3RZS0tHSHpOQzhuWW0KR2Q5U3pBYXVQK1pzdCtFczcvN3hVTWk1QWxKRldXWVkzSUxSMm5EWW1WRWNodG9IdkNBb1dWOTJEVHV4L2pDWgo1Z2ZYV0hwMmdCN29WYU0rVVh1bEJLNkN6MXY1YUpqUDh6V1g4TzhuN04rUnVGcWZwMlc3ZUNmUlFrSmxPaEpVCmlUZkc1RnlJQmxEdS9oRjArWjFwT09QcVhUK05HTXJDc1RjcUNCYkZpald4elpjZmo0ak5jNWZCVEFLelg2bUwKbDJFaXI3SjEvNVBaODY5RWsxVzdsdDZJa3RYcGtUUnhNeExhTWtLYWpaR2VobHMrNHc2a3BhYzFvck14UVZUTAp2VHUwSFdaUkw1enRnTmFSaU5zQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFGQlZZV1VERlE3WitDUWVJZzFMejR1VWRzUmIKMzBWRms2VUpoVG1FUkRJZ0U2K1lhNE5tOTNZVmFIM2cyQzBGODFiSHFOdW52dFBJY1hFRW4yZ1puWUI2T29CdQpCNERPQk42aE9CSzJvaVpoQmJ0STZzSWxxZWFwRnFvUVJmNE13dTl0OUxyVGxWRDJYTVdhTi9oVmdwNC9SRUpYCkZ1dzBiVFNGVGJNNmpXQ1g1Skp6a05hdFJKNXFuOUtCaERwendGS2lJZWxnc05VYjNzTzU2cmUxNWRpY3U5TS8KRldzeGl3SjhiOEJUWWhRSEQvSFMxNlJ6SS9kOTUxdEZZVE94Q1JOT0cyREtFVjlQK25MMktFRktJWXg3Q0JwegpJaEdyWEwzSFdrbUk5bUhZVEZaVDdINWhHczIzN3NjVENkQ3lSTXF1eXNMMSs5c0MzTEwyVWV3T3BTRT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo="
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::SecurityGroup",
+      OutputKey: "SecurityGroup",
+      OutputValue: "sg-04bffaeb42498266b"
+    },
+    {
+      OutputKey: "FeatureNATMode",
+      OutputValue: "Single"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::Endpoint",
+      OutputKey: "Endpoint",
+      OutputValue: "https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::SharedNodeSecurityGroup",
+      OutputKey: "SharedNodeSecurityGroup",
+      OutputValue: "sg-0dbe44cf44d2b69be"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::ClusterSecurityGroupId",
+      OutputKey: "ClusterSecurityGroupId",
+      OutputValue: "sg-05e821e4661c356b3"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::ARN",
+      OutputKey: "ARN",
+      OutputValue: "arn:aws:eks:us-east-1:738054984624:cluster/prototype"
+    },
+    {
+      ExportName: "eksctl-prototype-cluster::FargatePodExecutionRoleARN",
+      OutputKey: "FargatePodExecutionRoleARN",
+      OutputValue: "arn:aws:iam::738054984624:role/eksctl-prototype-cluster-FargatePodExecutionRole-10TVY11EMQD1B"
+    }
+  ],
+  RollbackConfiguration: {
+
+  },
+  StackId: "arn:aws:cloudformation:us-east-1:738054984624:stack/eksctl-prototype-cluster/3ccaef20-2690-11ea-8204-12a6272b4c0e",
+  StackName: "eksctl-prototype-cluster",
+  StackStatus: "CREATE_COMPLETE",
+  Tags: [
+    {
+      Key: "alpha.eksctl.io/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Owner",
+      Value: "SRE Team"
+    },
+    {
+      Key: "eksctl.cluster.k8s.io/v1alpha1/cluster-name",
+      Value: "prototype"
+    },
+    {
+      Key: "Team",
+      Value: "DevOps Team"
+    },
+    {
+      Key: "Creator",
+      Value: "Eduardo Valdes"
+    }
+  ]
+}
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_nodes
++ __function_name display_nodes
++ func_name=display_nodes
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_nodes]: '
+Function [display_nodes]:
++ return 0
++ newline
++ echo -e
+
++ return 0
++ kubectl get nodes --output wide
+NAME                             STATUS   ROLES    AGE    VERSION              INTERNAL-IP      EXTERNAL-IP     OS-IMAGE         KERNEL-VERSION                  CONTAINER-RUNTIME
+ip-192-168-62-125.ec2.internal   Ready    <none>   116s   v1.14.7-eks-1861c5   192.168.62.125   54.197.43.113   Amazon Linux 2   4.14.146-119.123.amzn2.x86_64   docker://18.6.1
+ip-192-168-64-125.ec2.internal   Ready    <none>   2m3s   v1.14.7-eks-1861c5   192.168.64.125   3.95.59.52      Amazon Linux 2   4.14.146-119.123.amzn2.x86_64   docker://18.6.1
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ create_autoscaler
++ __function_name create_autoscaler
++ func_name=create_autoscaler
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [create_autoscaler]: '
+Function [create_autoscaler]:
++ return 0
++ location=kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples
++ yaml_file=cluster-autoscaler-autodiscover.yaml
++ kubectl apply --filename https://raw.githubusercontent.com/kubernetes/autoscaler/master/cluster-autoscaler/cloudprovider/aws/examples/cluster-autoscaler-autodiscover.yaml
+serviceaccount/cluster-autoscaler created
+clusterrole.rbac.authorization.k8s.io/cluster-autoscaler created
+role.rbac.authorization.k8s.io/cluster-autoscaler created
+clusterrolebinding.rbac.authorization.k8s.io/cluster-autoscaler created
+rolebinding.rbac.authorization.k8s.io/cluster-autoscaler created
+deployment.apps/cluster-autoscaler created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ autoscaler_group
++ __function_name autoscaler_group
++ func_name=autoscaler_group
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [autoscaler_group]: '
+Function [autoscaler_group]:
++ return 0
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ return 0
++ echo -e 'Auto-Scaling Group Name: eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111'
+Auto-Scaling Group Name: eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ disable_eviction
++ __function_name disable_eviction
++ func_name=disable_eviction
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [disable_eviction]: '
+Function [disable_eviction]:
++ return 0
++ kubectl annotate deployment.apps/cluster-autoscaler cluster-autoscaler.kubernetes.io/safe-to-evict=false --namespace kube-system
+deployment.apps/cluster-autoscaler annotated
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ autoscaler_version
++ __function_name autoscaler_version
++ func_name=autoscaler_version
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [autoscaler_version]: '
+Function [autoscaler_version]:
++ return 0
++ kubectl set image deployment.apps/cluster-autoscaler cluster-autoscaler=k8s.gcr.io/cluster-autoscaler:v1.14.7 --namespace kube-system
+deployment.apps/cluster-autoscaler image updated
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ autoscaler_update
++ __function_name autoscaler_update
++ func_name=autoscaler_update
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [autoscaler_update]: '
+Function [autoscaler_update]:
++ return 0
++ echo -e '\nModify these lines:'
+
+Modify these lines:
++ echo -e '- --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/prototype'
+- --node-group-auto-discovery=asg:tag=k8s.io/cluster-autoscaler/enabled,k8s.io/cluster-autoscaler/prototype
++ echo -e '\nAppend these lines:'
+
+Append these lines:
++ echo -e '- --balance-similar-node-groups'
+- --balance-similar-node-groups
++ echo -e '- --skip-nodes-with-system-pods=false'
+- --skip-nodes-with-system-pods=false
++ kubectl edit deployment.apps/cluster-autoscaler --namespace kube-system
+deployment.apps/cluster-autoscaler edited
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ inspect_autoscaler
++ __function_name inspect_autoscaler
++ func_name=inspect_autoscaler
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [inspect_autoscaler]: '
+Function [inspect_autoscaler]:
++ return 0
++ kubectl logs --namespace kube-system --follow deployment.apps/cluster-autoscaler
++ less -N -
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ configmap_awsauth
++ __function_name configmap_awsauth
++ func_name=configmap_awsauth
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [configmap_awsauth]: '
+Function [configmap_awsauth]:
++ return 0
++ __instance_rolename
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ return 0
+++ aws iam get-instance-profile --profile kubernetes --region us-east-1 --instance-profile-name eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111 --query 'InstanceProfile.Roles[].Arn' --output text
++ export instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ return 0
++ remote_storage=https://amazon-eks.s3-us-west-2.amazonaws.com
++ location=cloudformation/2019-11-15
++ yaml_file=aws-auth-cm.yaml
++ config_file=/tmp/devops/prototype/aws-auth-cm.yaml
++ rm -fv /tmp/devops/prototype/aws-auth-cm.yaml
+/tmp/devops/prototype/aws-auth-cm.yaml
++ curl --silent --output /tmp/devops/prototype/aws-auth-cm.yaml --location --remote-name https://amazon-eks.s3-us-west-2.amazonaws.com/cloudformation/2019-11-15/aws-auth-cm.yaml
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ tee -a /tmp/devops/prototype/aws-auth-cm.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aws-auth
+  namespace: kube-system
+data:
+  mapRoles: |
+    - rolearn: arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
+      username: system:node:{{EC2PrivateDNSName}}
+      groups:
+        - system:bootstrappers
+        - system:nodes
++ kubectl apply --filename /tmp/devops/prototype/aws-auth-cm.yaml
+Warning: kubectl apply should be used on resource created by either kubectl create --save-config or kubectl apply
+configmap/aws-auth configured
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ kubectl describe configmap aws-auth --namespace kube-system
+Name:         aws-auth
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubectl.kubernetes.io/last-applied-configuration:
+                {"apiVersion":"v1","data":{"mapRoles":"- rolearn: arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG...
+
+Data
+====
+mapRoles:
+----
+- rolearn: arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
+  username: system:node:{{EC2PrivateDNSName}}
+  groups:
+    - system:bootstrappers
+    - system:nodes
+
+Events:  <none>
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ metricshelper_deploy
++ __function_name metricshelper_deploy
++ func_name=metricshelper_deploy
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [metricshelper_deploy]: '
+Function [metricshelper_deploy]:
++ return 0
++ location=aws/amazon-vpc-cni-k8s/release-1.5/config/v1.5
++ yaml_file=cni-metrics-helper.yaml
++ kubectl apply --filename https://raw.githubusercontent.com/aws/amazon-vpc-cni-k8s/release-1.5/config/v1.5/cni-metrics-helper.yaml
+clusterrole.rbac.authorization.k8s.io/cni-metrics-helper created
+serviceaccount/cni-metrics-helper created
+clusterrolebinding.rbac.authorization.k8s.io/cni-metrics-helper created
+deployment.extensions/cni-metrics-helper created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ metricshelper_policy
++ __function_name metricshelper_policy
++ func_name=metricshelper_policy
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [metricshelper_policy]: '
+Function [metricshelper_policy]:
++ return 0
++ config_file=/tmp/devops/prototype/allow_put_metrics_data.json
++ cat /dev/null
++ tee -a /tmp/devops/prototype/allow_put_metrics_data.json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "cloudwatch:PutMetricData",
+      "Resource": "*"
+    }
+  ]
+}
++ aws iam create-policy --profile kubernetes --region us-east-1 --policy-name CNIMetricsHelperPolicy--prototype-devops --description 'Grants permission to write metrics to CloudWatch' --policy-document file:///tmp/devops/prototype/allow_put_metrics_data.json
+{
+    "Policy": {
+        "PolicyName": "CNIMetricsHelperPolicy--prototype-devops",
+        "PolicyId": "ANPAZZP26542FDTVIL54I",
+        "Arn": "arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops",
+        "Path": "/",
+        "DefaultVersionId": "v1",
+        "AttachmentCount": 0,
+        "PermissionsBoundaryUsageCount": 0,
+        "IsAttachable": true,
+        "CreateDate": "2019-12-24T22:46:41Z",
+        "UpdateDate": "2019-12-24T22:46:41Z"
+    }
+}
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ metricshelper_rolepolicies
++ __function_name metricshelper_rolepolicies
++ func_name=metricshelper_rolepolicies
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [metricshelper_rolepolicies]: '
+Function [metricshelper_rolepolicies]:
++ return 0
++ __instance_rolename
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ return 0
+++ aws iam get-instance-profile --profile kubernetes --region us-east-1 --instance-profile-name eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111 --query 'InstanceProfile.Roles[].Arn' --output text
++ export instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ instance_rolename=arn:aws:iam::738054984624:role/eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ return 0
++ aws iam attach-role-policy --profile kubernetes --region us-east-1 --policy-arn arn:aws:iam::738054984624:policy/CNIMetricsHelperPolicy--prototype-devops --role-name eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ aws iam attach-role-policy --profile kubernetes --region us-east-1 --policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy --role-name eksctl-prototype-nodegroup-devops-NodeInstanceRole-GY8HCZEG9R02
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ instance_roleupdate
++ __function_name instance_roleupdate
++ func_name=instance_roleupdate
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [instance_roleupdate]: '
+Function [instance_roleupdate]:
++ return 0
++ cluster_nodes=($(
+        kubectl get           nodes           --output jsonpath="{.items[*].metadata.name}"
+      ))
+++ kubectl get nodes --output 'jsonpath={.items[*].metadata.name}'
++ declare -a cluster_nodes
++ for cluster_node in '${cluster_nodes[@]}'
+++ aws ec2 describe-instances --profile kubernetes --region us-east-1 --filters Name=network-interface.private-dns-name,Values=ip-192-168-62-125.ec2.internal --query 'Reservations[*].Instances[].InstanceId' --output text
+++ result=0
++ instance_id=i-0e4eccb53879ed814
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
+++ aws ec2 describe-iam-instance-profile-associations --profile kubernetes --region us-east-1 --filters Name=instance-id,Values=i-0e4eccb53879ed814 --query 'IamInstanceProfileAssociations[].AssociationId' --output text
+++ result=0
++ association_id=iip-assoc-049b08bde375c2297
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ return 0
++ aws ec2 replace-iam-instance-profile-association --profile kubernetes --region us-east-1 --association-id iip-assoc-049b08bde375c2297 --iam-instance-profile Name=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
+{
+    "IamInstanceProfileAssociation": {
+        "AssociationId": "iip-assoc-049b08bde375c2297",
+        "InstanceId": "i-0e4eccb53879ed814",
+        "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::738054984624:instance-profile/eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111",
+            "Id": "AIPAZZP26542EDQN3OELT"
+        },
+        "State": "associated"
+    }
+}
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ for cluster_node in '${cluster_nodes[@]}'
+++ aws ec2 describe-instances --profile kubernetes --region us-east-1 --filters Name=network-interface.private-dns-name,Values=ip-192-168-64-125.ec2.internal --query 'Reservations[*].Instances[].InstanceId' --output text
+++ result=0
++ instance_id=i-0412dd80409dc8cc6
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
+++ aws ec2 describe-iam-instance-profile-associations --profile kubernetes --region us-east-1 --filters Name=instance-id,Values=i-0412dd80409dc8cc6 --query 'IamInstanceProfileAssociations[].AssociationId' --output text
+++ result=0
++ association_id=iip-assoc-0a0aa5d1e930a75e2
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
++ __autoscaling_groupname
+++ aws autoscaling describe-auto-scaling-groups --profile kubernetes --region us-east-1 --query 'AutoScalingGroups[?contains(Tags[?Key=='\''eks:cluster-name'\''].Value,'\''prototype'\'')].[AutoScalingGroupName]' --output text
++ export autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ autoscaling_groupname=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
++ return 0
++ aws ec2 replace-iam-instance-profile-association --profile kubernetes --region us-east-1 --association-id iip-assoc-0a0aa5d1e930a75e2 --iam-instance-profile Name=eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111
+{
+    "IamInstanceProfileAssociation": {
+        "AssociationId": "iip-assoc-0a0aa5d1e930a75e2",
+        "InstanceId": "i-0412dd80409dc8cc6",
+        "IamInstanceProfile": {
+            "Arn": "arn:aws:iam::738054984624:instance-profile/eks-5eb79cdf-a399-afaf-7a65-bcf2e1cd1111",
+            "Id": "AIPAZZP26542EDQN3OELT"
+        },
+        "State": "associated"
+    }
+}
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ enable_cloudwatch
++ cloudwatch_namespace
++ __function_name cloudwatch_namespace
++ func_name=cloudwatch_namespace
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cloudwatch_namespace]: '
+Function [cloudwatch_namespace]:
++ return 0
++ location=aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates
++ yaml_file=cloudwatch-namespace.yaml
++ kubectl apply --filename https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/cloudwatch-namespace.yaml
+namespace/amazon-cloudwatch created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cwagent_fluentd
++ __function_name cwagent_fluentd
++ func_name=cwagent_fluentd
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cwagent_fluentd]: '
+Function [cwagent_fluentd]:
++ return 0
++ location=aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/quickstart
++ yaml_file=cwagent-fluentd-quickstart.yaml
++ curl --silent --location https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/quickstart/cwagent-fluentd-quickstart.yaml
++ sed 's/{{cluster_name}}/prototype/;s/{{region_name}}/us-east-1/'
++ kubectl apply --filename -
+namespace/amazon-cloudwatch unchanged
+serviceaccount/cloudwatch-agent created
+clusterrole.rbac.authorization.k8s.io/cloudwatch-agent-role created
+clusterrolebinding.rbac.authorization.k8s.io/cloudwatch-agent-role-binding created
+configmap/cwagentconfig created
+daemonset.apps/cloudwatch-agent created
+configmap/cluster-info created
+serviceaccount/fluentd created
+clusterrole.rbac.authorization.k8s.io/fluentd-role created
+clusterrolebinding.rbac.authorization.k8s.io/fluentd-role-binding created
+configmap/fluentd-config created
+daemonset.apps/fluentd-cloudwatch created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_pods amazon-cloudwatch
++ __function_name display_pods amazon-cloudwatch
++ func_name=display_pods
++ func_params=amazon-cloudwatch
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_pods]: amazon-cloudwatch'
+Function [display_pods]: amazon-cloudwatch
++ return 0
++ [[ -n '' ]]
++ target_namespace=amazon-cloudwatch
++ kubectl get pods --namespace=amazon-cloudwatch --output wide '--sort-by={.spec.nodeName}'
+NAME                       READY   STATUS              RESTARTS   AGE   IP       NODE                             NOMINATED NODE   READINESS GATES
+cloudwatch-agent-sp9k4     0/1     ContainerCreating   0          2s    <none>   ip-192-168-62-125.ec2.internal   <none>           <none>
+fluentd-cloudwatch-ktz68   0/1     Init:0/2            0          0s    <none>   ip-192-168-62-125.ec2.internal   <none>           <none>
+cloudwatch-agent-dpmsm     0/1     ContainerCreating   0          2s    <none>   ip-192-168-64-125.ec2.internal   <none>           <none>
+fluentd-cloudwatch-5nvzw   0/1     Init:0/2            0          0s    <none>   ip-192-168-64-125.ec2.internal   <none>           <none>
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cwagent_serviceaccount
++ __function_name cwagent_serviceaccount
++ func_name=cwagent_serviceaccount
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cwagent_serviceaccount]: '
+Function [cwagent_serviceaccount]:
++ return 0
++ location=aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/cwagent-kubernetes-monitoring
++ yaml_file=cwagent-serviceaccount.yaml
++ kubectl apply --filename https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/cwagent-kubernetes-monitoring/cwagent-serviceaccount.yaml
+serviceaccount/cloudwatch-agent unchanged
+clusterrole.rbac.authorization.k8s.io/cloudwatch-agent-role unchanged
+clusterrolebinding.rbac.authorization.k8s.io/cloudwatch-agent-role-binding unchanged
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ configmap_cwagent
++ __function_name configmap_cwagent
++ func_name=configmap_cwagent
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [configmap_cwagent]: '
+Function [configmap_cwagent]:
++ return 0
++ location=aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/cwagent-kubernetes-monitoring
++ yaml_file=cwagent-configmap.yaml
++ config_file=/tmp/devops/prototype/cwagent-configmap.yaml
++ rm -fv /tmp/devops/prototype/cwagent-configmap.yaml
+/tmp/devops/prototype/cwagent-configmap.yaml
++ curl --silent --output /tmp/devops/prototype/cwagent-configmap.yaml --location --remote-name https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/cwagent-kubernetes-monitoring/cwagent-configmap.yaml
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ sed -i '' -e 's|{{cluster_name}}|prototype|g' /tmp/devops/prototype/cwagent-configmap.yaml
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ kubectl apply --filename /tmp/devops/prototype/cwagent-configmap.yaml
+configmap/cwagentconfig configured
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cwagent_daemonset
++ __function_name cwagent_daemonset
++ func_name=cwagent_daemonset
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cwagent_daemonset]: '
+Function [cwagent_daemonset]:
++ return 0
++ location=aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/cwagent-kubernetes-monitoring
++ yaml_file=cwagent-daemonset.yaml
++ kubectl apply --filename https://raw.githubusercontent.com/aws-samples/amazon-cloudwatch-container-insights/master/k8s-yaml-templates/cwagent-kubernetes-monitoring/cwagent-daemonset.yaml
+daemonset.apps/cloudwatch-agent unchanged
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ cluster_podname amazon-cloudwatch cloudwatch-agent
++ __function_name cluster_podname amazon-cloudwatch cloudwatch-agent
++ func_name=cluster_podname
++ func_params=amazon-cloudwatch
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_podname]: amazon-cloudwatch'
+Function [cluster_podname]: amazon-cloudwatch
++ return 0
++ [[ -n '' ]]
++ target_namespace=amazon-cloudwatch
++ [[ -n '' ]]
++ application='--selector name=cloudwatch-agent'
++ [[ -n '' ]]
++ target_index=
++ target_index=
++ containers=($(
+        kubectl get pods           --namespace ${target_namespace}           --no-headers           ${application}         | awk '{print $1}';
+        result=${?};
+      ))
+++ kubectl get pods --namespace amazon-cloudwatch --no-headers --selector name=cloudwatch-agent
+++ awk '{print $1}'
+++ result=0
++ declare -a containers
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
++ export target_podname=cloudwatch-agent-dpmsm
++ target_podname=cloudwatch-agent-dpmsm
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ ! -z cloudwatch-agent-dpmsm ]]
++ echo -e '\nDescribing Pod: cloudwatch-agent-dpmsm'
+
+Describing Pod: cloudwatch-agent-dpmsm
++ describe_podname cloudwatch-agent-dpmsm amazon-cloudwatch
++ __function_name describe_podname cloudwatch-agent-dpmsm amazon-cloudwatch
++ func_name=describe_podname
++ func_params=cloudwatch-agent-dpmsm
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [describe_podname]: cloudwatch-agent-dpmsm'
+Function [describe_podname]: cloudwatch-agent-dpmsm
++ return 0
++ [[ -n x ]]
++ export target_podname=cloudwatch-agent-dpmsm
++ target_podname=cloudwatch-agent-dpmsm
++ target_namespace=amazon-cloudwatch
++ kubectl describe pod cloudwatch-agent-dpmsm --namespace amazon-cloudwatch
+Name:           cloudwatch-agent-dpmsm
+Namespace:      amazon-cloudwatch
+Priority:       0
+Node:           ip-192-168-64-125.ec2.internal/192.168.64.125
+Start Time:     Tue, 24 Dec 2019 15:46:55 -0700
+Labels:         controller-revision-hash=7cb45c7f8c
+                name=cloudwatch-agent
+                pod-template-generation=1
+Annotations:    kubernetes.io/psp: eks.privileged
+Status:         Running
+IP:             192.168.95.235
+IPs:            <none>
+Controlled By:  DaemonSet/cloudwatch-agent
+Containers:
+  cloudwatch-agent:
+    Container ID:   docker://ddc0f7d31bfa905f6079f92dccdc94532debcd9733615eb53071c8d4bc117bf2
+    Image:          amazon/cloudwatch-agent:1.230621.0
+    Image ID:       docker-pullable://amazon/cloudwatch-agent@sha256:877106acbc56e747ebe373548c88cd37274f666ca11b5c782211db4c5c7fb64b
+    Port:           <none>
+    Host Port:      <none>
+    State:          Running
+      Started:      Tue, 24 Dec 2019 15:46:59 -0700
+    Ready:          True
+    Restart Count:  0
+    Limits:
+      cpu:     200m
+      memory:  200Mi
+    Requests:
+      cpu:     200m
+      memory:  200Mi
+    Environment:
+      HOST_IP:         (v1:status.hostIP)
+      HOST_NAME:       (v1:spec.nodeName)
+      K8S_NAMESPACE:  amazon-cloudwatch (v1:metadata.namespace)
+      CI_VERSION:     k8s/1.0.1
+    Mounts:
+      /dev/disk from devdisk (ro)
+      /etc/cwagentconfig from cwagentconfig (rw)
+      /rootfs from rootfs (ro)
+      /sys from sys (ro)
+      /var/lib/docker from varlibdocker (ro)
+      /var/run/docker.sock from dockersock (ro)
+      /var/run/secrets/kubernetes.io/serviceaccount from cloudwatch-agent-token-j4qsk (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  cwagentconfig:
+    Type:      ConfigMap (a volume populated by a ConfigMap)
+    Name:      cwagentconfig
+    Optional:  false
+  rootfs:
+    Type:          HostPath (bare host directory volume)
+    Path:          /
+    HostPathType:
+  dockersock:
+    Type:          HostPath (bare host directory volume)
+    Path:          /var/run/docker.sock
+    HostPathType:
+  varlibdocker:
+    Type:          HostPath (bare host directory volume)
+    Path:          /var/lib/docker
+    HostPathType:
+  sys:
+    Type:          HostPath (bare host directory volume)
+    Path:          /sys
+    HostPathType:
+  devdisk:
+    Type:          HostPath (bare host directory volume)
+    Path:          /dev/disk/
+    HostPathType:
+  cloudwatch-agent-token-j4qsk:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  cloudwatch-agent-token-j4qsk
+    Optional:    false
+QoS Class:       Guaranteed
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/disk-pressure:NoSchedule
+                 node.kubernetes.io/memory-pressure:NoSchedule
+                 node.kubernetes.io/not-ready:NoExecute
+                 node.kubernetes.io/pid-pressure:NoSchedule
+                 node.kubernetes.io/unreachable:NoExecute
+                 node.kubernetes.io/unschedulable:NoSchedule
+Events:
+  Type    Reason     Age   From                                     Message
+  ----    ------     ----  ----                                     -------
+  Normal  Scheduled  7s    default-scheduler                        Successfully assigned amazon-cloudwatch/cloudwatch-agent-dpmsm to ip-192-168-64-125.ec2.internal
+  Normal  Pulling    6s    kubelet, ip-192-168-64-125.ec2.internal  Pulling image "amazon/cloudwatch-agent:1.230621.0"
+  Normal  Pulled     4s    kubelet, ip-192-168-64-125.ec2.internal  Successfully pulled image "amazon/cloudwatch-agent:1.230621.0"
+  Normal  Created    3s    kubelet, ip-192-168-64-125.ec2.internal  Created container cloudwatch-agent
+  Normal  Started    3s    kubelet, ip-192-168-64-125.ec2.internal  Started container cloudwatch-agent
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ sleep 15s
++ echo -e '\nDisplaying Pod'\''s Log: cloudwatch-agent-dpmsm\n'
+
+Displaying Pod's Log: cloudwatch-agent-dpmsm
+
++ display_podlog cloudwatch-agent-dpmsm amazon-cloudwatch
++ [[ -n '' ]]
++ target_namespace=amazon-cloudwatch
++ [[ -n x ]]
++ export target_podname=cloudwatch-agent-dpmsm
++ target_podname=cloudwatch-agent-dpmsm
++ kubectl logs cloudwatch-agent-dpmsm --namespace amazon-cloudwatch
+2019/12/24 22:46:59 I! I! Detected the instance is EC2
+2019/12/24 22:46:59 Reading json config file path: /opt/aws/amazon-cloudwatch-agent/bin/default_linux_config.json ...
+/opt/aws/amazon-cloudwatch-agent/bin/default_linux_config.json does not exist or cannot read. Skipping it.
+2019/12/24 22:46:59 Reading json config file path: /etc/cwagentconfig/..2019_12_24_22_46_56.382608231/cwagentconfig.json ...
+2019/12/24 22:46:59 Find symbolic link /etc/cwagentconfig/..data
+2019/12/24 22:46:59 Find symbolic link /etc/cwagentconfig/cwagentconfig.json
+2019/12/24 22:46:59 Reading json config file path: /etc/cwagentconfig/cwagentconfig.json ...
+Valid Json input schema.
+No csm configuration found.
+No metric configuration found.
+Configuration validation first phase succeeded
+
+2019/12/24 22:46:59 I! Config has been translated into TOML /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.toml
+2019/12/24 22:46:59 I! AmazonCloudWatchAgent Version 1.230621.0.
+2019-12-24T22:46:59Z I! Starting AmazonCloudWatchAgent (version 1.230621.0)
+2019-12-24T22:46:59Z I! Loaded outputs: cloudwatchlogs
+2019-12-24T22:46:59Z I! Loaded inputs: cadvisor k8sapiserver
+2019-12-24T22:46:59Z I! Tags enabled:
+2019-12-24T22:46:59Z I! Agent Config: Interval:1m0s, Quiet:false, Hostname:"ip-192-168-64-125.ec2.internal", Flush Interval:1s
+2019-12-24T22:46:59Z I! Cannot get the leader config map: configmaps "cwagent-clusterleader" not found, try to create the config map...
+2019-12-24T22:46:59Z I! configMap: &ConfigMap{ObjectMeta:k8s_io_apimachinery_pkg_apis_meta_v1.ObjectMeta{Name:cwagent-clusterleader,GenerateName:,Namespace:amazon-cloudwatch,SelfLink:/api/v1/namespaces/amazon-cloudwatch/configmaps/cwagent-clusterleader,UID:4b52cd0f-269f-11ea-8769-0a3dd054fc8b,ResourceVersion:13620,Generation:0,CreationTimestamp:2019-12-24 22:46:59 +0000 UTC,DeletionTimestamp:<nil>,DeletionGracePeriodSeconds:nil,Labels:map[string]string{},Annotations:map[string]string{},OwnerReferences:[],Finalizers:[],ClusterName:,Initializers:nil,},Data:map[string]string{},BinaryData:map[string][]byte{},}, err: <nil>
+2019-12-24T22:46:59Z I! k8sapiserver OnStartedLeading: ip-192-168-64-125.ec2.internal
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ target_podname=
++ return 0
++ [[ true == true ]]
++ deploy_prometheus
++ create_namespace prometheus
++ __function_name create_namespace prometheus
++ func_name=create_namespace
++ func_params=prometheus
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [create_namespace]: prometheus'
+Function [create_namespace]: prometheus
++ return 0
++ target_namespace=prometheus
++ kubectl create namespace prometheus
+namespace/prometheus created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ service_account tiller
++ __function_name service_account tiller
++ func_name=service_account
++ func_params=tiller
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [service_account]: tiller'
+Function [service_account]: tiller
++ return 0
++ config_file=/tmp/devops/prototype/helm-rback.yaml
++ cat /dev/null
++ tee -a /tmp/devops/prototype/helm-rback.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system
++ newline
++ echo -e
+
++ return 0
++ kubectl apply --filename /tmp/devops/prototype/helm-rback.yaml
+serviceaccount/tiller created
+clusterrolebinding.rbac.authorization.k8s.io/tiller created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ helm init --service-account=tiller --history-max 300
+$HELM_HOME has been configured at /Users/prototype/.helm.
+
+Tiller (the Helm server-side component) has been installed into your Kubernetes Cluster.
+
+Please note: by default, Tiller is deployed with an insecure 'allow unauthenticated users' policy.
+To prevent this, run `helm init` with the --tiller-tls-verify flag.
+For more information on securing your installation see: https://docs.helm.sh/using_helm/#securing-your-helm-installation
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ newline
++ echo -e
+
++ return 0
++ sleep 60s
++ kubectl get deployment tiller-deploy --namespace kube-system
+NAME            READY   UP-TO-DATE   AVAILABLE   AGE
+tiller-deploy   1/1     1            1           60s
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ newline
++ echo -e
+
++ return 0
++ kubectl describe deployment tiller-deploy --namespace=kube-system
+Name:                   tiller-deploy
+Namespace:              kube-system
+CreationTimestamp:      Tue, 24 Dec 2019 15:47:19 -0700
+Labels:                 app=helm
+                        name=tiller
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=helm,name=tiller
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:           app=helm
+                    name=tiller
+  Service Account:  tiller
+  Containers:
+   tiller:
+    Image:       gcr.io/kubernetes-helm/tiller:v2.16.1
+    Ports:       44134/TCP, 44135/TCP
+    Host Ports:  0/TCP, 0/TCP
+    Liveness:    http-get http://:44135/liveness delay=1s timeout=1s period=10s #success=1 #failure=3
+    Readiness:   http-get http://:44135/readiness delay=1s timeout=1s period=10s #success=1 #failure=3
+    Environment:
+      TILLER_NAMESPACE:    kube-system
+      TILLER_HISTORY_MAX:  300
+    Mounts:                <none>
+  Volumes:                 <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   tiller-deploy-54c98f988f (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  61s   deployment-controller  Scaled up replica set tiller-deploy-54c98f988f to 1
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ setup_monitoring prometheus prometheus
++ __function_name setup_monitoring prometheus prometheus
++ func_name=setup_monitoring
++ func_params=prometheus
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [setup_monitoring]: prometheus'
+Function [setup_monitoring]: prometheus
++ return 0
++ application=prometheus
++ target_namespace=prometheus
++ helm install stable/prometheus-operator --name prometheus --namespace prometheus --set alertmanager.persistentVolume.storageClass=gp2 --set server.persistentVolume.storageClass=gp2 --set service.type=LoadBalancer
+2019/12/24 15:48:22 Warning: Merging destination map for chart 'prometheus-node-exporter'. Overwriting table item 'extraArgs', with non table value: [--collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/) --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$]
+2019/12/24 15:48:22 Warning: Merging destination map for chart 'prometheus-node-exporter'. Overwriting table item 'extraArgs', with non table value: [--collector.filesystem.ignored-mount-points=^/(dev|proc|sys|var/lib/docker/.+)($|/) --collector.filesystem.ignored-fs-types=^(autofs|binfmt_misc|cgroup|configfs|debugfs|devpts|devtmpfs|fusectl|hugetlbfs|mqueue|overlay|proc|procfs|pstore|rpc_pipefs|securityfs|sysfs|tracefs)$]
+NAME:   prometheus
+LAST DEPLOYED: Tue Dec 24 15:48:24 2019
+NAMESPACE: prometheus
+STATUS: DEPLOYED
+
+RESOURCES:
+==> v1/Alertmanager
+NAME                                     AGE
+prometheus-prometheus-oper-alertmanager  33s
+
+==> v1/ClusterRole
+NAME                                       AGE
+prometheus-grafana-clusterrole             33s
+prometheus-prometheus-oper-alertmanager    33s
+prometheus-prometheus-oper-operator        33s
+prometheus-prometheus-oper-operator-psp    33s
+prometheus-prometheus-oper-prometheus      33s
+prometheus-prometheus-oper-prometheus-psp  33s
+psp-prometheus-kube-state-metrics          33s
+
+==> v1/ClusterRoleBinding
+NAME                                       AGE
+prometheus-grafana-clusterrolebinding      33s
+prometheus-prometheus-oper-alertmanager    33s
+prometheus-prometheus-oper-operator        33s
+prometheus-prometheus-oper-operator-psp    33s
+prometheus-prometheus-oper-prometheus      33s
+prometheus-prometheus-oper-prometheus-psp  33s
+psp-prometheus-kube-state-metrics          33s
+
+==> v1/ConfigMap
+NAME                                                          AGE
+prometheus-grafana                                            33s
+prometheus-grafana-config-dashboards                          33s
+prometheus-grafana-test                                       33s
+prometheus-prometheus-oper-apiserver                          33s
+prometheus-prometheus-oper-controller-manager                 33s
+prometheus-prometheus-oper-etcd                               33s
+prometheus-prometheus-oper-grafana-datasource                 33s
+prometheus-prometheus-oper-k8s-resources-cluster              33s
+prometheus-prometheus-oper-k8s-resources-namespace            33s
+prometheus-prometheus-oper-k8s-resources-pod                  33s
+prometheus-prometheus-oper-k8s-resources-workload             33s
+prometheus-prometheus-oper-k8s-resources-workloads-namespace  33s
+prometheus-prometheus-oper-kubelet                            33s
+prometheus-prometheus-oper-node-cluster-rsrc-use              33s
+prometheus-prometheus-oper-node-rsrc-use                      33s
+prometheus-prometheus-oper-nodes                              33s
+prometheus-prometheus-oper-persistentvolumesusage             33s
+prometheus-prometheus-oper-pods                               33s
+prometheus-prometheus-oper-prometheus                         33s
+prometheus-prometheus-oper-prometheus-remote-write            33s
+prometheus-prometheus-oper-proxy                              33s
+prometheus-prometheus-oper-scheduler                          33s
+prometheus-prometheus-oper-statefulset                        33s
+
+==> v1/Deployment
+NAME                                 AGE
+prometheus-grafana                   33s
+prometheus-kube-state-metrics        33s
+prometheus-prometheus-oper-operator  33s
+
+==> v1/Pod(related)
+NAME                                                  AGE
+prometheus-grafana-5c97446694-5v8x5                   33s
+prometheus-kube-state-metrics-5ffdf76ddd-vh9gp        33s
+prometheus-prometheus-node-exporter-2pfh6             33s
+prometheus-prometheus-node-exporter-qjz58             33s
+prometheus-prometheus-oper-operator-6d59dcfb57-6zcht  33s
+
+==> v1/Prometheus
+NAME                                   AGE
+prometheus-prometheus-oper-prometheus  33s
+
+==> v1/PrometheusRule
+NAME                                                             AGE
+prometheus-prometheus-oper-alertmanager.rules                    33s
+prometheus-prometheus-oper-etcd                                  33s
+prometheus-prometheus-oper-general.rules                         33s
+prometheus-prometheus-oper-k8s.rules                             33s
+prometheus-prometheus-oper-kube-apiserver.rules                  33s
+prometheus-prometheus-oper-kube-prometheus-node-recording.rules  33s
+prometheus-prometheus-oper-kube-scheduler.rules                  33s
+prometheus-prometheus-oper-kubernetes-absent                     33s
+prometheus-prometheus-oper-kubernetes-apps                       33s
+prometheus-prometheus-oper-kubernetes-resources                  33s
+prometheus-prometheus-oper-kubernetes-storage                    33s
+prometheus-prometheus-oper-kubernetes-system                     33s
+prometheus-prometheus-oper-node-exporter                         33s
+prometheus-prometheus-oper-node-exporter.rules                   33s
+prometheus-prometheus-oper-node-network                          33s
+prometheus-prometheus-oper-node-time                             33s
+prometheus-prometheus-oper-node.rules                            33s
+prometheus-prometheus-oper-prometheus                            33s
+prometheus-prometheus-oper-prometheus-operator                   33s
+
+==> v1/Role
+NAME                     AGE
+prometheus-grafana-test  33s
+
+==> v1/RoleBinding
+NAME                     AGE
+prometheus-grafana-test  33s
+
+==> v1/Secret
+NAME                                                  AGE
+alertmanager-prometheus-prometheus-oper-alertmanager  33s
+prometheus-grafana                                    33s
+
+==> v1/Service
+NAME                                                AGE
+prometheus-grafana                                  33s
+prometheus-kube-state-metrics                       33s
+prometheus-prometheus-node-exporter                 33s
+prometheus-prometheus-oper-alertmanager             33s
+prometheus-prometheus-oper-coredns                  33s
+prometheus-prometheus-oper-kube-controller-manager  33s
+prometheus-prometheus-oper-kube-etcd                33s
+prometheus-prometheus-oper-kube-proxy               33s
+prometheus-prometheus-oper-kube-scheduler           33s
+prometheus-prometheus-oper-operator                 33s
+prometheus-prometheus-oper-prometheus               33s
+
+==> v1/ServiceAccount
+NAME                                     AGE
+prometheus-grafana                       33s
+prometheus-grafana-test                  33s
+prometheus-kube-state-metrics            33s
+prometheus-prometheus-node-exporter      33s
+prometheus-prometheus-oper-alertmanager  33s
+prometheus-prometheus-oper-operator      33s
+prometheus-prometheus-oper-prometheus    33s
+
+==> v1/ServiceMonitor
+NAME                                                AGE
+prometheus-prometheus-oper-alertmanager             33s
+prometheus-prometheus-oper-apiserver                33s
+prometheus-prometheus-oper-coredns                  33s
+prometheus-prometheus-oper-grafana                  33s
+prometheus-prometheus-oper-kube-controller-manager  33s
+prometheus-prometheus-oper-kube-etcd                33s
+prometheus-prometheus-oper-kube-proxy               33s
+prometheus-prometheus-oper-kube-scheduler           33s
+prometheus-prometheus-oper-kube-state-metrics       33s
+prometheus-prometheus-oper-kubelet                  33s
+prometheus-prometheus-oper-node-exporter            33s
+prometheus-prometheus-oper-operator                 33s
+prometheus-prometheus-oper-prometheus               33s
+
+==> v1beta1/ClusterRole
+NAME                                     AGE
+prometheus-kube-state-metrics            33s
+psp-prometheus-prometheus-node-exporter  33s
+
+==> v1beta1/ClusterRoleBinding
+NAME                                     AGE
+prometheus-kube-state-metrics            33s
+psp-prometheus-prometheus-node-exporter  33s
+
+==> v1beta1/DaemonSet
+NAME                                 AGE
+prometheus-prometheus-node-exporter  33s
+
+==> v1beta1/MutatingWebhookConfiguration
+NAME                                  AGE
+prometheus-prometheus-oper-admission  33s
+
+==> v1beta1/PodSecurityPolicy
+NAME                                     AGE
+prometheus-grafana                       33s
+prometheus-grafana-test                  33s
+prometheus-kube-state-metrics            33s
+prometheus-prometheus-node-exporter      33s
+prometheus-prometheus-oper-alertmanager  33s
+prometheus-prometheus-oper-operator      33s
+prometheus-prometheus-oper-prometheus    33s
+
+==> v1beta1/Role
+NAME                AGE
+prometheus-grafana  33s
+
+==> v1beta1/RoleBinding
+NAME                AGE
+prometheus-grafana  33s
+
+==> v1beta1/ValidatingWebhookConfiguration
+NAME                                  AGE
+prometheus-prometheus-oper-admission  33s
+
+
+NOTES:
+The Prometheus Operator has been installed. Check its status by running:
+  kubectl --namespace prometheus get pods -l "release=prometheus"
+
+Visit https://github.com/coreos/prometheus-operator for instructions on how
+to create & configure Alertmanager and Prometheus instances using the Operator.
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ sleep 120s
++ newline
++ echo -e
+
++ return 0
++ kubectl get pods --namespace prometheus --selector release=prometheus
+NAME                                                   READY   STATUS    RESTARTS   AGE
+prometheus-grafana-5c97446694-5v8x5                    2/2     Running   0          2m34s
+prometheus-prometheus-node-exporter-2pfh6              1/1     Running   0          2m34s
+prometheus-prometheus-node-exporter-qjz58              1/1     Running   0          2m34s
+prometheus-prometheus-oper-operator-6d59dcfb57-6zcht   2/2     Running   0          2m34s
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ monitoring_services
++ __function_name monitoring_services
++ func_name=monitoring_services
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [monitoring_services]: '
+Function [monitoring_services]:
++ return 0
++ kubectl get svc --namespace prometheus --output json
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:07Z",
+                "labels": {
+                    "operated-alertmanager": "true"
+                },
+                "name": "alertmanager-operated",
+                "namespace": "prometheus",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "monitoring.coreos.com/v1",
+                        "kind": "Alertmanager",
+                        "name": "prometheus-prometheus-oper-alertmanager",
+                        "uid": "93bbc11a-269f-11ea-9c3d-12f930d7a58d"
+                    }
+                ],
+                "resourceVersion": "14300",
+                "selfLink": "/api/v1/namespaces/prometheus/services/alertmanager-operated",
+                "uid": "97a5bb2f-269f-11ea-8769-0a3dd054fc8b"
+            },
+            "spec": {
+                "clusterIP": "None",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9093,
+                        "protocol": "TCP",
+                        "targetPort": 9093
+                    },
+                    {
+                        "name": "mesh-tcp",
+                        "port": 9094,
+                        "protocol": "TCP",
+                        "targetPort": 9094
+                    },
+                    {
+                        "name": "mesh-udp",
+                        "port": 9094,
+                        "protocol": "UDP",
+                        "targetPort": 9094
+                    }
+                ],
+                "selector": {
+                    "app": "alertmanager"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "grafana",
+                    "chart": "grafana-3.8.19",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-grafana",
+                "namespace": "prometheus",
+                "resourceVersion": "14134",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-grafana",
+                "uid": "93b37325-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.47.253",
+                "ports": [
+                    {
+                        "name": "service",
+                        "port": 80,
+                        "protocol": "TCP",
+                        "targetPort": 3000
+                    }
+                ],
+                "selector": {
+                    "app": "grafana",
+                    "release": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "prometheus.io/scrape": "true"
+                },
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app.kubernetes.io/instance": "prometheus",
+                    "app.kubernetes.io/managed-by": "Tiller",
+                    "app.kubernetes.io/name": "kube-state-metrics",
+                    "helm.sh/chart": "kube-state-metrics-2.3.1"
+                },
+                "name": "prometheus-kube-state-metrics",
+                "namespace": "prometheus",
+                "resourceVersion": "14137",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-kube-state-metrics",
+                "uid": "93b4b7d8-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.58.108",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 8080,
+                        "protocol": "TCP",
+                        "targetPort": 8080
+                    }
+                ],
+                "selector": {
+                    "app.kubernetes.io/instance": "prometheus",
+                    "app.kubernetes.io/name": "kube-state-metrics"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:17Z",
+                "labels": {
+                    "operated-prometheus": "true"
+                },
+                "name": "prometheus-operated",
+                "namespace": "prometheus",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "monitoring.coreos.com/v1",
+                        "kind": "Prometheus",
+                        "name": "prometheus-prometheus-oper-prometheus",
+                        "uid": "93c413e3-269f-11ea-9c3d-12f930d7a58d"
+                    }
+                ],
+                "resourceVersion": "14381",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-operated",
+                "uid": "9d7f71d0-269f-11ea-8769-0a3dd054fc8b"
+            },
+            "spec": {
+                "clusterIP": "None",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9090,
+                        "protocol": "TCP",
+                        "targetPort": "web"
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "prometheus.io/scrape": "true"
+                },
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-node-exporter",
+                    "chart": "prometheus-node-exporter-1.5.2",
+                    "heritage": "Tiller",
+                    "jobLabel": "node-exporter",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-node-exporter",
+                "namespace": "prometheus",
+                "resourceVersion": "14140",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-node-exporter",
+                "uid": "93b5db94-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.218.91",
+                "ports": [
+                    {
+                        "name": "metrics",
+                        "port": 9100,
+                        "protocol": "TCP",
+                        "targetPort": 9100
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus-node-exporter",
+                    "release": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-operator-alertmanager",
+                    "chart": "prometheus-operator-6.18.0",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-oper-alertmanager",
+                "namespace": "prometheus",
+                "resourceVersion": "14143",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-oper-alertmanager",
+                "uid": "93b77665-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.7.10",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9093,
+                        "protocol": "TCP",
+                        "targetPort": 9093
+                    }
+                ],
+                "selector": {
+                    "alertmanager": "prometheus-prometheus-oper-alertmanager",
+                    "app": "alertmanager"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-operator-operator",
+                    "chart": "prometheus-operator-6.18.0",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-oper-operator",
+                "namespace": "prometheus",
+                "resourceVersion": "14131",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-oper-operator",
+                "uid": "93b1b0c1-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.11.161",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 8080,
+                        "protocol": "TCP",
+                        "targetPort": "http"
+                    },
+                    {
+                        "name": "https",
+                        "port": 443,
+                        "protocol": "TCP",
+                        "targetPort": "https"
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus-operator-operator",
+                    "release": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-operator-prometheus",
+                    "chart": "prometheus-operator-6.18.0",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-oper-prometheus",
+                "namespace": "prometheus",
+                "resourceVersion": "14123",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-oper-prometheus",
+                "uid": "93b04c4b-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.50.239",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9090,
+                        "protocol": "TCP",
+                        "targetPort": 9090
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus",
+                    "prometheus": "prometheus-prometheus-oper-prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_pods prometheus
++ __function_name display_pods prometheus
++ func_name=display_pods
++ func_params=prometheus
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_pods]: prometheus'
+Function [display_pods]: prometheus
++ return 0
++ [[ -n '' ]]
++ target_namespace=prometheus
++ kubectl get pods --namespace=prometheus --output wide '--sort-by={.spec.nodeName}'
+NAME                                                     READY   STATUS    RESTARTS   AGE     IP               NODE                             NOMINATED NODE   READINESS GATES
+alertmanager-prometheus-prometheus-oper-alertmanager-0   2/2     Running   0          2m28s   192.168.48.74    ip-192-168-62-125.ec2.internal   <none>           <none>
+prometheus-grafana-5c97446694-5v8x5                      2/2     Running   0          2m35s   192.168.48.85    ip-192-168-62-125.ec2.internal   <none>           <none>
+prometheus-prometheus-node-exporter-2pfh6                1/1     Running   0          2m35s   192.168.62.125   ip-192-168-62-125.ec2.internal   <none>           <none>
+prometheus-kube-state-metrics-5ffdf76ddd-vh9gp           1/1     Running   0          2m35s   192.168.75.169   ip-192-168-64-125.ec2.internal   <none>           <none>
+prometheus-prometheus-node-exporter-qjz58                1/1     Running   0          2m35s   192.168.64.125   ip-192-168-64-125.ec2.internal   <none>           <none>
+prometheus-prometheus-oper-operator-6d59dcfb57-6zcht     2/2     Running   0          2m35s   192.168.64.141   ip-192-168-64-125.ec2.internal   <none>           <none>
+prometheus-prometheus-prometheus-oper-prometheus-0       3/3     Running   1          2m18s   192.168.91.193   ip-192-168-64-125.ec2.internal   <none>           <none>
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ return 0
++ [[ true == true ]]
+++ eksctl get cluster --name prototype --output json
+++ jq '.[]|.Endpoint' --raw-output
+++ awk -F:// '{print $2}'
++ deploy_dashboard A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
++ __function_name deploy_dashboard A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
++ func_name=deploy_dashboard
++ func_params=A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [deploy_dashboard]: A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com'
+Function [deploy_dashboard]: A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
++ return 0
++ [[ -n x ]]
++ cluster_name=A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
++ dashboard_console='api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login'
++ echo -e 'Creating Kubernetes Dashboard ...\n'
+Creating Kubernetes Dashboard ...
+
++ kubectl apply --filename https://raw.githubusercontent.com/kubernetes/dashboard/v1.10.1/src/deploy/recommended/kubernetes-dashboard.yaml
+secret/kubernetes-dashboard-certs created
+serviceaccount/kubernetes-dashboard created
+role.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+rolebinding.rbac.authorization.k8s.io/kubernetes-dashboard-minimal created
+deployment.apps/kubernetes-dashboard created
+service/kubernetes-dashboard created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ echo -e '\nGenerating console-user and credentials ...\n'
+
+Generating console-user and credentials ...
+
++ kubectl create --filename /Users/prototype/etc/configs/dashboard/sample-user.yaml
+serviceaccount/admin-user created
+clusterrolebinding.rbac.authorization.k8s.io/admin-user created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ echo -e '\nDisplaying console-user configuration ...\n'
+
+Displaying console-user configuration ...
+
+++ kubectl --namespace kube-system get secret
+++ grep admin-user
+++ awk '{print $1}'
++ kubectl --namespace kube-system describe secret admin-user-token-xl5d9
+Name:         admin-user-token-xl5d9
+Namespace:    kube-system
+Labels:       <none>
+Annotations:  kubernetes.io/service-account.name: admin-user
+              kubernetes.io/service-account.uid: f2a25acd-269f-11ea-9c3d-12f930d7a58d
+
+Type:  kubernetes.io/service-account-token
+
+Data
+====
+namespace:  11 bytes
+token:      eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXhsNWQ5Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJmMmEyNWFjZC0yNjlmLTExZWEtOWMzZC0xMmY5MzBkN2E1OGQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YWRtaW4tdXNlciJ9.JecKMJnO5l7TX4TAA9WxFzpUCGR_5vFi4XiW7IdtKFjvmJTg0K8JKfaTtQ1uT5zNeQW2igrKqJ4FBxNbl4ZYq1NBEZr-sq4hZXB3PBJbqCEpqZocupdISoQo7CPCQM80flmMRoqm2vP3m41NqYWif913b7jDnt4nJzl7goHWFa5WTVQJDb913e8IUX2Fufw8DLmqLo3fi6W_WNEPqPdY6hFbNb2Kw3G1ZK8cyaAU0LMfo968nmHuLmhth2gWBhadhi2aALeVtA78f_lvGvzxYG7scuYNjHlkGLMnXpaYGgR4rq2dA4QodWKAPayiRFaoKpM1XS49tBNlXvwW-qkphw
+ca.crt:     1025 bytes
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ [[ k8s-eks == \k\8\s\-\e\c\2 ]]
++ echo -e '\nExecute: kubectl proxy ;'
+
+Execute: kubectl proxy ;
++ echo -e 'http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login'
+http://127.0.0.1:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/#!/login
++ echo -e '\nConsole User-Token:\n'
+
+Console User-Token:
+
++ egrep '^token.*$'
++ awk '{print $2}'
+++ kubectl --namespace kube-system get secret
+++ grep admin-user
+++ awk '{print $1}'
++ kubectl --namespace kube-system describe secret admin-user-token-xl5d9
+eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi11c2VyLXRva2VuLXhsNWQ5Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImFkbWluLXVzZXIiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiJmMmEyNWFjZC0yNjlmLTExZWEtOWMzZC0xMmY5MzBkN2E1OGQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06YWRtaW4tdXNlciJ9.JecKMJnO5l7TX4TAA9WxFzpUCGR_5vFi4XiW7IdtKFjvmJTg0K8JKfaTtQ1uT5zNeQW2igrKqJ4FBxNbl4ZYq1NBEZr-sq4hZXB3PBJbqCEpqZocupdISoQo7CPCQM80flmMRoqm2vP3m41NqYWif913b7jDnt4nJzl7goHWFa5WTVQJDb913e8IUX2Fufw8DLmqLo3fi6W_WNEPqPdY6hFbNb2Kw3G1ZK8cyaAU0LMfo968nmHuLmhth2gWBhadhi2aALeVtA78f_lvGvzxYG7scuYNjHlkGLMnXpaYGgR4rq2dA4QodWKAPayiRFaoKpM1XS49tBNlXvwW-qkphw
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ deploy_prototype
++ continue_process 'Deploy Prototype-Application (Y/n) ?: '
++ [[ 38 -eq 0 ]]
++ message='Deploy Prototype-Application (Y/n) ?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nDeploy Prototype-Application (Y/n) ?: y'
+
+Deploy Prototype-Application (Y/n) ?: y
++ continue_response=true
++ return 0
++ [[ true == true ]]
++ cluster_application
++ __function_name cluster_application
++ func_name=cluster_application
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_application]: '
+Function [cluster_application]:
++ return 0
++ echo -e 'Generating Application Container (Pod) ...\n'
+Generating Application Container (Pod) ...
+
++ kubectl create --filename /Users/prototype/etc/configs/deployments/helloworld.yaml
+deployment.apps/helloworld-deployment created
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ echo -e '\nExposing Deployment Object (Load-Balancer) ...\n'
+
+Exposing Deployment Object (Load-Balancer) ...
+
++ kubectl expose deployment helloworld-deployment --type=LoadBalancer
+service/helloworld-deployment exposed
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ echo -e '\nIdentifying Deployment Status ...\n'
+
+Identifying Deployment Status ...
+
++ kubectl rollout status deployment/helloworld-deployment
+Waiting for deployment "helloworld-deployment" rollout to finish: 0 of 3 updated replicas are available...
+Waiting for deployment "helloworld-deployment" rollout to finish: 1 of 3 updated replicas are available...
+Waiting for deployment "helloworld-deployment" rollout to finish: 2 of 3 updated replicas are available...
+deployment "helloworld-deployment" successfully rolled out
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cluster_services
++ __function_name cluster_services
++ func_name=cluster_services
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_services]: '
+Function [cluster_services]:
++ return 0
++ echo -e 'Listing Kubernetes Services:\n'
+Listing Kubernetes Services:
+
++ kubectl get services
+NAME                    TYPE           CLUSTER-IP     EXTERNAL-IP                                                              PORT(S)          AGE
+helloworld-deployment   LoadBalancer   10.100.4.185   af49ecbdd269f11ea9c3d12f930d7a58-360768571.us-east-1.elb.amazonaws.com   3000:32198/TCP   17s
+kubernetes              ClusterIP      10.100.0.1     <none>                                                                   443/TCP          104m
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ echo -e '\nDescribing Application Service ...\n'
+
+Describing Application Service ...
+
++ kubectl describe services
+Name:                     helloworld-deployment
+Namespace:                default
+Labels:                   <none>
+Annotations:              <none>
+Selector:                 app=helloworld
+Type:                     LoadBalancer
+IP:                       10.100.4.185
+LoadBalancer Ingress:     af49ecbdd269f11ea9c3d12f930d7a58-360768571.us-east-1.elb.amazonaws.com
+Port:                     <unset>  3000/TCP
+TargetPort:               3000/TCP
+NodePort:                 <unset>  32198/TCP
+Endpoints:                192.168.51.121:3000,192.168.61.207:3000,192.168.70.131:3000
+Session Affinity:         None
+External Traffic Policy:  Cluster
+Events:
+  Type    Reason                Age   From                Message
+  ----    ------                ----  ----                -------
+  Normal  EnsuringLoadBalancer  17s   service-controller  Ensuring load balancer
+  Normal  EnsuredLoadBalancer   15s   service-controller  Ensured load balancer
+
+
+Name:              kubernetes
+Namespace:         default
+Labels:            component=apiserver
+                   provider=kubernetes
+Annotations:       <none>
+Selector:          <none>
+Type:              ClusterIP
+IP:                10.100.0.1
+Port:              https  443/TCP
+TargetPort:        443/TCP
+Endpoints:         192.168.137.46:443,192.168.169.1:443
+Session Affinity:  None
+Events:            <none>
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cluster_replicationsets
++ __function_name cluster_replicationsets
++ func_name=cluster_replicationsets
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_replicationsets]: '
+Function [cluster_replicationsets]:
++ return 0
++ echo -e 'Listing Replication Sets:\n'
+Listing Replication Sets:
+
++ kubectl get rs
+NAME                               DESIRED   CURRENT   READY   AGE
+helloworld-deployment-79789c9f5d   3         3         3       19s
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cluster_deployments default
++ __function_name cluster_deployments default
++ func_name=cluster_deployments
++ func_params=default
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_deployments]: default'
+Function [cluster_deployments]: default
++ return 0
++ [[ -n '' ]]
++ target_namespace=default
++ [[ default == \e\v\e\r\y\t\h\i\n\g ]]
++ listing_namespace='--namespace default'
++ echo -e 'Listing Deployment Objects [default]:\n'
+Listing Deployment Objects [default]:
+
++ kubectl get deployments --namespace default
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+helloworld-deployment   3/3     3            3           19s
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ [[ true == true ]]
++ extract_deployment helloworld-deployment default
++ __function_name extract_deployment helloworld-deployment default
++ func_name=extract_deployment
++ func_params=helloworld-deployment
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [extract_deployment]: helloworld-deployment'
+Function [extract_deployment]: helloworld-deployment
++ return 0
++ target_deployment=helloworld-deployment
++ [[ -n '' ]]
++ target_namespace=default
+++ kubectl describe pods --namespace default helloworld-deployment
+++ egrep '^Name\:.*helloworld-deployment.*$'
+++ head -n1
+++ awk '{print $2}'
+++ result=0
++ export target_podname=helloworld-deployment-79789c9f5d-2qmfp
++ target_podname=helloworld-deployment-79789c9f5d-2qmfp
++ __debugging
++ [[ true == true ]]
++ [[ 0 -gt 0 ]]
++ return 0
++ echo -e 'Cluster Deployment: helloworld-deployment-79789c9f5d-2qmfp'
+Cluster Deployment: helloworld-deployment-79789c9f5d-2qmfp
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ newline
++ echo -e
+
++ return 0
++ [[ ! -z helloworld-deployment-79789c9f5d-2qmfp ]]
++ echo -e 'Describing Deployment: helloworld-deployment-79789c9f5d-2qmfp'
+Describing Deployment: helloworld-deployment-79789c9f5d-2qmfp
++ describe_podname helloworld-deployment-79789c9f5d-2qmfp default
++ __function_name describe_podname helloworld-deployment-79789c9f5d-2qmfp default
++ func_name=describe_podname
++ func_params=helloworld-deployment-79789c9f5d-2qmfp
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [describe_podname]: helloworld-deployment-79789c9f5d-2qmfp'
+Function [describe_podname]: helloworld-deployment-79789c9f5d-2qmfp
++ return 0
++ [[ -n x ]]
++ export target_podname=helloworld-deployment-79789c9f5d-2qmfp
++ target_podname=helloworld-deployment-79789c9f5d-2qmfp
++ target_namespace=default
++ kubectl describe pod helloworld-deployment-79789c9f5d-2qmfp --namespace default
+Name:           helloworld-deployment-79789c9f5d-2qmfp
+Namespace:      default
+Priority:       0
+Node:           ip-192-168-62-125.ec2.internal/192.168.62.125
+Start Time:     Tue, 24 Dec 2019 15:51:42 -0700
+Labels:         app=helloworld
+                pod-template-hash=79789c9f5d
+Annotations:    kubernetes.io/psp: eks.privileged
+Status:         Running
+IP:             192.168.61.207
+IPs:            <none>
+Controlled By:  ReplicaSet/helloworld-deployment-79789c9f5d
+Containers:
+  k8s-demo:
+    Container ID:   docker://7349489b6b06ab7c226213b505efdd324761c771a01a9ba4f09e07e7795654a2
+    Image:          wardviaene/k8s-demo
+    Image ID:       docker-pullable://wardviaene/k8s-demo@sha256:2c050f462f5d0b3a6430e7869bcdfe6ac48a447a89da79a56d0ef61460c7ab9e
+    Port:           3000/TCP
+    Host Port:      0/TCP
+    State:          Running
+      Started:      Tue, 24 Dec 2019 15:51:59 -0700
+    Ready:          True
+    Restart Count:  0
+    Environment:    <none>
+    Mounts:
+      /var/run/secrets/kubernetes.io/serviceaccount from default-token-4qnm8 (ro)
+Conditions:
+  Type              Status
+  Initialized       True
+  Ready             True
+  ContainersReady   True
+  PodScheduled      True
+Volumes:
+  default-token-4qnm8:
+    Type:        Secret (a volume populated by a Secret)
+    SecretName:  default-token-4qnm8
+    Optional:    false
+QoS Class:       BestEffort
+Node-Selectors:  <none>
+Tolerations:     node.kubernetes.io/not-ready:NoExecute for 300s
+                 node.kubernetes.io/unreachable:NoExecute for 300s
+Events:
+  Type    Reason     Age   From                                     Message
+  ----    ------     ----  ----                                     -------
+  Normal  Scheduled  21s   default-scheduler                        Successfully assigned default/helloworld-deployment-79789c9f5d-2qmfp to ip-192-168-62-125.ec2.internal
+  Normal  Pulling    20s   kubelet, ip-192-168-62-125.ec2.internal  Pulling image "wardviaene/k8s-demo"
+  Normal  Pulled     9s    kubelet, ip-192-168-62-125.ec2.internal  Successfully pulled image "wardviaene/k8s-demo"
+  Normal  Created    4s    kubelet, ip-192-168-62-125.ec2.internal  Created container k8s-demo
+  Normal  Started    4s    kubelet, ip-192-168-62-125.ec2.internal  Started container k8s-demo
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ sleep 15s
++ echo -e '\nDisplaying Deployment'\''s Log: helloworld-deployment-79789c9f5d-2qmfp\n'
+
+Displaying Deployment's Log: helloworld-deployment-79789c9f5d-2qmfp
+
++ display_podlog helloworld-deployment-79789c9f5d-2qmfp default
++ [[ -n '' ]]
++ target_namespace=default
++ [[ -n x ]]
++ export target_podname=helloworld-deployment-79789c9f5d-2qmfp
++ target_podname=helloworld-deployment-79789c9f5d-2qmfp
++ kubectl logs helloworld-deployment-79789c9f5d-2qmfp --namespace default
+npm info it worked if it ends with ok
+npm info using npm@2.15.11
+npm info using node@v4.6.2
+npm info prestart myapp@0.0.1
+npm info start myapp@0.0.1
+
+> myapp@0.0.1 start /app
+> node index.js
+
+Example app listening at http://:::3000
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ target_podname=
++ return 0
++ [[ true == true ]]
++ describe_cluster
++ continue_process 'Describe Kubernetes Cluster (Y/n) ?: '
++ [[ 37 -eq 0 ]]
++ message='Describe Kubernetes Cluster (Y/n) ?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nDescribe Kubernetes Cluster (Y/n) ?: y'
+
+Describe Kubernetes Cluster (Y/n) ?: y
++ continue_response=true
++ return 0
++ [[ true == true ]]
++ cluster_configuration
++ __function_name cluster_configuration
++ func_name=cluster_configuration
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_configuration]: '
+Function [cluster_configuration]:
++ return 0
++ echo -e '\nListing Infrastructure Clusters ...\n'
+
+Listing Infrastructure Clusters ...
+
++ kubectl config get-clusters
+NAME
+prototype.us-east-1.eksctl.io
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ echo -e '\nListing Kubernetes Configuration ...\n'
+
+Listing Kubernetes Configuration ...
+
++ kubectl config view
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: DATA+OMITTED
+    server: https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
+  name: prototype.us-east-1.eksctl.io
+contexts:
+- context:
+    cluster: prototype.us-east-1.eksctl.io
+    user: kubernetes@prototype.us-east-1.eksctl.io
+  name: kubernetes@prototype.us-east-1.eksctl.io
+current-context: kubernetes@prototype.us-east-1.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: kubernetes@prototype.us-east-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - token
+      - -i
+      - prototype
+      command: aws-iam-authenticator
+      env:
+      - name: AWS_PROFILE
+        value: kubernetes
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cluster_validation
++ __function_name cluster_validation
++ func_name=cluster_validation
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_validation]: '
+Function [cluster_validation]:
++ return 0
++ echo -e '\nValidating Kubernetes Cluster:  ...\n'
+
+Validating Kubernetes Cluster:  ...
+
++ kops validate cluster
+Using cluster from kubectl context: prototype.us-east-1.eksctl.io
+
+
+State Store: Required value: Please set the --state flag or export KOPS_STATE_STORE.
+For example, a valid value follows the format s3://<bucket>.
+You can find the supported stores in https://github.com/kubernetes/kops/blob/master/docs/state.md.
++ __debugging 1
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 1'
+Status: 1
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ cluster_deployments everything
++ __function_name cluster_deployments everything
++ func_name=cluster_deployments
++ func_params=everything
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [cluster_deployments]: everything'
+Function [cluster_deployments]: everything
++ return 0
++ [[ -n '' ]]
++ target_namespace=everything
++ [[ everything == \e\v\e\r\y\t\h\i\n\g ]]
++ listing_namespace=--all-namespaces
++ echo -e 'Listing Deployment Objects [everything]:\n'
+Listing Deployment Objects [everything]:
+
++ kubectl get deployments --all-namespaces
+NAMESPACE     NAME                                  READY   UP-TO-DATE   AVAILABLE   AGE
+default       helloworld-deployment                 3/3     3            3           37s
+kube-system   cluster-autoscaler                    1/1     1            1           97m
+kube-system   cni-metrics-helper                    1/1     1            1           5m39s
+kube-system   coredns                               2/2     2            2           104m
+kube-system   kubernetes-dashboard                  1/1     1            1           40s
+kube-system   metrics-server                        1/1     1            1           97m
+kube-system   tiller-deploy                         1/1     1            1           5m
+prometheus    prometheus-grafana                    1/1     1            1           3m19s
+prometheus    prometheus-kube-state-metrics         1/1     1            1           3m19s
+prometheus    prometheus-prometheus-oper-operator   1/1     1            1           3m19s
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ monitoring_services
++ __function_name monitoring_services
++ func_name=monitoring_services
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [monitoring_services]: '
+Function [monitoring_services]:
++ return 0
++ kubectl get svc --namespace prometheus --output json
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:07Z",
+                "labels": {
+                    "operated-alertmanager": "true"
+                },
+                "name": "alertmanager-operated",
+                "namespace": "prometheus",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "monitoring.coreos.com/v1",
+                        "kind": "Alertmanager",
+                        "name": "prometheus-prometheus-oper-alertmanager",
+                        "uid": "93bbc11a-269f-11ea-9c3d-12f930d7a58d"
+                    }
+                ],
+                "resourceVersion": "14300",
+                "selfLink": "/api/v1/namespaces/prometheus/services/alertmanager-operated",
+                "uid": "97a5bb2f-269f-11ea-8769-0a3dd054fc8b"
+            },
+            "spec": {
+                "clusterIP": "None",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9093,
+                        "protocol": "TCP",
+                        "targetPort": 9093
+                    },
+                    {
+                        "name": "mesh-tcp",
+                        "port": 9094,
+                        "protocol": "TCP",
+                        "targetPort": 9094
+                    },
+                    {
+                        "name": "mesh-udp",
+                        "port": 9094,
+                        "protocol": "UDP",
+                        "targetPort": 9094
+                    }
+                ],
+                "selector": {
+                    "app": "alertmanager"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "grafana",
+                    "chart": "grafana-3.8.19",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-grafana",
+                "namespace": "prometheus",
+                "resourceVersion": "14134",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-grafana",
+                "uid": "93b37325-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.47.253",
+                "ports": [
+                    {
+                        "name": "service",
+                        "port": 80,
+                        "protocol": "TCP",
+                        "targetPort": 3000
+                    }
+                ],
+                "selector": {
+                    "app": "grafana",
+                    "release": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "prometheus.io/scrape": "true"
+                },
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app.kubernetes.io/instance": "prometheus",
+                    "app.kubernetes.io/managed-by": "Tiller",
+                    "app.kubernetes.io/name": "kube-state-metrics",
+                    "helm.sh/chart": "kube-state-metrics-2.3.1"
+                },
+                "name": "prometheus-kube-state-metrics",
+                "namespace": "prometheus",
+                "resourceVersion": "14137",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-kube-state-metrics",
+                "uid": "93b4b7d8-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.58.108",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 8080,
+                        "protocol": "TCP",
+                        "targetPort": 8080
+                    }
+                ],
+                "selector": {
+                    "app.kubernetes.io/instance": "prometheus",
+                    "app.kubernetes.io/name": "kube-state-metrics"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:17Z",
+                "labels": {
+                    "operated-prometheus": "true"
+                },
+                "name": "prometheus-operated",
+                "namespace": "prometheus",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "monitoring.coreos.com/v1",
+                        "kind": "Prometheus",
+                        "name": "prometheus-prometheus-oper-prometheus",
+                        "uid": "93c413e3-269f-11ea-9c3d-12f930d7a58d"
+                    }
+                ],
+                "resourceVersion": "14381",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-operated",
+                "uid": "9d7f71d0-269f-11ea-8769-0a3dd054fc8b"
+            },
+            "spec": {
+                "clusterIP": "None",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9090,
+                        "protocol": "TCP",
+                        "targetPort": "web"
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "annotations": {
+                    "prometheus.io/scrape": "true"
+                },
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-node-exporter",
+                    "chart": "prometheus-node-exporter-1.5.2",
+                    "heritage": "Tiller",
+                    "jobLabel": "node-exporter",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-node-exporter",
+                "namespace": "prometheus",
+                "resourceVersion": "14140",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-node-exporter",
+                "uid": "93b5db94-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.218.91",
+                "ports": [
+                    {
+                        "name": "metrics",
+                        "port": 9100,
+                        "protocol": "TCP",
+                        "targetPort": 9100
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus-node-exporter",
+                    "release": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-operator-alertmanager",
+                    "chart": "prometheus-operator-6.18.0",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-oper-alertmanager",
+                "namespace": "prometheus",
+                "resourceVersion": "14143",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-oper-alertmanager",
+                "uid": "93b77665-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.7.10",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9093,
+                        "protocol": "TCP",
+                        "targetPort": 9093
+                    }
+                ],
+                "selector": {
+                    "alertmanager": "prometheus-prometheus-oper-alertmanager",
+                    "app": "alertmanager"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-operator-operator",
+                    "chart": "prometheus-operator-6.18.0",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-oper-operator",
+                "namespace": "prometheus",
+                "resourceVersion": "14131",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-oper-operator",
+                "uid": "93b1b0c1-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.11.161",
+                "ports": [
+                    {
+                        "name": "http",
+                        "port": 8080,
+                        "protocol": "TCP",
+                        "targetPort": "http"
+                    },
+                    {
+                        "name": "https",
+                        "port": 443,
+                        "protocol": "TCP",
+                        "targetPort": "https"
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus-operator-operator",
+                    "release": "prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        },
+        {
+            "apiVersion": "v1",
+            "kind": "Service",
+            "metadata": {
+                "creationTimestamp": "2019-12-24T22:49:00Z",
+                "labels": {
+                    "app": "prometheus-operator-prometheus",
+                    "chart": "prometheus-operator-6.18.0",
+                    "heritage": "Tiller",
+                    "release": "prometheus"
+                },
+                "name": "prometheus-prometheus-oper-prometheus",
+                "namespace": "prometheus",
+                "resourceVersion": "14123",
+                "selfLink": "/api/v1/namespaces/prometheus/services/prometheus-prometheus-oper-prometheus",
+                "uid": "93b04c4b-269f-11ea-9c3d-12f930d7a58d"
+            },
+            "spec": {
+                "clusterIP": "10.100.50.239",
+                "ports": [
+                    {
+                        "name": "web",
+                        "port": 9090,
+                        "protocol": "TCP",
+                        "targetPort": 9090
+                    }
+                ],
+                "selector": {
+                    "app": "prometheus",
+                    "prometheus": "prometheus-prometheus-oper-prometheus"
+                },
+                "sessionAffinity": "None",
+                "type": "ClusterIP"
+            },
+            "status": {
+                "loadBalancer": {}
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": "",
+        "selfLink": ""
+    }
+}
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_apiservice
++ __function_name display_apiservice
++ func_name=display_apiservice
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_apiservice]: '
+Function [display_apiservice]:
++ return 0
++ newline
++ echo -e
+
++ return 0
++ kubectl get apiservice
+NAME                                   SERVICE                      AVAILABLE   AGE
+v1.                                    Local                        True        104m
+v1.apps                                Local                        True        104m
+v1.authentication.k8s.io               Local                        True        104m
+v1.authorization.k8s.io                Local                        True        104m
+v1.autoscaling                         Local                        True        104m
+v1.batch                               Local                        True        104m
+v1.coordination.k8s.io                 Local                        True        104m
+v1.monitoring.coreos.com               Local                        True        3m56s
+v1.networking.k8s.io                   Local                        True        104m
+v1.rbac.authorization.k8s.io           Local                        True        104m
+v1.scheduling.k8s.io                   Local                        True        104m
+v1.storage.k8s.io                      Local                        True        104m
+v1alpha1.crd.k8s.amazonaws.com         Local                        True        101m
+v1beta1.admissionregistration.k8s.io   Local                        True        104m
+v1beta1.apiextensions.k8s.io           Local                        True        104m
+v1beta1.apps                           Local                        True        104m
+v1beta1.authentication.k8s.io          Local                        True        104m
+v1beta1.authorization.k8s.io           Local                        True        104m
+v1beta1.batch                          Local                        True        104m
+v1beta1.certificates.k8s.io            Local                        True        104m
+v1beta1.coordination.k8s.io            Local                        True        104m
+v1beta1.events.k8s.io                  Local                        True        104m
+v1beta1.extensions                     Local                        True        104m
+v1beta1.metrics.k8s.io                 kube-system/metrics-server   True        97m
+v1beta1.networking.k8s.io              Local                        True        104m
+v1beta1.node.k8s.io                    Local                        True        104m
+v1beta1.policy                         Local                        True        104m
+v1beta1.rbac.authorization.k8s.io      Local                        True        104m
+v1beta1.scheduling.k8s.io              Local                        True        104m
+v1beta1.storage.k8s.io                 Local                        True        104m
+v1beta2.apps                           Local                        True        104m
+v2beta1.autoscaling                    Local                        True        104m
+v2beta2.autoscaling                    Local                        True        104m
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_namespaces
++ __function_name display_namespaces
++ func_name=display_namespaces
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_namespaces]: '
+Function [display_namespaces]:
++ return 0
++ newline
++ echo -e
+
++ return 0
++ kubectl get crd --all-namespaces
+NAME                                    CREATED AT
+alertmanagers.monitoring.coreos.com     2019-12-24T22:48:24Z
+eniconfigs.crd.k8s.amazonaws.com        2019-12-24T21:07:35Z
+podmonitors.monitoring.coreos.com       2019-12-24T22:48:24Z
+prometheuses.monitoring.coreos.com      2019-12-24T22:48:24Z
+prometheusrules.monitoring.coreos.com   2019-12-24T22:48:25Z
+servicemonitors.monitoring.coreos.com   2019-12-24T22:48:26Z
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_nodes
++ __function_name display_nodes
++ func_name=display_nodes
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_nodes]: '
+Function [display_nodes]:
++ return 0
++ newline
++ echo -e
+
++ return 0
++ kubectl get nodes --output wide
+NAME                             STATUS   ROLES    AGE   VERSION              INTERNAL-IP      EXTERNAL-IP     OS-IMAGE         KERNEL-VERSION                  CONTAINER-RUNTIME
+ip-192-168-62-125.ec2.internal   Ready    <none>   99m   v1.14.7-eks-1861c5   192.168.62.125   54.197.43.113   Amazon Linux 2   4.14.146-119.123.amzn2.x86_64   docker://18.6.1
+ip-192-168-64-125.ec2.internal   Ready    <none>   99m   v1.14.7-eks-1861c5   192.168.64.125   3.95.59.52      Amazon Linux 2   4.14.146-119.123.amzn2.x86_64   docker://18.6.1
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_labels
++ __function_name display_labels
++ func_name=display_labels
++ func_params=
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_labels]: '
+Function [display_labels]:
++ return 0
++ echo -e '\nListing Kubernetes Nodes:\n'
+
+Listing Kubernetes Nodes:
+
++ kubectl get nodes --show-labels
+NAME                             STATUS   ROLES    AGE   VERSION              LABELS
+ip-192-168-62-125.ec2.internal   Ready    <none>   99m   v1.14.7-eks-1861c5   alpha.eksctl.io/cluster-name=prototype,alpha.eksctl.io/nodegroup-name=devops,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=m5.large,beta.kubernetes.io/os=linux,eks.amazonaws.com/nodegroup-image=ami-0392bafc801b7520f,eks.amazonaws.com/nodegroup=devops,failure-domain.beta.kubernetes.io/region=us-east-1,failure-domain.beta.kubernetes.io/zone=us-east-1b,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-192-168-62-125.ec2.internal,kubernetes.io/os=linux
+ip-192-168-64-125.ec2.internal   Ready    <none>   99m   v1.14.7-eks-1861c5   alpha.eksctl.io/cluster-name=prototype,alpha.eksctl.io/nodegroup-name=devops,beta.kubernetes.io/arch=amd64,beta.kubernetes.io/instance-type=m5.large,beta.kubernetes.io/os=linux,eks.amazonaws.com/nodegroup-image=ami-0392bafc801b7520f,eks.amazonaws.com/nodegroup=devops,failure-domain.beta.kubernetes.io/region=us-east-1,failure-domain.beta.kubernetes.io/zone=us-east-1c,kubernetes.io/arch=amd64,kubernetes.io/hostname=ip-192-168-64-125.ec2.internal,kubernetes.io/os=linux
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_pods default
++ __function_name display_pods default
++ func_name=display_pods
++ func_params=default
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_pods]: default'
+Function [display_pods]: default
++ return 0
++ [[ -n '' ]]
++ target_namespace=default
++ kubectl get pods --namespace=default --output wide '--sort-by={.spec.nodeName}'
+NAME                                     READY   STATUS    RESTARTS   AGE   IP               NODE                             NOMINATED NODE   READINESS GATES
+helloworld-deployment-79789c9f5d-2qmfp   1/1     Running   0          40s   192.168.61.207   ip-192-168-62-125.ec2.internal   <none>           <none>
+helloworld-deployment-79789c9f5d-4zwnz   1/1     Running   0          40s   192.168.51.121   ip-192-168-62-125.ec2.internal   <none>           <none>
+helloworld-deployment-79789c9f5d-cpx7j   1/1     Running   0          40s   192.168.70.131   ip-192-168-64-125.ec2.internal   <none>           <none>
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_pods kube-system
++ __function_name display_pods kube-system
++ func_name=display_pods
++ func_params=kube-system
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_pods]: kube-system'
+Function [display_pods]: kube-system
++ return 0
++ [[ -n '' ]]
++ target_namespace=kube-system
++ kubectl get pods --namespace=kube-system --output wide '--sort-by={.spec.nodeName}'
+NAME                                    READY   STATUS    RESTARTS   AGE     IP               NODE                             NOMINATED NODE   READINESS GATES
+aws-node-kl5pj                          1/1     Running   0          99m     192.168.62.125   ip-192-168-62-125.ec2.internal   <none>           <none>
+kubernetes-dashboard-5f7b999d65-l472x   1/1     Running   0          43s     192.168.49.187   ip-192-168-62-125.ec2.internal   <none>           <none>
+cni-metrics-helper-7b845dfdd4-2bqst     1/1     Running   0          5m42s   192.168.39.210   ip-192-168-62-125.ec2.internal   <none>           <none>
+coredns-56678dcf76-46ns8                1/1     Running   0          104m    192.168.45.236   ip-192-168-62-125.ec2.internal   <none>           <none>
+kube-proxy-kf4mf                        1/1     Running   0          99m     192.168.62.125   ip-192-168-62-125.ec2.internal   <none>           <none>
+metrics-server-7fcf9cc98b-bbgkm         1/1     Running   0          97m     192.168.41.30    ip-192-168-62-125.ec2.internal   <none>           <none>
+aws-node-g7fqx                          1/1     Running   0          99m     192.168.64.125   ip-192-168-64-125.ec2.internal   <none>           <none>
+coredns-56678dcf76-2c8bt                1/1     Running   0          104m    192.168.76.125   ip-192-168-64-125.ec2.internal   <none>           <none>
+kube-proxy-9kvdr                        1/1     Running   0          99m     192.168.64.125   ip-192-168-64-125.ec2.internal   <none>           <none>
+cluster-autoscaler-85c6b59c96-zbxb7     1/1     Running   0          16m     192.168.66.11    ip-192-168-64-125.ec2.internal   <none>           <none>
+tiller-deploy-54c98f988f-5tqzj          1/1     Running   0          5m3s    192.168.79.240   ip-192-168-64-125.ec2.internal   <none>           <none>
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ display_pods prometheus
++ __function_name display_pods prometheus
++ func_name=display_pods
++ func_params=prometheus
++ echo -e
+
++ [[ true == true ]]
++ echo -e 'Function [display_pods]: prometheus'
+Function [display_pods]: prometheus
++ return 0
++ [[ -n '' ]]
++ target_namespace=prometheus
++ kubectl get pods --namespace=prometheus --output wide '--sort-by={.spec.nodeName}'
+NAME                                                     READY   STATUS    RESTARTS   AGE     IP               NODE                             NOMINATED NODE   READINESS GATES
+alertmanager-prometheus-prometheus-oper-alertmanager-0   2/2     Running   0          3m16s   192.168.48.74    ip-192-168-62-125.ec2.internal   <none>           <none>
+prometheus-grafana-5c97446694-5v8x5                      2/2     Running   0          3m23s   192.168.48.85    ip-192-168-62-125.ec2.internal   <none>           <none>
+prometheus-prometheus-node-exporter-2pfh6                1/1     Running   0          3m23s   192.168.62.125   ip-192-168-62-125.ec2.internal   <none>           <none>
+prometheus-kube-state-metrics-5ffdf76ddd-vh9gp           1/1     Running   0          3m23s   192.168.75.169   ip-192-168-64-125.ec2.internal   <none>           <none>
+prometheus-prometheus-node-exporter-qjz58                1/1     Running   0          3m23s   192.168.64.125   ip-192-168-64-125.ec2.internal   <none>           <none>
+prometheus-prometheus-oper-operator-6d59dcfb57-6zcht     2/2     Running   0          3m23s   192.168.64.141   ip-192-168-64-125.ec2.internal   <none>           <none>
+prometheus-prometheus-prometheus-oper-prometheus-0       3/3     Running   1          3m6s    192.168.91.193   ip-192-168-64-125.ec2.internal   <none>           <none>
++ __debugging 0
++ [[ true == true ]]
++ [[ 1 -gt 0 ]]
++ echo -e 'Status: 0'
+Status: 0
++ return 0
++ continue_process
++ [[ 0 -eq 0 ]]
++ message='Continue [Y/n]?: '
++ continue_response=false
++ [[ false == true ]]
++ echo -e '\nContinue [Y/n]?: y'
+
+Continue [Y/n]?: y
++ continue_response=true
++ return 0
++ return 0
++ newline
++ echo -e
+
++ return 0
++ kubectl cluster-info
+Kubernetes master is running at https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com
+CoreDNS is running at https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/kube-dns:dns/proxy
+Metrics-server is running at https://A5E7343167DDE1DED38A8FAAC3B7B418.gr7.us-east-1.eks.amazonaws.com/api/v1/namespaces/kube-system/services/https:metrics-server:/proxy
+
+To further debug and diagnose cluster problems, use 'kubectl cluster-info dump'.
++ return 0
++ [[ 0 -gt 0 ]]
++ echo -e '\nCompleted! \n'
+
+Completed!
+
++ return 0

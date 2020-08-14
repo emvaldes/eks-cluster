@@ -1,0 +1,42 @@
+#!/bin/bash
+## Version: 0.1.0
+
+script_name=$(basename ${0});
+
+function script_options () {
+    ## tracking_process ${FUNCNAME} "${@}";
+    display_message "Use:  ${script_name}
+      --access-pubkey='${KUBERNETES_SSHKEY}'
+      --capacity='${cluster_capacity}'
+      --cluster-name='${cluster_name}'
+      --cluster-version='${EKSCLUSTER_VERSION}'
+      --delete-cluster
+      --create-cluster
+      --deploy-cluster
+      --deploy-dashboard
+      --deploy-prometheus
+      --deploy-prototype
+      --describe-cluster
+      --enable-autoscaling
+      --enable-cloudwatch
+      --enable-fargate
+      --enable-metrics
+      --help-create
+      --help-delete
+      --interactive
+      --kubeconfig='${KUBECONFIG}'
+      --nodegroup-name='${nodegroup_name}'
+      --profile='${default_profile}'
+      --region='${AWS_REGION}'
+      --scale-cluster='${scale_cluster}'
+      --target-cluster='${cluster_name}.${nodegroup_name}'
+      --team-creator='${team_creator}'
+      --team-member='${team_member}'
+      --team-owner='${team_owner}'
+      --zones='${default_zones}'
+      --verbose
+    ";
+    display_message "Goodbye!";
+    exit 0;
+    ## return 0;
+  };
